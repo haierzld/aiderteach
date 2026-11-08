@@ -1,0 +1,264 @@
+<section style="max-width:677px;margin:0 auto;background:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:#374151;line-height:1.75;letter-spacing:0.5px;overflow-x:hidden;">
+
+  <section style="margin:10px 10px 32px;padding:30px 26px 26px;background:linear-gradient(135deg,#DC2626 0%,#991B1B 100%);border-radius:16px;text-align:center;color:#fff;box-shadow:0 8px 28px -6px rgba(220,38,38,0.38);">
+    <p style="font-size:30px;color:rgba(255,255,255,0.5);font-weight:900;margin:0 0 4px;line-height:1;text-align:left;"><span leaf="">“</span></p>
+    <p style="font-size:17px;font-weight:800;color:#FFFFFF;margin:0 0 14px;line-height:1.8;text-align:center;"><span leaf="">上篇讲它变成了“同事”，这篇讲这笔账：更便宜的模型、更贵的速度、更少的额度。</span></p>
+    <p style="font-size:12px;color:rgba(255,255,255,0.78);margin:0;letter-spacing:1px;text-align:right;"><span leaf="">—— 小智</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">上篇我们讲了 dots 和 ChatGPT Space —— OpenAI 想把 AI 从“开一个新对话”变成“一份持续的工作关系”。</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">这一篇讲同场发布的另一半：模型、价格、额度，以及开发者侧的那一堆更新。这部分离你的钱包更近。</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <!-- 配图：图：这篇讲的是一笔账 —— 更便宜的模型、更贵的速度、更少的额度 -->
+    <section style="margin:0 0 24px;">
+      <img src="images/第64期/64_01_封面_越来越薄的账单.png" alt="越来越薄的账单（插画）" style="max-width:100%;height:auto;display:block;margin:0 auto;border-radius:12px;">
+      <p style="margin:8px 0 0;font-size:12px;color:#9CA3AF;line-height:1.7;text-align:center;"><span leaf="">图：这篇讲的是一笔账 —— 更便宜的模型、更贵的速度、更少的额度</span></p>
+    </section>
+  </section>
+  <section style="margin-top:16px;margin-bottom:28px;padding:0 10px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+      <section style="display:flex;align-items:center;">
+        <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">01</span></span>
+        <section>
+          <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">SOL</span></p>
+          <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">一、GPT-6.1 Sol：7 天就换代</span></h3>
+        </section>
+      </section>
+    </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">先说最意外的。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">距离 GPT-6 Sol 发布只过了 </span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">7 天</span></span><span leaf="">，OpenAI 就端出了 GPT-6.1 Sol。这也是它历史上模型迭代最快的一次 —— 背景很直接：Claude Opus 5.5 那一周把压力顶满了。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><strong><span leaf="">价格</span></strong><span leaf="">（每百万 token）：</span></p>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:6px;height:6px;background:#DC2626;border-radius:50%;flex-shrink:0;margin-top:10px;"><span leaf="">&nbsp;</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span leaf="">输入 2 美元、输出 10 美元，和上一代持平，</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">约为 Astra 的五分之一</span></span></p>
+      </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:6px;height:6px;background:#DC2626;border-radius:50%;flex-shrink:0;margin-top:10px;"><span leaf="">&nbsp;</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span leaf="">缓存输入 0.10 美元，</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">比上一代再降一半</span></span></p>
+      </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">缓存这一项对智能体很关键：多步工作流会反复读取上下文，命中缓存便宜一半，实际账单会明显变薄。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><strong><span leaf="">能力</span></strong><span leaf="">，官方的说法是“以五分之一的价格，接近 Astra 的水平”。几个可查的数字：</span></p>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:6px;height:6px;background:#DC2626;border-radius:50%;flex-shrink:0;margin-top:10px;"><span leaf="">&nbsp;</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span leaf="">软件工程评测 DeepSWE v1.1：</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">反超 Astra 一个百分点</span></span><span leaf="">，单任务成本 0.65 美元，Astra 要 4.43 美元</span></p>
+      </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:6px;height:6px;background:#DC2626;border-radius:50%;flex-shrink:0;margin-top:10px;"><span leaf="">&nbsp;</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span leaf="">电脑操作 OSWorld 2.0：比 6 Sol 高 7%，离 Astra 只差 2.1%，</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">成本约为 Astra 的七分之一</span></span></p>
+      </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:6px;height:6px;background:#DC2626;border-radius:50%;flex-shrink:0;margin-top:10px;"><span leaf="">&nbsp;</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span leaf="">业务流程 AutomationBench（中等推理）：比 Opus 5.5 高 2.2%，成本约其三分之一</span></p>
+      </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:6px;height:6px;background:#DC2626;border-radius:50%;flex-shrink:0;margin-top:10px;"><span leaf="">&nbsp;</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span leaf="">平均下来，每项任务成本约 5.47 美元，Opus 5.5 是 23.21 美元，Astra 是 23.80 美元</span></p>
+      </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><strong><span leaf="">谁能用</span></strong><span leaf="">：已向 Plus、Pro、Business、Enterprise 和 Edu 推送，API 同步开放，但</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">目前只在 ChatGPT Work 和 Codex 里能用</span></span><span leaf="">，普通聊天暂时还用不到。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">一句提醒：评测分数不等于你手上的体验。</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">真正该看的是“每件事多少钱”</span></span><span leaf="">，这个数字这一轮确实又下了一个台阶。</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:linear-gradient(to right,transparent,#FECACA,#DC2626,#FECACA,transparent);margin:0;"><span leaf=""><br></span></section>
+  </section>
+  <section style="margin-top:48px;margin-bottom:28px;padding:0 10px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+      <section style="display:flex;align-items:center;">
+        <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">02</span></span>
+        <section>
+          <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">FAST</span></p>
+          <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">二、UltraFast：快是要加钱的</span></h3>
+        </section>
+      </section>
+    </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">GPT-6 Astra 迎来了 UltraFast 模式：API 端约 </span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">6 倍输出速度</span></span><span leaf="">，Codex 里能做到 8 倍速、每秒约 300 个 token。GPT-6.1 Sol 稍后也会支持。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">代价是价格：据 The Decoder 报道，UltraFast 的 API 价约为标准价的 6 倍 —— 对应 Astra 就是每百万 token </span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">输入 60 美元、输出 300 美元</span></span><span leaf="">。原来的 Fast 模式大致是“2 倍价格换 2.5 倍速度”。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">翻译成人话：</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">速度是可以买的，而且很贵</span></span><span leaf="">。对多数人来说，默认的那一档通常就够了。</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:linear-gradient(to right,transparent,#FECACA,#DC2626,#FECACA,transparent);margin:0;"><span leaf=""><br></span></section>
+  </section>
+  <section style="margin-top:48px;margin-bottom:28px;padding:0 10px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+      <section style="display:flex;align-items:center;">
+        <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">03</span></span>
+        <section>
+          <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">PRO</span></p>
+          <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">三、Pro 500 与那场额度争议</span></h3>
+        </section>
+      </section>
+    </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">这是发布后争议最大的一条。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><strong><span leaf="">新增 Pro 500</span></strong><span leaf="">：月费 </span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">500 美元</span></span><span leaf="">，额度是 Plus 的 25 倍，独占 UltraFast 模式。Pro 会员从此分成 100、200、500 三档，每档都包含一只免费的 dot。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><strong><span leaf="">Pro 200 重新开放</span></strong><span leaf="">了此前暂停近三周的订阅，但随之而来的是坏消息：</span></p>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:6px;height:6px;background:#DC2626;border-radius:50%;flex-shrink:0;margin-top:10px;"><span leaf="">&nbsp;</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span leaf="">Pro 100 额度：Plus 的 </span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">5 倍</span></span></p>
+      </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:6px;height:6px;background:#DC2626;border-radius:50%;flex-shrink:0;margin-top:10px;"><span leaf="">&nbsp;</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span leaf="">Pro 200 额度：从 20 倍降到 </span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">10 倍</span></span></p>
+      </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:6px;height:6px;background:#DC2626;border-radius:50%;flex-shrink:0;margin-top:10px;"><span leaf="">&nbsp;</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span leaf="">存量用户的双倍额度，</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">10 月 29 日失效</span></span></p>
+      </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:6px;height:6px;background:#DC2626;border-radius:50%;flex-shrink:0;margin-top:10px;"><span leaf="">&nbsp;</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span leaf="">唯一的补偿：取消了 5 小时使用限制</span></p>
+      </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">社区里的反对声不小，最形象的说法是：</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">“这就像运营商说 5G 更快了，所以我把你的流量砍一半”</span></span><span leaf="">。官方的解释是模型会继续降价，额度虽然少了，能干的活反而更多 —— 逻辑上说得通，观感上很难服众。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">更可能的真实原因是方向变了：OpenAI 在往企业服务倾斜，过去那种“量大从优”地补贴个人订阅，自然难以为继。</span></p>
+    <!-- 配图：图：速度在涨、容量在降 —— 额度砍半的那笔账 -->
+    <section style="margin:0 0 24px;">
+      <img src="images/第64期/64_02_额度_砍半.png" alt="额度砍半（插画）" style="max-width:100%;height:auto;display:block;margin:0 auto;border-radius:12px;">
+      <p style="margin:8px 0 0;font-size:12px;color:#9CA3AF;line-height:1.7;text-align:center;"><span leaf="">图：速度在涨、容量在降 —— 额度砍半的那笔账</span></p>
+    </section>
+  </section>
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:linear-gradient(to right,transparent,#FECACA,#DC2626,#FECACA,transparent);margin:0;"><span leaf=""><br></span></section>
+  </section>
+  <section style="margin-top:48px;margin-bottom:28px;padding:0 10px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+      <section style="display:flex;align-items:center;">
+        <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">04</span></span>
+        <section>
+          <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">DECISION</span></p>
+          <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">四、Decisions API：让模型只做选择题</span></h3>
+        </section>
+      </section>
+    </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">这是全场看起来最小、但我个人最感兴趣的一条。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">做法很简单：开发者先预设几个选项，把材料丢进去，Decisions API 用定制版的 GPT-6 Luna </span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">快速做分类、路由，或者决定智能体的下一步</span></span><span leaf="">，而不是生成一大段文字。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">效果：官方案例里 </span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">150 毫秒</span></span><span leaf="">出结果，而通过 API 调标准 GPT-6 Luna 要 1.6 秒，快约 10 倍。Luna 原本的图像理解、多语言和安全能力都还在。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">为什么值得单独说？两周前的 9 月 16 日，一家叫 TypeSafeAI 的公司发布了专用判断模型 Jev，核心主张就是“很多自动化根本不需要模型写答案，只需要它快速做决定”。我们当时也聊过。结果两周后，OpenAI 在讲模型的时候顺手掏了几分钟，把同样的能力加给了 Luna。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">这就是小公司的处境：</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">你教育完市场，大厂随手就补上了</span></span><span leaf="">。反过来说，也说明“让便宜的模型做判断、让贵的模型做推理”这个思路，已经被验证是对的。</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:linear-gradient(to right,transparent,#FECACA,#DC2626,#FECACA,transparent);margin:0;"><span leaf=""><br></span></section>
+  </section>
+  <section style="margin-top:48px;margin-bottom:28px;padding:0 10px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+      <section style="display:flex;align-items:center;">
+        <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">05</span></span>
+        <section>
+          <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">CODEX</span></p>
+          <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">五、开发者侧：Codex 全面上云</span></h3>
+        </section>
+      </section>
+    </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><strong><span leaf="">Codex Cloud</span></strong><span leaf=""> 这次补上了最关键的一层 —— </span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">可复用开发环境</span></span><span leaf="">。你可以提前把代码仓库、依赖、工具、环境变量配好，之后的任务直接基于这套环境启动，不用每次重装。每个任务仍有独立 workspace，任务状态最长可恢复 7 天。云端 Codex 现在也能用插件和 Computer Use。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">顺带一句：山姆·奥特曼开场还揶揄了“用 Codex 不敢合上笔记本盖子”这件事 —— 从此可以了。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><strong><span leaf="">Codex Security Cloud</span></strong><span leaf="">：从“帮我审一下这个仓库”变成常驻安全智能体，支持自动去重、定时扫描和新的管理界面。这个能力今年 3 月就预览上线并开源，</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">已扫过 3000 多万个 commit、3 万多个代码库</span></span><span leaf="">。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">其余还有：Agents API 把 Computer Use 也装了进去；Codex CLI 开放了双向语音对话。</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:linear-gradient(to right,transparent,#FECACA,#DC2626,#FECACA,transparent);margin:0;"><span leaf=""><br></span></section>
+  </section>
+  <section style="margin-top:48px;margin-bottom:28px;padding:0 10px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+      <section style="display:flex;align-items:center;">
+        <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">06</span></span>
+        <section>
+          <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">ECO</span></p>
+          <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">六、生态三件事</span></h3>
+        </section>
+      </section>
+    </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><strong><span leaf="">① 带着你的订阅去第三方。</span></strong><span leaf=""> 以后用 ChatGPT 账号登录 Notion、GitLab、HubSpot、Vercel 这类应用，可以直接消耗你 ChatGPT 套餐里的额度。对开发者是大利好：API 成本不用自己掏了。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><strong><span leaf="">② 插件越来越像 App。</span></strong><span leaf=""> 开发者可以把编辑器、Dashboard、表单、整个工作区直接嵌进 ChatGPT 和 Codex（现场演示了 Figma 和 Adobe），插件还能在对话里被自动发现。审核流程也更像正规开发平台了。苹果那套 App Store 的野心，一直都在。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><strong><span leaf="">③ OpenAI Marketplace（Beta）</span></strong><span leaf="">。首发 30 多家合作伙伴，玩法是：企业把已经承诺给 OpenAI 的采购额度，拿一部分去买合作伙伴的软件。本质上是把自己当企业分发平台。这个模式 Claude 先发了，OpenAI 跟进。</span></p>
+    <!-- 配图：图：带着你的订阅去第三方 —— 一个账号牵着所有应用 -->
+    <section style="margin:0 0 24px;">
+      <img src="images/第64期/64_03_生态_一个账号牵着所有应用.png" alt="订阅生态（插画）" style="max-width:100%;height:auto;display:block;margin:0 auto;border-radius:12px;">
+      <p style="margin:8px 0 0;font-size:12px;color:#9CA3AF;line-height:1.7;text-align:center;"><span leaf="">图：带着你的订阅去第三方 —— 一个账号牵着所有应用</span></p>
+    </section>
+  </section>
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:linear-gradient(to right,transparent,#FECACA,#DC2626,#FECACA,transparent);margin:0;"><span leaf=""><br></span></section>
+  </section>
+  <section style="margin-top:48px;margin-bottom:28px;padding:0 10px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+      <section style="display:flex;align-items:center;">
+        <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">07</span></span>
+        <section>
+          <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">VIEW</span></p>
+          <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">七、怎么看这场会</span></h3>
+        </section>
+      </section>
+    </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">发布会的最后有个彩蛋：奥特曼说大家又要疯狂烧 Codex 额度了，于是送了一张“重置卡”。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">但整场看下来，更值得记的是一句话：</span></p>
+    <section style="background:#FEF2F2;border-radius:0 10px 10px 0;border-left:4px solid #DC2626;padding:18px 22px;margin-bottom:24px;">
+      <p style="font-size:16px;font-weight:800;color:#991B1B;margin:0;line-height:1.8;"><span leaf="">OpenAI 正在把 ChatGPT 做成一种 SaaS 服务。</span></p>
+    </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">它有 </span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">12 亿周活</span></span><span leaf="">，消费者心智几乎无人能敌；但据路透社披露，Anthropic 那边 30 多万家企业和商业客户贡献了约 80% 的收入 —— </span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">真正稳定、高价值的收入在企业侧</span></span><span leaf="">。所以你会看到 dots 有 Specialist 版本、Space 有团队任务、Marketplace 面向企业采购。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">还有一个判断我认同：</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">没有任何一个模型能在能力上领先竞品超过半年</span></span><span leaf="">。既然如此，护城河就不在模型本身，而在项目、智能体、权限体系和工作流这些“难以迁移”的东西上。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">这跟我们这两年讲的一条线是一致的：能力会越来越便宜，</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">真正稀缺的是“你敢把什么交给它”</span></span><span leaf="">。</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:linear-gradient(to right,transparent,#FECACA,#DC2626,#FECACA,transparent);margin:0;"><span leaf=""><br></span></section>
+  </section>
+  <section style="margin-top:48px;margin-bottom:28px;padding:0 10px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+      <section style="display:flex;align-items:center;">
+        <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">∞</span></span>
+        <section>
+          <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">THE END</span></p>
+          <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">最后</span></h3>
+        </section>
+      </section>
+    </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">DevDay 这两篇就到这里。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">接下来假期里还有几篇：AI 自己跑出去了（越界事件全貌与应对）、给 AI 画围栏（Docker 那份开放标准）、以及 10 月 5 日那篇我特别想写的 —— </span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">dots、豆包、CodeBuddy/WorkBuddy 这几类“AI 同事”到底有什么不一样，放在我们讲过的“七层”里看，各自是在哪一层发力</span></span><span leaf="">。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">明天见。</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:linear-gradient(to right,transparent,#FECACA,#DC2626,#FECACA,transparent);margin:0;"><span leaf=""><br></span></section>
+  </section>
+  <section style="padding:0 10px;">
+    <p style="font-size:12px;color:#9CA3AF;margin:0 0 24px;line-height:1.8;text-align:left;"><span leaf="">本文事实依据：OpenAI DevDay 2026 发布会实录与 OpenAI 官方定价/文档，多家媒体现场报道（爱范儿、量子位、数字生命卡兹克、The Decoder 等）交叉比对。价格、额度与开通范围可能调整，以 OpenAI 官方最新公告为准，核查时间：2026 年 9 月 30 日。</span></p>
+  </section>
+
+  <section style="padding:0 10px;">
+    <section style="text-align:center;margin:0 0 32px;">
+      <section style="display:flex;align-items:center;justify-content:center;">
+        <span style="height:2px;width:60px;background:#DC2626;margin-right:12px;"><span leaf=""><br></span></span>
+        <span style="font-size:11px;color:#DC2626;letter-spacing:3px;font-weight:700;"><span leaf="">END</span></span>
+        <span style="height:2px;width:60px;background:#DC2626;margin-left:12px;"><span leaf=""><br></span></span>
+      </section>
+    </section>
+  </section>
+  <section style="margin:0 10px 24px;padding:24px 22px;background:linear-gradient(135deg,#DC2626 0%,#991B1B 100%);border-radius:16px;text-align:center;color:#fff;">
+    <p style="font-size:18px;font-weight:800;margin:0 0 10px;"><span leaf="">500 美元一个月的 AI 会员，你会买吗？</span></p>
+    <p style="font-size:14px;margin:0 0 18px;opacity:0.9;line-height:1.7;"><span leaf="">评论区聊聊你现在的 AI 订阅是哪一档，额度够不够用。</span></p>
+    <p style="display:inline-block;margin:0;background:#fff;color:#DC2626;font-size:14px;font-weight:700;padding:10px 26px;border-radius:999px;"><span leaf="">下期见 · 评论区聊聊</span></p>
+  </section>
+  <section style="margin:0 10px 28px;padding:20px 18px;background:#fff;border:1.5px solid #DC2626;border-radius:16px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;gap:14px;">
+      <section style="flex:1;text-align:left;">
+        <p style="font-size:18px;font-weight:800;color:#DC2626;margin:0 0 8px;"><span leaf="">爱德数智</span></p>
+        <p style="font-size:14px;color:#374151;margin:0 0 14px;line-height:1.6;"><span leaf="">分享 AI 观察与干货，用得上、看得懂</span></p>
+        <p style="font-size:13px;color:#DC2626;margin:0;font-weight:600;"><span leaf="">长按识别二维码 · 关注不迷路</span></p>
+      </section>
+      <section style="flex:0 0 110px;width:110px;height:110px;background:#fff;border-radius:10px;overflow:hidden;border:1px solid #FEE2E2;">
+        <span leaf=""><img src="images/pub/qrcode.jpg" style="width:100%;height:100%;display:block;" alt="公众号二维码"></span>
+      </section>
+    </section>
+  </section>
+    <section style="padding:0 10px;">
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">如果你觉得今天这篇有收获，欢迎 </span><strong><span leaf="">点赞、在看、转发</span></strong><span leaf=""> 三连，我们下篇见。</span></p>
+  </section>
+  <!-- 组件32 页脚签名条（随机名言版） -->
+<section style="padding:20px 0;margin-top:24px;text-align:center;">
+  <p style="font-size:12px;font-weight:600;color:#991B1B;line-height:1.9;margin:0 0 10px;letter-spacing:0.5px;"><span leaf="">小智：机器替你节省时间，你要替自己创造意义。</span></p>
+  <section style="display:flex;align-items:center;gap:8px;justify-content:center;">
+    <section style="flex:0 0 60px;height:1px;background:linear-gradient(to right,transparent,#DC2626);"><span leaf="">&nbsp;</span></section>
+    <span style="font-size:10px;color:#DC2626;font-weight:700;"><span leaf="">▲</span></span>
+    <section style="flex:0 0 60px;height:1px;background:linear-gradient(to left,transparent,#DC2626);"><span leaf="">&nbsp;</span></section>
+  </section>
+</section>
+
+</section>

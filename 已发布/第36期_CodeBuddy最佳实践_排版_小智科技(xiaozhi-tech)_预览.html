@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第36期_CodeBuddy最佳实践_排版_小智科技(xiaozhi-tech) · 公众号排版预览</title>
+<style>
+  body{margin:0;background:#eef0f2;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;-webkit-text-size-adjust:100%;}
+  .gzh-toolbar{position:fixed;top:0;left:0;right:0;height:54px;background:#ffffff;box-shadow:0 1px 10px rgba(0,0,0,.08);display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:99;}
+  .gzh-hint{font-size:13px;color:#6b7280;line-height:1.4;}
+  .gzh-hint b{color:#111827;}
+  .gzh-copy{background:#059669;color:#fff;border:0;border-radius:9px;padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 3px 10px rgba(5,150,105,.28);white-space:nowrap;transition:transform .08s,background .15s;}
+  .gzh-copy:hover{background:#047857;}
+  .gzh-copy:active{transform:translateY(1px);}
+  .gzh-toast{position:fixed;top:66px;left:50%;transform:translateX(-50%);background:#111827;color:#fff;padding:11px 20px;border-radius:10px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .25s;z-index:100;box-shadow:0 6px 20px rgba(0,0,0,.25);max-width:88vw;text-align:center;}
+  .gzh-toast.show{opacity:1;}
+  .gzh-stage{max-width:700px;margin:78px auto 64px;padding:0 8px;}
+  @media(max-width:520px){.gzh-hint{max-width:150px;}}
+</style>
+</head>
+<body>
+<div class="gzh-toolbar">
+  <span class="gzh-hint">👇 下方是排版效果 · 点右侧 <b>复制</b> 直接粘到公众号</span>
+  <button class="gzh-copy" id="gzhCopyBtn" onclick="gzhCopy()">📋 复制到公众号</button>
+</div>
+<div class="gzh-toast" id="gzhToast"></div>
+<div class="gzh-stage">
+  <div id="gzh-content">
+<section style="max-width:677px;margin:0 auto;background:#FFFFFF;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:#1F2937;line-height:1.75;letter-spacing:0.3px;">
+
+<!-- ===== 封面头图卡 ===== -->
+<section style="background:#FFFFFF;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(37,99,235,0.08);">
+  <section style="background:linear-gradient(135deg,#2563EB,#7C3AED);padding:26px 28px 22px;">
+    <section style="display:flex;align-items:center;gap:8px;margin-bottom:18px;">
+      <span style="width:6px;height:6px;background:#93C5FD;border-radius:50%;display:inline-block;"><span leaf="">&nbsp;</span></span>
+      <span style="font-size:11px;font-weight:700;letter-spacing:3px;color:rgba(255,255,255,0.85);"><span leaf="">第 36 期</span></span>
+      <section style="flex:1;height:1px;background:rgba(255,255,255,0.25);"><span leaf="">&nbsp;</span></section>
+      <span style="font-size:10px;color:rgba(255,255,255,0.7);font-weight:500;"><span leaf="">2026.09.04</span></span>
+    </section>
+    <p style="font-size:23px;font-weight:800;color:#FFFFFF;margin:0 0 10px;line-height:1.2;letter-spacing:-0.75px;"><span leaf="">把「Markdown 一键打印」做成开源扩展，全程只用 CodeBuddy</span></p>
+    <p style="font-size:14px;color:rgba(255,255,255,0.75);margin:0;line-height:1.7;letter-spacing:0.3px;"><span leaf="">从一句话需求到 GitHub 开源发布——AI 协作开发的全流程实录</span></p>
+  </section>
+  <section style="padding:18px 28px;display:flex;align-items:center;justify-content:space-between;">
+    <p style="font-size:12px;color:#6B7280;margin:0;font-weight:500;"><span leaf="">Markdown / 代码一键打印 · 已开源 · MIT 协议</span></p>
+    <section style="display:flex;gap:6px;">
+      <span style="background:#EEF2FF;color:#2563EB;padding:2px 10px;border-radius:20px;font-size:10px;font-weight:600;"><span leaf="">CodeBuddy 实战</span></span>
+      <span style="background:#EEF2FF;color:#2563EB;padding:2px 10px;border-radius:20px;font-size:10px;font-weight:600;"><span leaf="">开源交付</span></span>
+    </section>
+  </section>
+</section>
+
+<section style="padding:0 20px;">
+
+  <!-- ===== 导语段 ===== -->
+  <section style="background:#F8FAFF;border-left:3px solid #2563EB;padding:16px 18px;margin-top:24px;border-radius:0 12px 12px 0;">
+    <p style="font-size:15px;font-weight:600;color:#1E3A8A;line-height:1.8;margin:0;letter-spacing:0.3px;"><span leaf="">大家好，我是小智。前几期聊了不少 AI 行业的宏观话题，今天来点动手的——我这周真刀真枪做完了一件事：把「在编辑器里一键把 Markdown / 代码文件打印成排版好的 HTML、还能另存成 PDF」的需求丢给 CodeBuddy，从写第一行代码到打包、测试、修 Bug、开源发布，全程 AI 协作。</span></p>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">产物已经开源在 GitHub，地址文末给到。它到底好不好用、</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">CodeBuddy 协作顺不顺手</span></span>
+    <span leaf="">，你看完这篇心里就有数了。</span>
+  </p>
+
+  <!-- ===== 本文看点 ===== -->
+  <p style="font-size:14px;font-weight:700;color:#111827;margin:20px 0 10px;"><span leaf="">📌 本文看点</span></p>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#2563EB;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">一句话需求，CodeBuddy 一天交付第一个能跑的版本</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#06B6D4;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">翻车现场：一个“自作聪明”的兜底逻辑，差点让我打错文件</span></p>
+  </section>
+  <section style="display:flex;gap:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#7C3AED;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">从本地到开源：README、截图、License、Release 一个不少</span></p>
+  </section>
+
+  <!-- ===== 渐变分隔线 ===== -->
+  <section style="height:1px;background:linear-gradient(to right,transparent,#2563EB,#06B6D4,transparent);margin-top:24px;"><span leaf="">&nbsp;</span></section>
+
+  <!-- ===== 01 起因 ===== -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:24px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">01</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">起因：一个“就差一个插件”的小需求</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">为什么自己动手做一个打印扩展</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">写 Markdown 久了会有个很实在的痛点：文档写好了，想打印成纸质版或归档成 PDF，编辑器里却总差一个</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">“顺手的打印键”</span></span>
+    <span leaf="">。</span>
+  </p>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">编辑器自带的打印要么调浏览器页面，要么样式难看；VS Code / CodeBuddy 生态里能用的打印扩展少得可怜，还大多依赖网络服务。</span>
+  </p>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">我自己天天泡在 AI 工具里，这个需求又不复杂，那就干脆自己造一个——</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">让 CodeBuddy 来造。</span></span>
+  </p>
+
+  <!-- ===== 02 开工 ===== -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:24px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">02</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">开工：把需求“翻译”成 AI 能执行的任务</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">目标、约束、验收标准，缺一不可</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">给 CodeBuddy 的第一个指令，我没有让它“写个扩展”，而是给了它</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">三个明确的约束</span></span>
+    <span leaf="">：</span>
+  </p>
+
+  <section style="display:flex;gap:10px;margin-bottom:10px;margin-top:20px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">1</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">目标平台：VS Code / CodeBuddy 扩展，</span><span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">零第三方依赖</span></span><span leaf="">，装上就能用；</span></p>
+  </section>
+  <section style="display:flex;gap:10px;margin-bottom:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">2</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">核心能力：Markdown 按排版渲染（标题、表格、代码块都要好看），其他文本文件按等宽字体原样打印；</span></p>
+  </section>
+  <section style="display:flex;gap:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">3</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">交付标准：能打包成 </span><span style="background:#F3F4F6;border:1px solid #E5E7EB;border-radius:4px;padding:1px 6px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:13px;color:#2563EB;"><span leaf="">.vsix</span></span><span leaf=""> 安装包，支持右键菜单、状态栏、快捷键多个入口。</span></p>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">只讲需求、不预设实现。CodeBuddy 自己把工程拆成两部分：渲染核心放 </span>
+    <span style="background:#F3F4F6;border:1px solid #E5E7EB;border-radius:4px;padding:1px 6px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:13px;color:#2563EB;"><span leaf="">lib/</span></span>
+    <span leaf="">（负责把 Markdown 变成排版 HTML），扩展侧做入口和宿主适配（右键、预览按钮、命令面板）。</span>
+  </p>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">当天</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">第一个能跑的版本就出来了</span></span>
+    <span leaf="">。</span>
+  </p>
+
+  <!-- ===== 小技巧提示卡 ===== -->
+  <section style="background:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:16px 18px;margin-top:24px;display:flex;gap:12px;">
+    <section style="flex-shrink:0;width:24px;height:24px;background:linear-gradient(135deg,#2563EB,#06B6D4);border-radius:6px;color:#FFFFFF;text-align:center;line-height:24px;font-size:13px;font-weight:800;"><span leaf="">i</span></section>
+    <section>
+      <p style="font-size:14px;font-weight:700;color:#111827;margin:0 0 4px;"><span leaf="">小技巧</span></p>
+      <p style="font-size:13px;color:#6B7280;line-height:1.7;margin:0;"><span leaf="">AI 不缺写代码的能力，缺的是「你想要的到底是什么」的边界。把目标、约束、验收标准说清楚，它就能自己飞。</span></p>
+    </section>
+  </section>
+
+  <!-- ===== 03 最有价值的一课 ===== -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:24px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">03</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">最有价值的一课：AI 也会“自作聪明”</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">一个兜底缓存方案引发的翻车现场</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">上线后陆续修了几个环境兼容问题，直到 1.5.1 版本，我让它解决一个 Bug：</span>
+  </p>
+
+  <section style="background:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:16px 18px;margin-top:24px;display:flex;gap:12px;">
+    <section style="flex-shrink:0;width:24px;height:24px;background:linear-gradient(135deg,#2563EB,#06B6D4);border-radius:6px;color:#FFFFFF;text-align:center;line-height:24px;font-size:13px;font-weight:800;"><span leaf="">i</span></section>
+    <section>
+      <p style="font-size:14px;font-weight:700;color:#111827;margin:0 0 4px;"><span leaf="">场景描述</span></p>
+      <p style="font-size:13px;color:#6B7280;line-height:1.7;margin:0;"><span leaf="">某个 Markdown 文件第一次以预览模式打开时，在预览窗口里右键打印，提示“没有可打印的文件”——因为预览窗口拿到焦点后，编辑器认为“当前没有活动文件”。</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">CodeBuddy 给出的方案是：</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">缓存“上一次打开的文件”</span></span>
+    <span leaf="">，拿不到当前文件时就用缓存兜底。</span>
+  </p>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">这个方案看起来无懈可击，实则埋了个雷：当用户新打开文档 B 去打印时，一旦上下文解析失败，就会把上一份文档 A 打印出来——</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">打印错文件，比打印不出来更可怕。</span></span>
+  </p>
+
+  <!-- ===== 双卡对比 ===== -->
+  <section style="display:flex;gap:12px;margin-top:24px;">
+    <section style="flex:1;border:1.5px solid #FECACA;border-radius:12px;padding:16px 14px;background:#FFF5F5;">
+      <p style="font-size:12px;font-weight:800;color:#DC2626;margin:0 0 8px;"><span leaf="">✗ 旧方案：缓存上次文件</span></p>
+      <p style="font-size:12px;color:#7F1D1D;line-height:1.7;margin:0;"><span leaf="">拿不到当前文件就“猜”上一个，打 B 打成了 A，误打印风险高</span></p>
+    </section>
+    <section style="flex:1;border:1.5px solid #A7F3D0;border-radius:12px;padding:16px 14px;background:#F0FDF4;">
+      <p style="font-size:12px;font-weight:800;color:#059669;margin:0 0 8px;"><span leaf="">✓ 新方案：当前上下文 + 确认</span></p>
+      <p style="font-size:12px;color:#064E3B;line-height:1.7;margin:0;"><span leaf="">按光标、活动标签页精确解析，实在拿不准就弹出列表让用户点选，绝不猜</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:12px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">用户反馈后我们复盘，结论很清晰：</span>
+  </p>
+
+  <section style="border-left:3px solid #2563EB;padding-left:16px;margin-top:24px;">
+    <p style="font-size:15px;color:#111827;line-height:1.8;margin:0;font-weight:600;"><span leaf="">「凡是 AI 拿不准的，宁可停下来让用户确认，也不要自作主张去猜。」</span></p>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">1.5.2 版本改成按“当前上下文”逐级精确定位：当前光标所在文件 → 当前激活的标签页 → 预览窗口的标题反查源文件……实在同时匹配多个候选，就</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">弹出列表让用户点选</span></span>
+    <span leaf="">，绝不回溯使用“历史文件”。</span>
+  </p>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">这一课不仅适用这个插件，</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">也适用所有人和 AI 的协作场景</span></span>
+    <span leaf="">。</span>
+  </p>
+
+  <!-- ===== 04 五条最佳实践 ===== -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:24px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">04</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">我用 CodeBuddy 的五条最佳实践</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">一个完整项目跑下来的心得</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">这一个项目跑下来，我把心得收敛成五条，分享给想上手的朋友：</span>
+  </p>
+
+  <section style="display:flex;gap:10px;margin-bottom:10px;margin-top:20px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">1</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">让它先读代码再动手：AI 有上下文才不瞎改。每次让它改东西前，先确认它真的“看”过相关文件，而不是凭记忆硬写。</span></p>
+  </section>
+  <section style="display:flex;gap:10px;margin-bottom:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">2</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">拆成“能做 → 能装 → 能测”的小循环：先出最小可用版本，本地打包 </span><span style="background:#F3F4F6;border:1px solid #E5E7EB;border-radius:4px;padding:1px 6px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:13px;color:#2563EB;"><span leaf="">.vsix</span></span><span leaf=""> 装上真机测试，再谈新功能，每个循环都短、都可回滚。</span></p>
+  </section>
+  <section style="display:flex;gap:10px;margin-bottom:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">3</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">出问题就贴“报错原文 + 截图”，别转述：预览窗口拿不到焦点、右键菜单被宿主拦截……这类环境兼容问题，只有原始报错和界面截图能让 AI 精准定位。</span></p>
+  </section>
+  <section style="display:flex;gap:10px;margin-bottom:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">4</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">凡是涉及“猜”的逻辑，明说“拿不准就问”：给 AI 的兜底策略定基调——宁可多弹一次确认框，也不要在打印、删除、覆盖这类动作上自作主张。</span></p>
+  </section>
+  <section style="display:flex;gap:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">5</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">发布类琐事全部交给它：提交信息怎么写、tag 怎么打、Release 怎么发、README 配图怎么放，这种有章可循的重复劳动，AI 又快又稳，还能顺手把 </span><span style="background:#F3F4F6;border:1px solid #E5E7EB;border-radius:4px;padding:1px 6px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:13px;color:#2563EB;"><span leaf="">.gitignore</span></span><span leaf=""> 理干净。</span></p>
+  </section>
+
+  <!-- ===== 05 开源出去 ===== -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:24px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">05</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">开源出去：小工具也要有完整的交付</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">代码只是第一步，交付是一整套</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">代码写出来只是第一步。开源一个项目，其实是一整套交付物：</span>
+  </p>
+
+  <p style="font-size:14px;font-weight:700;color:#111827;margin:20px 0 10px;"><span leaf="">📦 完整交付清单</span></p>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#2563EB;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">公开仓库：代码 + MIT 协议，任何人都能看、能改、能商用</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#06B6D4;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">README：一句话说清解决什么问题、怎么安装、有哪些入口，配真实使用截图</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#7C3AED;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">CHANGELOG：版本演进和修复记录，用户看得懂你的迭代</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#2563EB;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">Release 安装包：把打包好的 </span><span style="background:#F3F4F6;border:1px solid #E5E7EB;border-radius:4px;padding:1px 6px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:13px;color:#2563EB;"><span leaf="">.vsix</span></span><span leaf=""> 挂在 GitHub Release 上，用户下载即装</span></p>
+  </section>
+  <section style="display:flex;gap:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#06B6D4;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">工程卫生：临时文件、打包产物写进 </span><span style="background:#F3F4F6;border:1px solid #E5E7EB;border-radius:4px;padding:1px 6px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:13px;color:#2563EB;"><span leaf="">.gitignore</span></span><span leaf="">，仓库保持干净</span></p>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:12px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">这些琐碎但有章法的事，CodeBuddy 基本一条龙搞定。项目已经在 GitHub 开源，仓库地址给大家：</span>
+  </p>
+
+  <!-- ===== 仓库地址 CTA ===== -->
+  <section style="background:linear-gradient(135deg,#2563EB,#7C3AED);border-radius:12px;padding:22px 24px;margin-top:24px;text-align:center;">
+    <p style="font-size:16px;font-weight:800;color:#FFFFFF;margin:0 0 6px;letter-spacing:0.5px;"><span leaf="">📦 github.com/haierzld/print-md</span></p>
+    <p style="font-size:12px;color:rgba(255,255,255,0.8);margin:0 0 14px;"><span leaf="">支持 Markdown 与几十种代码 / 文本文件打印 · 零依赖 · 免费 · MIT 协议</span></p>
+    <span style="display:inline-block;background:#FFFFFF;color:#2563EB;font-size:13px;font-weight:700;padding:8px 22px;border-radius:24px;"><span leaf="">欢迎试用 &amp; Star</span></span>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">有需要的朋友可以直接下载试用，觉得好用欢迎点个 Star，遇到问题可以在仓库提 Issue，我会持续迭代。</span>
+  </p>
+
+  <!-- ===== 06 小智说两句 ===== -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:24px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">∞</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">小智说两句</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">给想上手的你</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">工具很小，但</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">“人类定目标与边界、AI 干执行与细节”</span></span>
+    <span leaf="">这条路，我算是完整走通了一遍。</span>
+  </p>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">如果你也想让 CodeBuddy 帮你做点什么，别从大项目开始——先选一个你天天都在用、又总觉得“差点意思”的小功能，把它做到</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">能装、能用、敢开源</span></span>
+    <span leaf="">。</span>
+  </p>
+
+  <section style="border-left:3px solid #2563EB;padding-left:16px;margin-top:24px;">
+    <p style="font-size:15px;color:#111827;line-height:1.8;margin:0;font-weight:600;"><span leaf="">「AI 写代码的下限很高，上限取决于你给它的上下文和边界——把需求讲清楚、把兜底策略定好，剩下的大胆交给它。」</span></p>
+  </section>
+
+  <!-- ===== 今日互动 ===== -->
+  <section style="background:#EEF2FF;border-radius:12px;padding:18px 20px;margin-top:24px;border:1px solid #C7D2FE;">
+    <p style="font-size:15px;font-weight:800;color:#1E3A8A;margin:0 0 8px;"><span leaf="">💬 今日互动</span></p>
+    <p style="font-size:14px;color:#1F2937;margin:0;line-height:1.8;text-align:left;"><span leaf="">你有没有“天天想用、又差点意思”的小工具？留言说说你的需求，说不定下期小智就用 CodeBuddy 帮你把它做出来。</span></p>
+  </section>
+
+  <!-- ===== 尾部签名 ===== -->
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:24px 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">我是小智，每天一分钟，把 AI 讲成妈妈都能听懂的话。</span></p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">如果你觉得今天这篇有收获，欢迎</span>
+    <strong style="color:#2563EB;"><span leaf="">点赞、在看、转发</span></strong>
+    <span leaf="">三连，我们下篇见。</span>
+  </p>
+
+  <!-- ===== 关注引导卡（二维码版） ===== -->
+  <section style="background:#FFFFFF;border:1.5px solid #2563EB;border-radius:12px;padding:18px 20px;margin-top:24px;display:flex;align-items:center;gap:14px;">
+    <span leaf=""><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/zeT1IrhsLLib9UkBbgKv2A7jfpyv4T5O3uAscIOuib1wHH4NibKALu7iaeSER3aC9jgFPZPgvHib0LWgYd5hhs5KjEvIcRia2aua48aUibYFNvibf2g/0?wx_fmt=jpeg&amp;from=appmsg" alt="公众号二维码" style="width:84px;height:84px;display:block;flex-shrink:0;border-radius:10px;"></span>
+    <section style="flex:1;min-width:0;">
+      <p style="font-size:15px;font-weight:800;color:#111827;margin:0 0 4px;"><span leaf="">智趣AI资讯小站</span></p>
+      <p style="font-size:12px;color:#6B7280;line-height:1.6;margin:0 0 6px;"><span leaf="">每天一分钟，AI 变轻松</span></p>
+      <p style="font-size:11px;font-weight:600;color:#2563EB;margin:0;"><span leaf="">长按识别二维码 · 关注不迷路</span></p>
+    </section>
+    <span style="flex-shrink:0;background:#2563EB;color:#FFFFFF;font-size:12px;font-weight:700;padding:6px 14px;border-radius:20px;"><span leaf="">关注</span></span>
+  </section>
+
+  <!-- ===== 页脚签名条 ===== -->
+  <section style="padding:20px 8px 8px;margin-top:24px;text-align:center;">
+    <p style="font-size:11px;color:#9CA3AF;letter-spacing:2px;margin:0 0 8px;"><span leaf="">每天一分钟 · AI 变轻松</span></p>
+    <section style="display:flex;align-items:center;gap:8px;justify-content:center;">
+      <section style="flex:0 0 60px;height:1px;background:linear-gradient(to right,transparent,#2563EB);"><span leaf="">&nbsp;</span></section>
+      <span style="font-size:10px;color:#2563EB;font-weight:700;"><span leaf="">▲</span></span>
+      <section style="flex:0 0 60px;height:1px;background:linear-gradient(to left,transparent,#2563EB);"><span leaf="">&nbsp;</span></section>
+    </section>
+  </section>
+
+</section>
+
+</section>
+  </div>
+</div>
+<script>
+  function gzhShowToast(msg){
+    var t=document.getElementById('gzhToast');
+    t.textContent=msg;t.classList.add('show');
+    clearTimeout(t._timer);
+    t._timer=setTimeout(function(){t.classList.remove('show');},2800);
+  }
+  function gzhCopy(){
+    var el=document.getElementById('gzh-content');
+    // 选中渲染后的富文本节点并复制（等价于手动 Ctrl+A / Ctrl+C，保留全部样式）
+    var range=document.createRange();
+    range.selectNodeContents(el);
+    var sel=window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    var ok=false;
+    try{ok=document.execCommand('copy');}catch(e){ok=false;}
+    sel.removeAllRanges();
+    var btn=document.getElementById('gzhCopyBtn');
+    if(ok){
+      gzhShowToast('✅ 已复制！去公众号编辑器按 Ctrl/⌘+V 粘贴即可');
+      var old=btn.textContent;btn.textContent='✅ 已复制';
+      setTimeout(function(){btn.textContent=old;},2200);
+    }else{
+      gzhShowToast('⚠ 自动复制失败，请手动全选(Ctrl/⌘+A)再复制(Ctrl/⌘+C)');
+    }
+  }
+</script>
+</body>
+</html>

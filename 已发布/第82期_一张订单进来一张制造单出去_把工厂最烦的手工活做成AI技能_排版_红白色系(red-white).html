@@ -1,0 +1,317 @@
+<section style="max-width:677px;margin:0 auto;background:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:#374151;line-height:1.75;letter-spacing:0.5px;overflow-x:hidden;">
+
+  <section style="margin:10px 10px 32px;padding:30px 26px 26px;background:linear-gradient(135deg,#DC2626 0%,#991B1B 100%);border-radius:16px;text-align:center;color:#fff;box-shadow:0 8px 28px -6px rgba(220,38,38,0.38);">
+    <p style="font-size:30px;color:rgba(255,255,255,0.5);font-weight:900;margin:0 0 4px;line-height:1;text-align:left;"><span leaf="">“</span></p>
+    <p style="font-size:17px;font-weight:800;color:#FFFFFF;margin:0 0 14px;line-height:1.8;text-align:center;"><span leaf="">客户发来的是十几个型号的订单，车间要的是逐行对齐的内部制造单。中间那一步，以前全靠人抄。</span><span style="background:#FDE047;color:#7F1D1D;padding:2px 8px;border-radius:4px;"><span leaf="">现在是一句话的事</span></span><span leaf="">。</span></p>
+    <p style="font-size:12px;color:rgba(255,255,255,0.78);margin:0;letter-spacing:1px;text-align:right;"><span leaf="">—— 小智</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">一家做活塞环的工厂，每天要干这么一件事：</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">客户发来订单——中英文混着，Excel、PDF、微信截图都有。业务要在当天把它翻译成</span><strong><span leaf="">车间看得懂的制造单</span></strong><span leaf="">：哪台机、什么规格、哪个档位、多少只、材料尺寸多少、工序号是什么。</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">订单和制造单长得很像，其实是两套语言。中间隔着几十条只有老师傅才记得住的规则。</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">这一步以前全靠人工。抄错一个数字，车间就多做几百只废品。而想把它做成软件？</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">找开发很贵，规则还经常变</span></span><span leaf="">。</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">这次换个做法：把它做成 WorkBuddy 的一个</span><strong><span leaf="">技能</span></strong><span leaf="">（Skill）。今天讲清楚 —— 是怎么做的，踩了哪些坑，最后省下了什么。</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <section style="background:#FFF;border-radius:12px;padding:6px;border:1px solid #E5E7EB;box-shadow:0 4px 12px -2px rgba(0,0,0,0.08);margin-bottom:8px;">
+      <section style="margin:0;border-radius:8px;overflow:hidden;">
+        <span leaf=""><img src="images/pub/82_01_封面_订单转制造单.png" style="max-width:100%;height:auto;display:block;margin:0 auto;"></span>
+      </section>
+    </section>
+    <p style="font-size:12px;color:#9CA3AF;text-align:center;margin:0 0 24px;"><span leaf="">— 封面图</span></p>
+  </section>
+  <section style="margin-top:16px;margin-bottom:28px;padding:0 10px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+      <section style="display:flex;align-items:center;">
+        <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">01</span></span>
+        <section>
+          <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">PROBLEM</span></p>
+          <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">一、这道手工活，到底难在哪</span></h3>
+        </section>
+      </section>
+    </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">先说清楚“难”在哪，才能明白为什么以前做不成软件。</span></p>
+    <p style="font-size:15px;font-weight:800;color:#1C1917;margin:28px 0 14px;padding-left:10px;border-left:3px solid #DC2626;line-height:1.4;"><span leaf="">第一，客户是多家，规则各一套。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">活塞环按</span><strong><span leaf="">客户</span></strong><span leaf="">分体系，不是按产品分。同一个型号，在印尼客户账本里的工序号是 </span><span style="background:#F3F4F6;color:#1F2937;padding:2px 6px;border-radius:4px;font-size:14px;font-weight:600;"><span leaf="">72-41</span></span><span leaf="">，在上海客户账本里是 </span><span style="background:#F3F4F6;color:#1F2937;padding:2px 6px;border-radius:4px;font-size:14px;font-weight:600;"><span leaf="">12-41</span></span><span leaf="">。</span></p>
+    <section style="background:#FEF2F2;border-radius:0 10px 10px 0;border-left:4px solid #DC2626;padding:18px 22px;margin-bottom:24px;">
+      <p style="font-size:16px;font-weight:800;color:#991B1B;margin:0;line-height:1.8;"><span leaf="">换句话说：</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">做哪个客户的单，只能用那个客户的规则</span></span><span leaf="">。跨客户抄一次，整张表就错了。</span></p>
+    </section>
+    <p style="font-size:15px;font-weight:800;color:#1C1917;margin:28px 0 14px;padding-left:10px;border-left:3px solid #DC2626;line-height:1.4;"><span leaf="">第二，格式是活的。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">有的客户发 Excel，有的发 PDF，有的就直接拍张照发微信。表头列名也各写各的：档位有的写 </span><span style="background:#F3F4F6;color:#1F2937;padding:2px 6px;border-radius:4px;font-size:14px;font-weight:600;"><span leaf="">0.25</span></span><span leaf="">，有的写 </span><span style="background:#F3F4F6;color:#1F2937;padding:2px 6px;border-radius:4px;font-size:14px;font-weight:600;"><span leaf="">0,25</span></span><span leaf="">（逗号当小数点），有的写 </span><span style="background:#F3F4F6;color:#1F2937;padding:2px 6px;border-radius:4px;font-size:14px;font-weight:600;"><span leaf="">S25</span></span><span leaf="">，还有的写 </span><span style="background:#F3F4F6;color:#1F2937;padding:2px 6px;border-radius:4px;font-size:14px;font-weight:600;"><span leaf="">0.25+</span></span><span leaf="">。</span></p>
+    <p style="font-size:15px;font-weight:800;color:#1C1917;margin:28px 0 14px;padding-left:10px;border-left:3px solid #DC2626;line-height:1.4;"><span leaf="">第三，规则经常变。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">新客户来了要加规则；老客户新增了型号要补；客户改了尺寸口径还得跟着改。以前每改一次，都要回头找开发。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">这三条叠起来，就是它一直靠人工的原因：</span><strong><span leaf="">变化太快，而改软件的代价太高。</span></strong></p>
+  </section>
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:linear-gradient(to right,transparent,#FECACA,#DC2626,#FECACA,transparent);margin:0;"><span leaf=""><br></span></section>
+  </section>
+  <section style="margin-top:48px;margin-bottom:28px;padding:0 10px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+      <section style="display:flex;align-items:center;">
+        <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">02</span></span>
+        <section>
+          <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">SKILL</span></p>
+          <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">二、先想清楚：这次不写软件，写“技能”</span></h3>
+        </section>
+      </section>
+    </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">以前的做法是“提需求 → 排期 → 开发 → 上线 → 再改”，一轮下来几周，规则一变小半年的功夫又废了。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">这次换了思路：</span><strong><span leaf="">不做成一个软件，做成一个技能。</span></strong></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">技能和软件的区别在哪？</span></p>
+    <table style="width:100%;border-collapse:collapse;margin-bottom:20px;font-size:14px;line-height:1.6;border:1px solid #FEE2E2;">
+      <thead><tr><th style="padding:9px 10px;text-align:left;font-weight:700;color:#991B1B;background:#FEE2E2;border:1px solid #FEE2E2;border-bottom:3px solid #DC2626;"></th><th style="padding:9px 10px;text-align:left;font-weight:700;color:#991B1B;background:#FEE2E2;border:1px solid #FEE2E2;border-bottom:3px solid #DC2626;"><span leaf="">传统软件</span></th><th style="padding:9px 10px;text-align:left;font-weight:700;color:#991B1B;background:#FEE2E2;border:1px solid #FEE2E2;border-bottom:3px solid #DC2626;"><span leaf="">技能（Skill）</span></th></tr></thead>
+      <tbody>
+      <tr style="background:#FEF2F2;"><td style="padding:9px 10px;color:#374151;vertical-align:top;border:1px solid #FEE2E2;"><span leaf="">谁在改</span></td><td style="padding:9px 10px;color:#374151;vertical-align:top;border:1px solid #FEE2E2;"><span leaf="">开发</span></td><td style="padding:9px 10px;color:#374151;vertical-align:top;border:1px solid #FEE2E2;"><span leaf="">业务自己，说一句话</span></td></tr>
+      <tr style="background:#FEF2F2;"><td style="padding:9px 10px;color:#374151;vertical-align:top;border:1px solid #FEE2E2;"><span leaf="">改一次要多久</span></td><td style="padding:9px 10px;color:#374151;vertical-align:top;border:1px solid #FEE2E2;"><span leaf="">几天到几周</span></td><td style="padding:9px 10px;color:#374151;vertical-align:top;border:1px solid #FEE2E2;"><span leaf="">几分钟</span></td></tr>
+      <tr style="background:#FEF2F2;"><td style="padding:9px 10px;color:#374151;vertical-align:top;border:1px solid #FEE2E2;"><span leaf="">规则写在哪</span></td><td style="padding:9px 10px;color:#374151;vertical-align:top;border:1px solid #FEE2E2;"><span leaf="">代码里，藏得深</span></td><td style="padding:9px 10px;color:#374151;vertical-align:top;border:1px solid #FEE2E2;"><span leaf="">一份可读的配置里，看得见</span></td></tr>
+      </tbody>
+    </table>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">说白了：</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">把规则从代码里搬出来，让它变成业务能看懂、能改的东西</span></span><span leaf="">。改规则这件事，就不再需要开发了。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">技能装进 WorkBuddy 之后，业务只要说一句“把这张订单转成制造表”，后面全自动。</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:linear-gradient(to right,transparent,#FECACA,#DC2626,#FECACA,transparent);margin:0;"><span leaf=""><br></span></section>
+  </section>
+  <section style="margin-top:48px;margin-bottom:28px;padding:0 10px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+      <section style="display:flex;align-items:center;">
+        <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">03</span></span>
+        <section>
+          <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">FLOW</span></p>
+          <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">三、一条订单进来，里面发生了什么</span></h3>
+        </section>
+      </section>
+    </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">从一张订单到一张制造表，中间自动跑六步：</span></p>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#DC2626;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">1</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><strong><span leaf="">认厂家</span></strong><span leaf=""> —— 从订单上的客户名判断是哪一家，五家客户的规则各一套；</span></p>
+      </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#DC2626;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">2</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><strong><span leaf="">读订单</span></strong><span leaf=""> —— Excel / PDF / 图片都读，档位写法先归一（</span><span style="background:#F3F4F6;color:#1F2937;padding:2px 6px;border-radius:4px;font-size:14px;font-weight:600;"><span leaf="">0,25</span></span><span leaf="">、</span><span style="background:#F3F4F6;color:#1F2937;padding:2px 6px;border-radius:4px;font-size:14px;font-weight:600;"><span leaf="">S25</span></span><span leaf="">、</span><span style="background:#F3F4F6;color:#1F2937;padding:2px 6px;border-radius:4px;font-size:14px;font-weight:600;"><span leaf="">0.25+</span></span><span leaf=""> 统一成一个）；</span></p>
+      </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#DC2626;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">3</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><strong><span leaf="">查规则本</span></strong><span leaf=""> —— 每个型号去对应客户的账本里找它的工序号、环组代号、规格；</span></p>
+      </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#DC2626;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">4</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><strong><span leaf="">填三行组</span></strong><span leaf=""> —— 制造表每个型号占三行：车种行、代号行、材料尺寸行；</span></p>
+      </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#DC2626;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">5</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><strong><span leaf="">自动自检</span></strong><span leaf=""> —— 九项检查（V1~V9）逐条过，对不上就报警；</span></p>
+      </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#DC2626;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">6</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><strong><span leaf="">交表</span></strong><span leaf=""> —— 生成内部制造表，附一份检查结果。</span></p>
+      </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">最该说的是</span><strong><span leaf="">第五步</span></strong><span leaf="">。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">以前人工抄，最怕的不是抄错，是</span><strong><span leaf="">抄错了没人发现</span></strong><span leaf="">。所以这次把“检查”做进了流程里 —— </span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">生成表的同时，顺手把该核对的都对一遍</span></span><span leaf="">：</span></p>
+    <table style="width:100%;border-collapse:collapse;margin-bottom:20px;font-size:14px;line-height:1.6;border:1px solid #FEE2E2;">
+      <thead><tr><th style="padding:9px 10px;text-align:left;font-weight:700;color:#991B1B;background:#FEE2E2;border:1px solid #FEE2E2;border-bottom:3px solid #DC2626;"><span leaf="">检查级</span></th><th style="padding:9px 10px;text-align:left;font-weight:700;color:#991B1B;background:#FEE2E2;border:1px solid #FEE2E2;border-bottom:3px solid #DC2626;"><span leaf="">什么情况</span></th><th style="padding:9px 10px;text-align:left;font-weight:700;color:#991B1B;background:#FEE2E2;border:1px solid #FEE2E2;border-bottom:3px solid #DC2626;"><span leaf="">怎么办</span></th></tr></thead>
+      <tbody>
+      <tr style="background:#FEF2F2;"><td style="padding:9px 10px;color:#374151;vertical-align:top;border:1px solid #FEE2E2;"><span leaf="">错误</span></td><td style="padding:9px 10px;color:#374151;vertical-align:top;border:1px solid #FEE2E2;"><span leaf="">型号没匹配上、档位数量对不上</span></td><td style="padding:9px 10px;color:#374151;vertical-align:top;border:1px solid #FEE2E2;"><span leaf="">必须处理才能出表</span></td></tr>
+      <tr style="background:#FEF2F2;"><td style="padding:9px 10px;color:#374151;vertical-align:top;border:1px solid #FEE2E2;"><span leaf="">提醒</span></td><td style="padding:9px 10px;color:#374151;vertical-align:top;border:1px solid #FEE2E2;"><span leaf="">账本本身缺某项数据</span></td><td style="padding:9px 10px;color:#374151;vertical-align:top;border:1px solid #FEE2E2;"><span leaf="">核对后可放行</span></td></tr>
+      </tbody>
+    </table>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">一句话：</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">把老师傅脑子里那套“这里要看看、那里要核一下”，写成了程序里的九条检查</span></span><span leaf="">。</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:linear-gradient(to right,transparent,#FECACA,#DC2626,#FECACA,transparent);margin:0;"><span leaf=""><br></span></section>
+  </section>
+  <section style="margin-top:48px;margin-bottom:28px;padding:0 10px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+      <section style="display:flex;align-items:center;">
+        <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">04</span></span>
+        <section>
+          <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">PITFALL</span></p>
+          <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">四、踩过的坑，比做出来的功能更值得记</span></h3>
+        </section>
+      </section>
+    </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">技能不是一次做对的。下面这几个坑，每个都是真实撞出来的。</span></p>
+    <p style="font-size:15px;font-weight:800;color:#1C1917;margin:28px 0 14px;padding-left:10px;border-left:3px solid #DC2626;line-height:1.4;"><span leaf="">坑一：客户账本带密码，还带“坏记录”。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">五家客户的账本都是加密的，密码统一。加密还好办，麻烦的是其中一本解密后读不出来 —— 底层文件里有一条损坏的写入记录，读到就崩。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">解决办法是</span><strong><span leaf="">绕过那条坏记录</span></strong><span leaf="">再读。这种坑，你不真去读一遍那个文件，是想不到的。</span></p>
+    <p style="font-size:15px;font-weight:800;color:#1C1917;margin:28px 0 14px;padding-left:10px;border-left:3px solid #DC2626;line-height:1.4;"><span leaf="">坑二：同样的型号，两个客户给的编号完全不同。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">一开始我以为工序号是型号自带的，直接照搬。后来逐本核对才发现：</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">工序号是“某个客户账本内部的编号”，不是型号的属性</span></span><span leaf="">。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">这个认知一旦纠正，整张表才对得上。</span></p>
+    <p style="font-size:15px;font-weight:800;color:#1C1917;margin:28px 0 14px;padding-left:10px;border-left:3px solid #DC2626;line-height:1.4;"><span leaf="">坑三：规则有两处对不上，是账本错了还是我错了？</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">有一次生成的表和人工表有三个数字不一样。我没有直接信人工表，而是回到账本去</span><strong><span leaf="">逐页交叉验证</span></strong><span leaf="">——</span></p>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:6px;height:6px;background:#DC2626;border-radius:50%;flex-shrink:0;margin-top:10px;"><span leaf="">&nbsp;</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span leaf="">发现人工表里有个材料的尺寸，是照着</span><strong><span leaf="">草稿页</span></strong><span leaf="">抄的；</span></p>
+      </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:6px;height:6px;background:#DC2626;border-radius:50%;flex-shrink:0;margin-top:10px;"><span leaf="">&nbsp;</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span leaf="">而账本里</span><strong><span leaf="">正式的那一页</span></strong><span leaf="">，三个独立页面互证，是另一组数字。</span></p>
+      </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">结论：</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">以账本为准</span></span><span leaf="">。技能自动纠正了人工表的错。</span></p>
+    <section style="background:#FEF2F2;border-radius:0 10px 10px 0;border-left:4px solid #DC2626;padding:18px 22px;margin-bottom:24px;">
+      <p style="font-size:16px;font-weight:800;color:#991B1B;margin:0;line-height:1.8;"><span leaf="">这也是这次一个意外收获：</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">技能不只是“把活干快”，它还顺手把以前人工抄错的账，反向修好了</span></span><span leaf="">。</span></p>
+    </section>
+    <p style="font-size:15px;font-weight:800;color:#1C1917;margin:28px 0 14px;padding-left:10px;border-left:3px solid #DC2626;line-height:1.4;"><span leaf="">坑四：中英文混写是常态。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">订单里 </span><span style="background:#F3F4F6;color:#1F2937;padding:2px 6px;border-radius:4px;font-size:14px;font-weight:600;"><span leaf="">BEAT-FI</span></span><span leaf="">、</span><span style="background:#F3F4F6;color:#1F2937;padding:2px 6px;border-radius:4px;font-size:14px;font-weight:600;"><span leaf="">MIO-M3</span></span><span leaf="">、</span><span style="background:#F3F4F6;color:#1F2937;padding:2px 6px;border-radius:4px;font-size:14px;font-weight:600;"><span leaf="">CT50/43MM</span></span><span leaf=""> 这种写法到处都是。解决的思路很简单 —— </span><strong><span leaf="">全部先归一化再匹配</span></strong><span leaf="">：去掉空格、大小写、括号、斜杠差异，再去找规则。</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:linear-gradient(to right,transparent,#FECACA,#DC2626,#FECACA,transparent);margin:0;"><span leaf=""><br></span></section>
+  </section>
+  <section style="margin-top:48px;margin-bottom:28px;padding:0 10px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+      <section style="display:flex;align-items:center;">
+        <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">05</span></span>
+        <section>
+          <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">RESULT</span></p>
+          <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">五、最后省下了什么</span></h3>
+        </section>
+      </section>
+    </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">跑到现在，五家客户的订单都能转，实测结果：</span></p>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:6px;height:6px;background:#DC2626;border-radius:50%;flex-shrink:0;margin-top:10px;"><span leaf="">&nbsp;</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span leaf="">印尼客户一张单：</span><strong><span leaf="">16 个型号 / 15,920 只</span></strong><span leaf="">，与合同逐格比对，零差异；</span></p>
+      </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:6px;height:6px;background:#DC2626;border-radius:50%;flex-shrink:0;margin-top:10px;"><span leaf="">&nbsp;</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span leaf="">另一客户单：</span><strong><span leaf="">45 组型号</span></strong><span leaf="">，数量、材料价、规格逐项与账本一致；</span></p>
+      </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:6px;height:6px;background:#DC2626;border-radius:50%;flex-shrink:0;margin-top:10px;"><span leaf="">&nbsp;</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span leaf="">生成后自动跑九项检查，</span><strong><span leaf="">每一次都对得上</span></strong><span leaf="">。</span></p>
+      </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">真正省下的不只是时间，是三样东西：</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><strong><span leaf="">第一，省掉了找开发的成本。</span></strong><span leaf=""> 规则变了，业务自己说一句就改，不用再走一轮开发排期。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><strong><span leaf="">第二，省掉了“抄错”的风险。</span></strong><span leaf=""> 九项检查兜底，抄错的概率从“没人发现”变成“当场报警”。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><strong><span leaf="">第三，把规则沉淀了下来。</span></strong><span leaf=""> 以前规则在老师傅脑子里，人一走就断档；现在写在技能里，</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">换个人来，照着用就行</span></span><span leaf="">。</span></p>
+    <section style="background:#FEF2F2;border-radius:0 10px 10px 0;border-left:4px solid #DC2626;padding:18px 22px;margin-bottom:24px;">
+      <p style="font-size:16px;font-weight:800;color:#991B1B;margin:0;line-height:1.8;"><span leaf="">这三条里，最后一条最值钱。</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">技能解决的不只是效率，是“人的经验怎么留下来”</span></span><span leaf="">。</span></p>
+    </section>
+  </section>
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:linear-gradient(to right,transparent,#FECACA,#DC2626,#FECACA,transparent);margin:0;"><span leaf=""><br></span></section>
+  </section>
+  <section style="margin-top:48px;margin-bottom:28px;padding:0 10px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+      <section style="display:flex;align-items:center;">
+        <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">06</span></span>
+        <section>
+          <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">REUSE</span></p>
+          <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">六、这件事，能复制到别的工厂吗</span></h3>
+        </section>
+      </section>
+    </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">我写这篇，不只是讲一个活塞环工厂。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">如果你厂里也有这么一道活：</span><strong><span leaf="">两边格式不一样、规则靠人记、还经常变</span></strong><span leaf=""> —— 那它大概率也能做成技能。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">判断标准就三条：</span></p>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:6px;height:6px;background:#DC2626;border-radius:50%;flex-shrink:0;margin-top:10px;"><span leaf="">&nbsp;</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><strong><span leaf="">有固定的“翻译规则”</span></strong><span leaf="">：从 A 格式到 B 格式，规则虽然多，但是能写清楚的；</span></p>
+      </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:6px;height:6px;background:#DC2626;border-radius:50%;flex-shrink:0;margin-top:10px;"><span leaf="">&nbsp;</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><strong><span leaf="">规则会变</span></strong><span leaf="">：变得越勤，做技能越划算（写死在软件里反而拖累）；</span></p>
+      </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:6px;height:6px;background:#DC2626;border-radius:50%;flex-shrink:0;margin-top:10px;"><span leaf="">&nbsp;</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><strong><span leaf="">错了有代价</span></strong><span leaf="">：抄错要出事，那自检就值得做进流程。</span></p>
+      </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">三条都中，就值得试。做法也不复杂：</span></p>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#DC2626;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">1</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><strong><span leaf="">先把规则写清楚</span></strong><span leaf=""> —— 找一个最懂的老师傅，把“什么情况怎么做”一条条列出来；</span></p>
+      </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#DC2626;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">2</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><strong><span leaf="">拿真实的单子试</span></strong><span leaf=""> —— 用已经有的历史订单做回归，一条条对；</span></p>
+      </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#DC2626;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">3</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><strong><span leaf="">把检查也做进去</span></strong><span leaf=""> —— 别只让它生成，还要让它自己核对；</span></p>
+      </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#DC2626;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">4</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><strong><span leaf="">规则留在配置里</span></strong><span leaf=""> —— 让业务能改，别锁死在代码里。</span></p>
+      </section>
+    <section style="background:#FFF;border-radius:12px;padding:6px;border:1px solid #E5E7EB;box-shadow:0 4px 12px -2px rgba(0,0,0,0.08);margin-bottom:8px;">
+      <section style="margin:0;border-radius:8px;overflow:hidden;">
+        <span leaf=""><img src="images/pub/82_02_从订单到制造表.png" style="max-width:100%;height:auto;display:block;margin:0 auto;"></span>
+      </section>
+    </section>
+    <p style="font-size:12px;color:#9CA3AF;text-align:center;margin:0 0 24px;"><span leaf="">— 配图｜从客户订单到内部制造表</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:linear-gradient(to right,transparent,#FECACA,#DC2626,#FECACA,transparent);margin:0;"><span leaf=""><br></span></section>
+  </section>
+  <section style="margin-top:48px;margin-bottom:28px;padding:0 10px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+      <section style="display:flex;align-items:center;">
+        <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">∞</span></span>
+        <section>
+          <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">THE END</span></p>
+          <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">最后：工具会变，把经验留下来的事不会变</span></h3>
+        </section>
+      </section>
+    </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">写这篇的时候我一直在想一件事：</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">我们讨论 AI 的时候，总在比谁的模型强、谁跑得快。但真正在上厂里落地时，最打动人的往往不是“它有多聪明”，而是 —— </span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">它把一位老师傅几十年的经验，第一次变成了一件谁都能用、还不会忘的东西</span></span><span leaf="">。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">活塞环的尺寸会变，客户会换，规则会调。但“把经验沉淀下来、让它不随人走”这件事，一直是制造业最想要的东西。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">以前它靠写软件，太贵太慢；现在它可以是一个技能，业务自己就能维护。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">变的从来只是工具，不变的是“怎么把人的经验留下来”</span></span><span leaf="">。</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:linear-gradient(to right,transparent,#FECACA,#DC2626,#FECACA,transparent);margin:0;"><span leaf=""><br></span></section>
+  </section>
+  <section style="padding:0 10px;">
+    <p style="font-size:12px;color:#9CA3AF;margin:0 0 24px;line-height:1.8;text-align:left;"><span leaf="">本文为真实工厂实践记录。文中的活塞环工厂订单转换技能（bushing-ring-convert）基于 WorkBuddy 技能机制开发，支持多家客户、中英文订单、Excel/PDF/图片多格式输入，生成后自动执行 V1~V9 九项完整性校验。涉及到的客户名称与数据均做与业务无关的技术描述，不涉及具体商业信息。</span></p>
+  </section>
+
+  <section style="padding:0 10px;">
+    <section style="text-align:center;margin:0 0 32px;">
+      <section style="display:flex;align-items:center;justify-content:center;">
+        <span style="height:2px;width:60px;background:#DC2626;margin-right:12px;"><span leaf=""><br></span></span>
+        <span style="font-size:11px;color:#DC2626;letter-spacing:3px;font-weight:700;"><span leaf="">END</span></span>
+        <span style="height:2px;width:60px;background:#DC2626;margin-left:12px;"><span leaf=""><br></span></span>
+      </section>
+    </section>
+  </section>
+  <section style="margin:0 10px 24px;padding:24px 22px;background:linear-gradient(135deg,#DC2626 0%,#991B1B 100%);border-radius:16px;text-align:center;color:#fff;">
+    <p style="font-size:18px;font-weight:800;margin:0 0 10px;"><span leaf="">这个假期，你用 AI 干过最有用的一件事是什么？</span></p>
+    <p style="font-size:14px;margin:0 0 18px;opacity:0.9;line-height:1.7;"><span leaf="">评论区聊聊，小智攒一攒，节后做一期「大家用 AI 的真实清单」。</span></p>
+    <p style="display:inline-block;margin:0;background:#fff;color:#DC2626;font-size:14px;font-weight:700;padding:10px 26px;border-radius:999px;"><span leaf="">下期见 · 评论区聊聊</span></p>
+  </section>
+  <section style="margin:0 10px 28px;padding:20px 18px;background:#fff;border:1.5px solid #DC2626;border-radius:16px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;gap:14px;">
+      <section style="flex:1;text-align:left;">
+        <p style="font-size:18px;font-weight:800;color:#DC2626;margin:0 0 8px;"><span leaf="">爱德数智</span></p>
+        <p style="font-size:14px;color:#374151;margin:0 0 14px;line-height:1.6;"><span leaf="">分享 AI 观察与干货，用得上、看得懂</span></p>
+        <p style="font-size:13px;color:#DC2626;margin:0;font-weight:600;"><span leaf="">长按识别二维码 · 关注不迷路</span></p>
+      </section>
+      <section style="flex:0 0 110px;width:110px;height:110px;background:#fff;border-radius:10px;overflow:hidden;border:1px solid #FEE2E2;">
+        <span leaf=""><img src="images/pub/qrcode.jpg" style="width:100%;height:100%;display:block;" alt="公众号二维码"></span>
+      </section>
+    </section>
+  </section>
+    <section style="padding:0 10px;">
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">如果你觉得今天这篇有收获，欢迎 </span><strong><span leaf="">点赞、在看、转发</span></strong><span leaf=""> 三连，我们下篇见。</span></p>
+  </section>
+  <!-- 组件32 页脚签名条（随机名言版） -->
+<section style="padding:20px 0;margin-top:24px;text-align:center;">
+  <p style="font-size:12px;font-weight:600;color:#991B1B;line-height:1.9;margin:0 0 10px;letter-spacing:0.5px;"><span leaf="">小智：会操作工具的人很多，会用工具思考的人很少。</span></p>
+  <section style="display:flex;align-items:center;gap:8px;justify-content:center;">
+    <section style="flex:0 0 60px;height:1px;background:linear-gradient(to right,transparent,#DC2626);"><span leaf="">&nbsp;</span></section>
+    <span style="font-size:10px;color:#DC2626;font-weight:700;"><span leaf="">▲</span></span>
+    <section style="flex:0 0 60px;height:1px;background:linear-gradient(to left,transparent,#DC2626);"><span leaf="">&nbsp;</span></section>
+  </section>
+</section>
+
+</section>

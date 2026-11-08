@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第53期_AI画图大乱斗_主流文生图工具逐个测_排版_小智科技(xiaozhi-tech) · 公众号排版预览</title>
+<style>
+  body{margin:0;background:#eef0f2;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;-webkit-text-size-adjust:100%;}
+  .gzh-toolbar{position:fixed;top:0;left:0;right:0;height:54px;background:#ffffff;box-shadow:0 1px 10px rgba(0,0,0,.08);display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:99;}
+  .gzh-hint{font-size:13px;color:#6b7280;line-height:1.4;}
+  .gzh-hint b{color:#111827;}
+  .gzh-copy{background:#059669;color:#fff;border:0;border-radius:9px;padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 3px 10px rgba(5,150,105,.28);white-space:nowrap;transition:transform .08s,background .15s;}
+  .gzh-copy:hover{background:#047857;}
+  .gzh-copy:active{transform:translateY(1px);}
+  .gzh-toast{position:fixed;top:66px;left:50%;transform:translateX(-50%);background:#111827;color:#fff;padding:11px 20px;border-radius:10px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .25s;z-index:100;box-shadow:0 6px 20px rgba(0,0,0,.25);max-width:88vw;text-align:center;}
+  .gzh-toast.show{opacity:1;}
+  .gzh-stage{max-width:700px;margin:78px auto 64px;padding:0 8px;}
+  @media(max-width:520px){.gzh-hint{max-width:150px;}}
+</style>
+</head>
+<body>
+<div class="gzh-toolbar">
+  <span class="gzh-hint">👇 下方是排版效果 · 点右侧 <b>复制</b> 直接粘到公众号</span>
+  <button class="gzh-copy" id="gzhCopyBtn" onclick="gzhCopy()">📋 复制到公众号</button>
+</div>
+<div class="gzh-toast" id="gzhToast"></div>
+<div class="gzh-stage">
+  <div id="gzh-content">
+<section style="max-width:677px;margin:0 auto;background:#FFFFFF;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:#1F2937;line-height:1.75;letter-spacing:0.3px;">
+
+  <!-- 组件2 渐变封面头图卡 -->
+  <section style="background:#FFFFFF;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(37,99,235,0.08);">
+    <section style="background:linear-gradient(135deg,#2563EB,#7C3AED);padding:26px 28px 22px;">
+      <section style="display:flex;align-items:center;gap:8px;margin-bottom:18px;">
+        <span style="width:6px;height:6px;background:#93C5FD;border-radius:50%;display:inline-block;"><span leaf="">&nbsp;</span></span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:3px;color:rgba(255,255,255,0.85);"><span leaf="">AI TOOLS · 第53期</span></span>
+        <section style="flex:1;height:1px;background:rgba(255,255,255,0.25);"><span leaf="">&nbsp;</span></section>
+        <span style="font-size:10px;color:rgba(255,255,255,0.7);font-weight:500;"><span leaf="">2026.09</span></span>
+      </section>
+      <p style="font-size:24px;font-weight:800;color:#FFFFFF;margin:0 0 10px;line-height:1.15;letter-spacing:-0.75px;"><span leaf="">AI 画图大乱斗：主流文生图工具逐个测</span></p>
+      <p style="font-size:14px;color:rgba(255,255,255,0.75);margin:0;line-height:1.7;letter-spacing:0.3px;"><span leaf="">同一句提示词丢给 7 个主流工具，谁画得像样、谁能直接拿去用、谁在悄悄浪费你的时间</span></p>
+    </section>
+    <section style="padding:18px 28px;display:flex;align-items:center;justify-content:space-between;">
+      <p style="font-size:12px;color:#6B7280;margin:0;font-weight:500;"><span leaf="">2026 年 9 月实测 · 7 工具 / 4 道同题考试 / 1 张速查表</span></p>
+      <section style="display:flex;gap:6px;">
+        <span style="background:#EEF2FF;color:#2563EB;padding:2px 10px;border-radius:20px;font-size:10px;font-weight:600;"><span leaf="">文生图</span></span>
+        <span style="background:#EEF2FF;color:#2563EB;padding:2px 10px;border-radius:20px;font-size:10px;font-weight:600;"><span leaf="">工具横评</span></span>
+      </section>
+    </section>
+  </section>
+
+  <!-- 开篇正文 -->
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:24px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">大家好，我是小智。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">后台被问得最多的一个问题，不是“AI 能干啥”，而是很具体的一句：</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">我想画张图，到底用哪个？</span></span>
+    <span leaf="">”</span>
+  </p>
+
+  <!-- 组件9 导语/强调段落 -->
+  <section style="background:#F8FAFF;border-left:3px solid #2563EB;padding:16px 18px;margin-top:24px;border-radius:0 12px 12px 0;">
+    <p style="font-size:15px;font-weight:600;color:#1E3A8A;line-height:1.8;margin:0;letter-spacing:0.3px;"><span leaf="">有人让我推荐一个“最好的”。说实话，这个问题现在没有答案——因为没有最强，只有最合适。</span></p>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:12px 0 0;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">所以这期我做了件笨事：把</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">同一句提示词</span></span>
+    <span leaf="">，丢给市面上主流的生图工具，一个一个跑。谁画得像样、谁能直接拿去用、谁在悄悄浪费你的时间，全摊开讲。</span>
+  </p>
+
+  <!-- 组件26 无序列表：本文看点 -->
+  <p style="font-size:14px;font-weight:700;color:#111827;margin:20px 0 10px;"><span leaf="">📌 本文看点</span></p>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#2563EB;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">我用四道“同题考试”横评了 <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">7 个工具</span>，附原始提示词</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#06B6D4;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">每个工具一句话定位：长板、短板、适合谁</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#7C3AED;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">一张“<span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">选型速查表</span>”，照着场景直接抄作业</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#2563EB;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">六个坑：中文字、手指、一致性、版权、4K 加价、参数忽悠</span></p>
+  </section>
+  <section style="display:flex;gap:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#06B6D4;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">最后给你一套“1 主 + 1 辅”的搭配方案</span></p>
+  </section>
+
+  <!-- 组件13 信息提示卡 -->
+  <section style="background:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:16px 18px;margin-top:24px;display:flex;gap:12px;">
+    <section style="flex-shrink:0;width:24px;height:24px;background:linear-gradient(135deg,#2563EB,#06B6D4);border-radius:6px;color:#FFFFFF;text-align:center;line-height:24px;font-size:13px;font-weight:800;"><span leaf="">i</span></section>
+    <section>
+      <p style="font-size:14px;font-weight:700;color:#111827;margin:0 0 4px;"><span leaf="">下单前请注意</span></p>
+      <p style="font-size:13px;color:#6B7280;line-height:1.7;margin:0;"><span leaf="">价格与免费额度变化很快，文中数字是我 2026 年 9 月实测时的状态，下单或商用前请以各家官方公告为准。</span></p>
+    </section>
+  </section>
+
+  <!-- 组件33 渐变分隔线 -->
+  <section style="height:1px;background:linear-gradient(to right,transparent,#2563EB,#06B6D4,transparent);margin-top:24px;"><span leaf="">&nbsp;</span></section>
+
+  <!-- 组件5 章节标题 01 -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:24px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">01</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">先说规则：怎么测才算公平</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">RULES · 四条规矩，尽量不偏心</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:20px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">横评这东西最容易变成“我觉得好看”。所以我给自己定了</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">四条规矩</span></span>
+    <span leaf="">：</span>
+  </p>
+
+  <!-- 组件27 有序列表 -->
+  <section style="display:flex;gap:10px;margin-bottom:10px;margin-top:20px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">1</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">同一句提示词，不偏心。每个工具都用一模一样的中文描述，不针对谁改写法。</span></p>
+  </section>
+  <section style="display:flex;gap:10px;margin-bottom:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">2</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">四道同题考试，覆盖真实需求。</span></p>
+  </section>
+  <section style="display:flex;gap:10px;margin-bottom:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">3</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">每个工具跑 3 次取最好的一张。抽卡型选手确实能靠运气赢一次，但我关心的是“<span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">你点一次能不能用</span>”。</span></p>
+  </section>
+  <section style="display:flex;gap:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">4</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">打分只看一句话：<span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">这张图，我敢不敢直接拿去用</span>。</span></p>
+  </section>
+
+  <!-- 组件24 数据表格：四道同题考试 -->
+  <table style="width:100%;border-collapse:collapse;font-size:12px;line-height:1.7;margin-top:24px;">
+    <tr>
+      <th style="background:#F8FAFC;color:#2563EB;font-weight:700;padding:8px 10px;border:1px solid #E5E7EB;text-align:left;"><span leaf="">题目</span></th>
+      <th style="background:#F8FAFC;color:#2563EB;font-weight:700;padding:8px 10px;border:1px solid #E5E7EB;text-align:left;"><span leaf="">提示词（原文）</span></th>
+      <th style="background:#F8FAFC;color:#2563EB;font-weight:700;padding:8px 10px;border:1px solid #E5E7EB;text-align:left;"><span leaf="">考什么</span></th>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">第 1 题 · 中文意境</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">水墨山水，远山如黛，江面一叶扁舟，大面积留白，竖版</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">中文理解、中式审美</span></td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">第 2 题 · 带字封面</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">公众号封面，标题“AI 时代，普通人的机会”，科技蓝渐变，扁平插画</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">能不能把中文字写对</span></td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">第 3 题 · 电商白底</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">原木色五层书架，白底，产品摄影棚光，高清</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">主体准确、能不能直接上架</span></td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">第 4 题 · 人像头像</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">把这张自拍转成扁平插画头像，保留本人五官特征</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">像不像本人、一致性</span></td>
+    </tr>
+  </table>
+
+  <!-- 组件5 章节标题 02 -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:24px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">02</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">逐个测：7 个工具，一句话定位</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">TEST · 实测表现 / 长板 / 短板 / 适合谁</span></p>
+    </section>
+  </section>
+
+  <!-- ① 豆包绘图 -->
+  <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">① 豆包绘图（字节）— 新手的“边聊边改”</span></p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">实测表现</span></span>
+    <span leaf="">：第一题的水墨山水，意境对、留白舒服；第二题的中文标题，字能出但笔画偶尔会多一笔少一笔。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">长板</span></span>
+    <span leaf="">：独创“边聊边改”。出完图直接说“把地球换成渐变蓝”，不到 1 秒就改好，特别适合反复微调。每月 200 张免费额度，还送 5 次 4K 升级。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">短板</span></span>
+    <span leaf="">：人物一多就糊，复杂场景容易元素错乱；风格库只有十来种，玩久了会觉得窄。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">适合谁</span></span>
+    <span leaf="">：刚上手、想快速出配图、又不愿意学提示词的人。当“草稿本”用最香。</span>
+  </p>
+
+  <!-- 配图占位 -->
+  <section style="border:1px dashed #93C5FD;background:#F8FAFF;border-radius:12px;padding:30px 16px;text-align:center;margin:0 0 20px;">
+    <p style="font-size:12px;font-weight:700;color:#2563EB;letter-spacing:1px;margin:0 0 4px;"><span leaf="">配图占位</span></p>
+    <p style="font-size:11px;color:#9CA3AF;line-height:1.6;margin:0;"><span leaf="">① 豆包绘图 · 第 1 题水墨山水实测出图（替换为你的截图）</span></p>
+  </section>
+
+  <!-- ② 即梦 AI -->
+  <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">② 即梦 AI（字节）— 短视频人的顺手工具</span></p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">实测表现</span></span>
+    <span leaf="">：竖版构图是它的主场，2 秒出图，节奏快得离谱；横版要自己裁一刀。切到旗舰模型 Seedream，第 3 题的书架木纹、光影、阴影方向都对，是全场最“像照片”的一张。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">长板</span></span>
+    <span leaf="">：天生为 9:16 竖版优化，还能一键同步抖音草稿箱——画完直接进发布流程。电商白底商品图大约 10 秒出，单张成本很低。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">短板</span></span>
+    <span leaf="">：横版构图要自己裁一刀；要印刷级 4K，得切到旗舰模型 Seedream（2K 约 2 秒、4K 无损输出、可融合多张参考图做定制），但免费额度用得快，超额按张计费。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">适合谁</span></span>
+    <span leaf="">：做短视频、直播、电商详情的人。如果你的图最终是竖着看的，选它；要印出来或放很大，就用它的 Seedream 旗舰模型。</span>
+  </p>
+
+  <!-- 配图占位 -->
+  <section style="border:1px dashed #93C5FD;background:#F8FAFF;border-radius:12px;padding:30px 16px;text-align:center;margin:0 0 20px;">
+    <p style="font-size:12px;font-weight:700;color:#2563EB;letter-spacing:1px;margin:0 0 4px;"><span leaf="">配图占位</span></p>
+    <p style="font-size:11px;color:#9CA3AF;line-height:1.6;margin:0;"><span leaf="">② 即梦 AI · 第 2 题带字封面与竖版实测出图（替换为你的截图）</span></p>
+  </section>
+
+  <!-- ③ 通义万相 -->
+  <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">③ 通义万相（阿里）— 电商人的流水线</span></p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">实测表现</span></span>
+    <span leaf="">：第 3 题直接甩给我 7 种电商常用比例，淘宝、天猫、京东的规范都给你配好了——这一下就省了半小时裁图。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">长板</span></span>
+    <span leaf="">：商品与场景的光影融合很自然，不会出现“商品悬浮在背景上”的尴尬；高清商品图几秒出，大批量单张成本能压到很低。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">短板</span></span>
+    <span leaf="">：艺术创作、小众风格就一般，它是个偏科生，但电商这门课它考满分。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">适合谁</span></span>
+    <span leaf="">：店铺装修、详情页、商品主图。</span>
+  </p>
+
+  <!-- 配图占位 -->
+  <section style="border:1px dashed #93C5FD;background:#F8FAFF;border-radius:12px;padding:30px 16px;text-align:center;margin:0 0 20px;">
+    <p style="font-size:12px;font-weight:700;color:#2563EB;letter-spacing:1px;margin:0 0 4px;"><span leaf="">配图占位</span></p>
+    <p style="font-size:11px;color:#9CA3AF;line-height:1.6;margin:0;"><span leaf="">③ 通义万相 · 第 3 题电商白底商品图（替换为你的截图）</span></p>
+  </section>
+
+  <!-- ④ 文心一格 -->
+  <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">④ 文心一格（百度）— 国风和“要版权”的场合</span></p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">实测表现</span></span>
+    <span leaf="">：第 1 题的水墨山水，笔触和晕染是全场最像回事的，拿到了最高分。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">长板</span></span>
+    <span leaf="">：中文语义理解准，工笔、水墨、传统国风的还原度明显高一档；更关键的是能出官方版权证书，溯源清楚。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">短板</span></span>
+    <span leaf="">：科幻、超现实这类需要“瞎想”的题材，它比较拘谨。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">适合谁</span></span>
+    <span leaf="">：传统文化项目、政务宣传、需要合规背书的商业稿。“这张图要拿去报批 / 投标 / 官方发布”时，它的版权链最省心。</span>
+  </p>
+
+  <!-- 配图占位 -->
+  <section style="border:1px dashed #93C5FD;background:#F8FAFF;border-radius:12px;padding:30px 16px;text-align:center;margin:0 0 20px;">
+    <p style="font-size:12px;font-weight:700;color:#2563EB;letter-spacing:1px;margin:0 0 4px;"><span leaf="">配图占位</span></p>
+    <p style="font-size:11px;color:#9CA3AF;line-height:1.6;margin:0;"><span leaf="">④ 文心一格 · 第 1 题水墨山水实测出图（替换为你的截图）</span></p>
+  </section>
+
+  <!-- ⑤ 智谱 AI 绘画 -->
+  <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">⑤ 智谱 AI 绘画 — 写论文、做汇报的人的救星</span></p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">实测表现</span></span>
+    <span leaf="">：让它画“细胞分裂 3D 示意图”“分子结构模型”，结构和标注都对——这点非常难得，因为多数模型画出来的科学图“看着专业，其实全是错的”。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">长板</span></span>
+    <span leaf="">：支持公式嵌入、数据可视化、专业结构示意图，学术场景适配度最高。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">短板</span></span>
+    <span leaf="">：界面偏技术，艺术表现力弱，别拿它画海报。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">适合谁</span></span>
+    <span leaf="">：论文配图、科研海报、教学课件。非商用通常免费，商用按张计费。</span>
+  </p>
+
+  <!-- 配图占位 -->
+  <section style="border:1px dashed #93C5FD;background:#F8FAFF;border-radius:12px;padding:30px 16px;text-align:center;margin:0 0 20px;">
+    <p style="font-size:12px;font-weight:700;color:#2563EB;letter-spacing:1px;margin:0 0 4px;"><span leaf="">配图占位</span></p>
+    <p style="font-size:11px;color:#9CA3AF;line-height:1.6;margin:0;"><span leaf="">⑤ 智谱 AI 绘画 · 细胞分裂示意图实测出图（替换为你的截图）</span></p>
+  </section>
+
+  <!-- 组件14 警示卡 -->
+  <section style="background:#FFF7ED;border-left:3px solid #F97316;border-radius:0 12px 12px 0;padding:14px 18px;margin-top:24px;display:flex;gap:12px;">
+    <section style="flex-shrink:0;width:22px;height:22px;background:#F97316;border-radius:50%;color:#FFFFFF;text-align:center;line-height:22px;font-size:13px;font-weight:800;"><span leaf="">!</span></section>
+    <section>
+      <p style="font-size:14px;font-weight:700;color:#7C2D12;margin:0 0 4px;"><span leaf="">学术论文配图请注意</span></p>
+      <p style="font-size:13px;color:#9A3412;line-height:1.7;margin:0;"><span leaf="">先查清目标期刊对 AI 生成内容的政策，别踩学术规范。</span></p>
+    </section>
+  </section>
+
+  <!-- ⑥ 美图秀秀 AI 绘画 -->
+  <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">⑥ 美图秀秀 AI 绘画 — 头像、人像这一块的老本行</span></p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">实测表现</span></span>
+    <span leaf="">：第 4 题的自拍转插画头像，五官特征保留得很好，一眼能认出是你，不是“好看的陌生人”。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">长板</span></span>
+    <span leaf="">：人像优化是它做了很多年的老本行，还能一键换证件照背景、统一色调。基础功能免费。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">短板</span></span>
+    <span leaf="">：比例模板少，场景偏娱乐，专业商业设计撑不住。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">适合谁</span></span>
+    <span leaf="">：社交头像、朋友圈配图、轻量修图。</span>
+  </p>
+
+  <!-- 配图占位 -->
+  <section style="border:1px dashed #93C5FD;background:#F8FAFF;border-radius:12px;padding:30px 16px;text-align:center;margin:0 0 20px;">
+    <p style="font-size:12px;font-weight:700;color:#2563EB;letter-spacing:1px;margin:0 0 4px;"><span leaf="">配图占位</span></p>
+    <p style="font-size:11px;color:#9CA3AF;line-height:1.6;margin:0;"><span leaf="">⑥ 美图秀秀 AI 绘画 · 第 4 题头像实测出图（替换为你的截图）</span></p>
+  </section>
+
+  <!-- ⑧ 可灵 AI -->
+  <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">⑦ 可灵 AI — 它是“会动的图”，别当静态工具比</span></p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">实测表现</span></span>
+    <span leaf="">：严格说它不该跟上面几位同台比静态画质——它主打动态内容，能出十几秒的高清视频，运镜也自然。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">长板</span></span>
+    <span leaf="">：短视频素材、动态海报、品牌预告片，一条龙。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">短板</span></span>
+    <span leaf="">：人物面部在长时间动态里偶尔会“跳脸”；免费额度很少。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">适合谁</span></span>
+    <span leaf="">：做短视频的人。想要“动起来的封面”，找它。</span>
+  </p>
+
+  <!-- 配图占位 -->
+  <section style="border:1px dashed #93C5FD;background:#F8FAFF;border-radius:12px;padding:30px 16px;text-align:center;margin:0 0 20px;">
+    <p style="font-size:12px;font-weight:700;color:#2563EB;letter-spacing:1px;margin:0 0 4px;"><span leaf="">配图占位</span></p>
+    <p style="font-size:11px;color:#9CA3AF;line-height:1.6;margin:0;"><span leaf="">⑦ 可灵 AI · 动态海报 / 短视频素材截图（替换为你的截图）</span></p>
+  </section>
+
+  <!-- 组件5 章节标题 番外 -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:24px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">番外</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">海外三强，一句话认识</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">EXTRA · 各有一招，但门槛不同</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:20px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">不放在主测里，是因为它们要么</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">需要特殊网络环境</span></span>
+    <span leaf="">、要么对英文提示词更友好，但它们各有一招：</span>
+  </p>
+
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#2563EB;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">Midjourney</span>：审美天花板，出图自带“高级感”，社区风格库巨大。缺点是中文提示词容易打折，学习成本最高。</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#06B6D4;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">GPT Image 2</span>：主打“先想清楚再画”，对复杂指令的跟随能力很强，适合“要求很多”的图。</span></p>
+  </section>
+  <section style="display:flex;gap:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#7C3AED;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">Nano Banana</span>：出图快、改图一致性好，连续改同一张图不容易跑偏。</span></p>
+  </section>
+
+  <!-- 组件12 左竖线引用 -->
+  <section style="border-left:3px solid #2563EB;padding-left:16px;margin-top:24px;">
+    <p style="font-size:15px;color:#111827;line-height:1.8;margin:0 0 6px;font-weight:600;"><span leaf="">中文场景、国内发布，优先国产——中文理解、支付、版权合规都省心；追求某种特定审美、或者要做英文内容，再考虑海外。</span></p>
+    <p style="font-size:11px;color:#9CA3AF;margin:0;"><span leaf="">—— 小智的建议</span></p>
+  </section>
+
+  <!-- 组件5 章节标题 03 -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:24px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">03</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">选型速查表：照着场景抄作业</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">CHEATSHEET · 九种常见场景，直接对号入座</span></p>
+    </section>
+  </section>
+
+  <!-- 组件24 数据表格：选型速查表 -->
+  <table style="width:100%;border-collapse:collapse;font-size:12px;line-height:1.7;margin-top:24px;">
+    <tr>
+      <th style="background:#F8FAFC;color:#2563EB;font-weight:700;padding:8px 10px;border:1px solid #E5E7EB;text-align:left;"><span leaf="">你的场景</span></th>
+      <th style="background:#F8FAFC;color:#2563EB;font-weight:700;padding:8px 10px;border:1px solid #E5E7EB;text-align:left;"><span leaf="">首选</span></th>
+      <th style="background:#F8FAFC;color:#2563EB;font-weight:700;padding:8px 10px;border:1px solid #E5E7EB;text-align:left;"><span leaf="">备选</span></th>
+      <th style="background:#F8FAFC;color:#2563EB;font-weight:700;padding:8px 10px;border:1px solid #E5E7EB;text-align:left;"><span leaf="">一句话理由</span></th>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">公众号 / 短视频封面</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">即梦</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">豆包</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">竖版快，还能直接同步发布</span></td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">想反复改、边聊边调</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">豆包</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">—</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">改一句不到 1 秒</span></td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">电商主图 / 详情页</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">通义万相</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">即梦</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">比例直接配好，不用裁图</span></td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">国风海报 / 政务宣传</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">文心一格</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">—</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">国风还原高，能出版权证书</span></td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">论文 / 科研配图</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">智谱 AI 绘画</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">—</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">结构准确，不画“伪科学”</span></td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">头像 / 人像</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">美图秀秀 AI 绘画</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">豆包</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">像本人，不像陌生人</span></td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">印刷级 / 4K 商业稿</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">即梦（Seedream）</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">Midjourney</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">画质和细节最稳</span></td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">动态素材 / 短视频</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">可灵 AI</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">—</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">它是做“会动的图”的</span></td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">纯新手试水</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">豆包</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">即梦</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">免费额度多，不用学提示词</span></td>
+    </tr>
+  </table>
+
+  <!-- 组件5 章节标题 04 -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:24px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">04</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">六个坑，踩过的人才懂</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">PITFALLS · 出图前多花 10 秒看一眼</span></p>
+    </section>
+  </section>
+
+  <section style="display:flex;gap:10px;margin-bottom:10px;margin-top:20px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">1</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">让 AI 写中文字，至今仍是老大难。笔画多一笔少一笔是常事。正经的标题字，建议出图后用排版工具加上。我们公众号的封面就是这么干的——图是 AI 画的，字是排版加的，稳。</span></p>
+  </section>
+  <section style="display:flex;gap:10px;margin-bottom:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">2</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">手指、多人物，永远是高危区。画到手就多看两眼，画到一群人就降低预期。</span></p>
+  </section>
+  <section style="display:flex;gap:10px;margin-bottom:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">3</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">系列图要“锁住”一致性。一套图要风格统一，别每次重新描述，用同一张参考图 + 同一套提示词去跑。</span></p>
+  </section>
+  <section style="display:flex;gap:10px;margin-bottom:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">4</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">商用之前，先看清授权。尤其是对外发布、投标、官方物料，优先选能出具授权凭证的工具。“能生成”不等于“能商用”。</span></p>
+  </section>
+  <section style="display:flex;gap:10px;margin-bottom:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">5</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">4K 常常要另外加钱。高清输出不是默认选项，做印刷前先确认清楚单价。</span></p>
+  </section>
+  <section style="display:flex;gap:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">6</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">别被参数忽悠。分辨率、推理速度这些数字，在你自己的场景里可能毫无意义。真正该问的是：我这个需求，点几次能出一张能用的图？</span></p>
+  </section>
+
+  <!-- 组件5 章节标题 05 -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:24px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">05</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">小智说两句</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">THOUGHTS · 没有冠军，只有搭配</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:20px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">跑完这一圈，我最深的感受是：这个赛道已经不是“谁画得更好”的竞争了，而是</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">谁更懂你的场景</span></span>
+    <span leaf="">。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">同样是画一张图：电商人要的是</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">比例合规</span></span>
+    <span leaf="">，科研人要的是结构准确，政务要的是版权可溯，短视频要的是快。需求根本不一样，自然不会有唯一的冠军。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">所以我给你一套能直接用的方案：</span>
+  </p>
+
+  <!-- 组件12 左竖线引用：1 主 + 1 辅 -->
+  <section style="border-left:3px solid #2563EB;padding-left:16px;margin-top:24px;">
+    <p style="font-size:15px;color:#111827;line-height:1.8;margin:0 0 6px;font-weight:600;"><span leaf="">“1 主 + 1 辅”：主工具选你最高频的那个场景对应的选手（看上面的速查表）；辅工具放豆包这类“边聊边改”的，专门用来快速试想法、改细节。一个负责交付，一个负责折腾。</span></p>
+    <p style="font-size:11px;color:#9CA3AF;margin:0;"><span leaf="">—— 可直接抄的搭配</span></p>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:12px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">再送一个</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">万能的提示词三件套</span></span>
+    <span leaf="">，比背长串咒语管用：</span>
+  </p>
+
+  <!-- 组件16 概念说明卡：提示词三件套 -->
+  <section style="background:#EEF2FF;border:1px solid #C7D2FE;border-radius:12px;padding:16px 18px;margin-top:24px;">
+    <p style="font-size:10px;font-weight:700;letter-spacing:2px;color:#4F46E5;margin:0 0 8px;"><span leaf="">PROMPT</span></p>
+    <p style="font-size:15px;font-weight:700;color:#1E1B4B;margin:0 0 6px;"><span leaf="">主体（画什么）+ 风格（什么调调）+ 用途（拿来干嘛 / 什么构图）</span></p>
+    <p style="font-size:13px;color:#4338CA;line-height:1.7;margin:0;"><span leaf="">例：一位在窗边看书的年轻女性（主体），扁平插画、莫兰迪色（风格），竖版公众号封面、上方留白（用途）。</span></p>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:12px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">最后一句大实话：别纠结“哪个最强”，</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">先拿你手头这件事去试一次</span></span>
+    <span leaf="">。十分钟就能知道合不合适，比看十篇测评都有用。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">你平时画图用哪个？有没有被哪个工具气到过？评论区聊聊，我攒一攒下次做个“避坑续集”。</span>
+  </p>
+
+  <!-- 组件17 渐变 CTA：下期预告 -->
+  <section style="background:linear-gradient(135deg,#2563EB,#7C3AED);border-radius:12px;padding:22px 24px;margin-top:24px;text-align:center;">
+    <p style="font-size:16px;font-weight:800;color:#FFFFFF;margin:0 0 6px;letter-spacing:0.5px;"><span leaf="">下期预告 · 10 月 9 日</span></p>
+    <p style="font-size:12px;color:rgba(255,255,255,0.8);margin:0 0 14px;"><span leaf="">《国庆档 AI 大事记》双周特辑——假期里 AI 圈发生了什么，我一次给你讲完。</span></p>
+    <span style="display:inline-block;background:#FFFFFF;color:#2563EB;font-size:13px;font-weight:700;padding:8px 22px;border-radius:24px;"><span leaf="">记得来看</span></span>
+  </section>
+
+  <!-- 组件31 结尾总结区 -->
+  <section style="border-top:3px solid #2563EB;padding:24px 8px 8px;margin-top:24px;">
+    <p style="font-size:10px;font-weight:700;letter-spacing:3px;color:#2563EB;margin:0 0 12px;"><span leaf="">SUMMARY</span></p>
+    <p style="font-size:15px;font-weight:700;color:#111827;line-height:1.8;margin:0 0 8px;"><span leaf="">没有最强的生图工具，只有最适合你场景的那一个。</span></p>
+    <p style="font-size:13px;color:#6B7280;line-height:1.8;margin:0;"><span leaf="">先按速查表挑一个主工具，再配一个能“边聊边改”的辅工具；中文字、手指、一致性、版权这四个坑，出图前多看一眼。别纠结谁第一，拿手头这件事去试一次，十分钟就有答案。</span></p>
+  </section>
+
+  <!-- 组件18 关注引导卡 -->
+  <section style="background:#FFFFFF;border:1.5px solid #2563EB;border-radius:12px;padding:18px 20px;margin-top:24px;display:flex;align-items:center;gap:14px;">
+    <span leaf=""><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/zeT1IrhsLLib9UkBbgKv2A7jfpyv4T5O3uAscIOuib1wHH4NibKALu7iaeSER3aC9jgFPZPgvHib0LWgYd5hhs5KjEvIcRia2aua48aUibYFNvibf2g/0?wx_fmt=jpeg&from=appmsg" alt="公众号二维码" style="width:84px;height:84px;display:block;flex-shrink:0;border-radius:10px;"></span>
+    <section style="flex:1;min-width:0;">
+      <p style="font-size:15px;font-weight:800;color:#111827;margin:0 0 4px;"><span leaf="">小智科技</span></p>
+      <p style="font-size:12px;color:#6B7280;line-height:1.6;margin:0 0 6px;"><span leaf="">分享 AI 观察与干货，用得上、看得懂</span></p>
+      <p style="font-size:11px;font-weight:600;color:#2563EB;margin:0;"><span leaf="">长按识别二维码 · 关注不迷路</span></p>
+    </section>
+    <span style="flex-shrink:0;background:#2563EB;color:#FFFFFF;font-size:12px;font-weight:700;padding:6px 14px;border-radius:20px;"><span leaf="">关注</span></span>
+  </section>
+
+  <!-- 组件30 作者信息卡 -->
+  <section style="background:#F8FAFF;border:1px solid #E5E7EB;border-radius:12px;padding:18px 20px;margin-top:24px;display:flex;gap:14px;align-items:center;">
+    <section style="flex-shrink:0;width:48px;height:48px;background:linear-gradient(135deg,#2563EB,#7C3AED);border-radius:50%;color:#FFFFFF;text-align:center;line-height:48px;font-size:18px;font-weight:800;"><span leaf="">智</span></section>
+    <section style="flex:1;">
+      <p style="font-size:14px;font-weight:800;color:#111827;margin:0 0 3px;"><span leaf="">小智</span></p>
+      <p style="font-size:12px;color:#6B7280;line-height:1.6;margin:0;"><span leaf="">热衷于分享 AI 观察与干货，每周更新。</span></p>
+    </section>
+  </section>
+
+  <!-- 组件32 页脚签名条 -->
+  <section style="padding:20px 8px 8px;margin-top:24px;text-align:center;">
+    <p style="font-size:11px;color:#9CA3AF;letter-spacing:2px;margin:0 0 8px;"><span leaf="">小智科技 · 每周更新 AI 观察与干货</span></p>
+    <section style="display:flex;align-items:center;gap:8px;justify-content:center;">
+      <section style="flex:0 0 60px;height:1px;background:linear-gradient(to right,transparent,#2563EB);"><span leaf="">&nbsp;</span></section>
+      <span style="font-size:10px;color:#2563EB;font-weight:700;"><span leaf="">▲</span></span>
+      <section style="flex:0 0 60px;height:1px;background:linear-gradient(to left,transparent,#2563EB);"><span leaf="">&nbsp;</span></section>
+    </section>
+  </section>
+
+</section>
+  </div>
+</div>
+<script>
+  function gzhShowToast(msg){
+    var t=document.getElementById('gzhToast');
+    t.textContent=msg;t.classList.add('show');
+    clearTimeout(t._timer);
+    t._timer=setTimeout(function(){t.classList.remove('show');},2800);
+  }
+  function gzhCopy(){
+    var el=document.getElementById('gzh-content');
+    // 选中渲染后的富文本节点并复制（等价于手动 Ctrl+A / Ctrl+C，保留全部样式）
+    var range=document.createRange();
+    range.selectNodeContents(el);
+    var sel=window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    var ok=false;
+    try{ok=document.execCommand('copy');}catch(e){ok=false;}
+    sel.removeAllRanges();
+    var btn=document.getElementById('gzhCopyBtn');
+    if(ok){
+      gzhShowToast('✅ 已复制！去公众号编辑器按 Ctrl/⌘+V 粘贴即可');
+      var old=btn.textContent;btn.textContent='✅ 已复制';
+      setTimeout(function(){btn.textContent=old;},2200);
+    }else{
+      gzhShowToast('⚠ 自动复制失败，请手动全选(Ctrl/⌘+A)再复制(Ctrl/⌘+C)');
+    }
+  }
+</script>
+</body>
+</html>

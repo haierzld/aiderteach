@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第52期_英伟达收购HuggingFace_排版_石墨极简风(graphite-minimal) · 公众号排版预览</title>
+<style>
+  body{margin:0;background:#eef0f2;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;-webkit-text-size-adjust:100%;}
+  .gzh-toolbar{position:fixed;top:0;left:0;right:0;height:54px;background:#ffffff;box-shadow:0 1px 10px rgba(0,0,0,.08);display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:99;}
+  .gzh-hint{font-size:13px;color:#6b7280;line-height:1.4;}
+  .gzh-hint b{color:#111827;}
+  .gzh-copy{background:#059669;color:#fff;border:0;border-radius:9px;padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 3px 10px rgba(5,150,105,.28);white-space:nowrap;transition:transform .08s,background .15s;}
+  .gzh-copy:hover{background:#047857;}
+  .gzh-copy:active{transform:translateY(1px);}
+  .gzh-toast{position:fixed;top:66px;left:50%;transform:translateX(-50%);background:#111827;color:#fff;padding:11px 20px;border-radius:10px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .25s;z-index:100;box-shadow:0 6px 20px rgba(0,0,0,.25);max-width:88vw;text-align:center;}
+  .gzh-toast.show{opacity:1;}
+  .gzh-stage{max-width:700px;margin:78px auto 64px;padding:0 8px;}
+  @media(max-width:520px){.gzh-hint{max-width:150px;}}
+</style>
+</head>
+<body>
+<div class="gzh-toolbar">
+  <span class="gzh-hint">👇 下方是排版效果 · 点右侧 <b>复制</b> 直接粘到公众号</span>
+  <button class="gzh-copy" id="gzhCopyBtn" onclick="gzhCopy()">📋 复制到公众号</button>
+</div>
+<div class="gzh-toast" id="gzhToast"></div>
+<div class="gzh-stage">
+  <div id="gzh-content">
+<section style="max-width:677px;margin:0 auto;background:#FFFFFF;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:#52525B;line-height:1.8;letter-spacing:0.3px;overflow-x:hidden;">
+
+  <!-- 1. 开头引言卡片 -->
+  <section style="margin:10px 10px 40px;padding:32px 24px 24px;border-top:1px solid #E4E4E7;border-bottom:1px solid #E4E4E7;background:#FFFFFF;">
+    <p style="font-size:11px;color:#A1A1AA;letter-spacing:2px;margin:0 0 18px;font-weight:400;">
+      <span leaf="">QUOTE</span>
+    </p>
+    <p style="font-size:18px;font-weight:700;color:#27272A;margin:0 0 8px;line-height:1.7;letter-spacing:0.5px;">
+      <span leaf="">卖铲子的人，终于买下了淘金者的广场——开源 AI 的</span>
+      <span style="border-bottom:2px solid #52525B;"><span leaf="">分发权</span></span>
+      <span leaf="">，第一次被明码标价。</span>
+    </p>
+    <p style="text-align:right;font-size:12px;color:#A1A1AA;margin:16px 0 0;letter-spacing:1px;">
+      <span leaf="">—— 小智 ｜ 2026-09-16</span>
+    </p>
+  </section>
+
+  <!-- 封面图 -->
+  <section style="border:1px solid #E4E4E7;padding:4px;margin:0 10px 28px;">
+    <section style="margin:0;overflow:hidden;">
+      <span leaf=""><img src="images/cover.jpeg" style="max-width:100%;height:auto;display:block;margin:0 auto;"></span>
+    </section>
+  </section>
+
+  <!-- 2. 前言正文 -->
+  <section style="padding:0 10px;">
+    <p style="font-size:12px;color:#A1A1AA;letter-spacing:1px;margin:0 0 16px;">
+      <span leaf="">作者 ｜ 小智</span>
+    </p>
+    <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+      <span leaf="">大家好，我是小智。</span>
+    </p>
+    <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+      <span leaf="">这两天 AI 圈最炸的消息，莫过于英伟达</span>
+      <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">官宣收购 Hugging Face</span></span>
+      <span leaf="">。129 亿美元，约合人民币 869 亿元——很多人第一反应是：一家</span>
+      <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">不训练 GPT、不造芯片、也不做云</span></span>
+      <span leaf="">的公司，凭什么值这么多钱？</span>
+    </p>
+    <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+      <span leaf="">这期咱们把它掰开揉碎讲清楚：</span>
+      <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">英伟达到底买了什么</span></span>
+      <span leaf="">、为什么非买不可，以及最重要的——</span>
+      <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">这事跟咱们普通人有什么关系</span></span>
+      <span leaf="">。</span>
+    </p>
+  </section>
+
+  <!-- 3. 前言导读（精选三看点） -->
+  <section style="padding:0 10px 40px;">
+    <p style="font-size:11px;color:#A1A1AA;margin:0 0 16px;letter-spacing:2px;">
+      <span leaf="">本文看点</span>
+    </p>
+    <section style="display:flex;justify-content:space-between;">
+      <section style="flex:1;background:#FAFAFA;border-top:1px solid #E4E4E7;padding:18px 12px 16px;margin-right:8px;">
+        <p style="font-size:11px;color:#A1A1AA;font-weight:500;margin:0 0 8px;letter-spacing:1px;"><span leaf="">01</span></p>
+        <p style="font-size:13px;font-weight:700;color:#27272A;margin:0;line-height:1.5;"><span leaf="">129 亿美元买下“AI 界的 GitHub”，钱花在哪了</span></p>
+      </section>
+      <section style="flex:1;background:#FAFAFA;border-top:1px solid #E4E4E7;padding:18px 12px 16px;margin-right:8px;">
+        <p style="font-size:11px;color:#A1A1AA;font-weight:500;margin:0 0 8px;letter-spacing:1px;"><span leaf="">02</span></p>
+        <p style="font-size:13px;font-weight:700;color:#27272A;margin:0;line-height:1.5;"><span leaf="">黄仁勋的算盘：卖铲子的人，为什么买广场</span></p>
+      </section>
+      <section style="flex:1;background:#FAFAFA;border-top:1px solid #E4E4E7;padding:18px 12px 16px;">
+        <p style="font-size:11px;color:#A1A1AA;font-weight:500;margin:0 0 8px;letter-spacing:1px;"><span leaf="">03</span></p>
+        <p style="font-size:13px;font-weight:700;color:#27272A;margin:0;line-height:1.5;"><span leaf="">开源 AI 最大的“中立国”被收编，意味着什么</span></p>
+      </section>
+    </section>
+  </section>
+
+  <!-- 章节分割线 -->
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:#E4E4E7;margin:0;">
+      <span leaf=""><br></span>
+    </section>
+  </section>
+
+  <!-- 4. 第一章 -->
+  <section style="margin-top:16px;margin-bottom:32px;padding:0 10px;">
+    <section style="position:relative;padding-bottom:20px;border-bottom:1px solid #E4E4E7;">
+      <p style="font-size:48px;font-weight:900;color:#E4E4E7;margin:0;line-height:1;letter-spacing:-2px;">
+        <span leaf="">01</span>
+      </p>
+      <section style="margin-top:-8px;">
+        <p style="font-size:10px;color:#A1A1AA;font-weight:500;letter-spacing:3px;margin:0 0 6px;text-transform:uppercase;">
+          <span leaf="">DEAL</span>
+        </p>
+        <h3 style="font-size:20px;font-weight:800;color:#27272A;margin:0;letter-spacing:0.5px;line-height:1.4;">
+          <span leaf="">先看这笔交易：129 亿美元，到底买了什么</span>
+        </h3>
+      </section>
+    </section>
+
+    <section style="padding-top:24px;">
+      <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+        <span leaf="">9 月 3 日（美国当地时间），英伟达 CEO 黄仁勋在官方博客宣布：英伟达已同意以</span>
+        <strong style="color:#27272A;"><span leaf="">129.303 亿美元</span></strong>
+        <span leaf="">（约合人民币 868.61 亿元）收购 Hugging Face。交易预计</span>
+        <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">2027 年上半年完成</span></span>
+        <span leaf="">，还需通过</span>
+        <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">监管审批</span></span>
+        <span leaf="">。</span>
+      </p>
+
+      <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+        <span leaf="">这不是突然袭击。8 月 26 日，美国科技媒体 The Information 率先披露双方已达成协议；消息传出的次日，英伟达股价大涨 8.74%，收报 227.98 美元，</span>
+        <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">单日市值增加约 4420 亿美元</span></span>
+        <span leaf="">——这是</span>
+        <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">全球股市史上第二大单日市值增量</span></span>
+        <span leaf="">。</span>
+      </p>
+
+      <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+        <span leaf="">价格贵不贵？非常贵。据 The Information 报道，Hugging Face</span>
+        <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">年化收入约 1.5 亿美元</span></span>
+        <span leaf="">，收购对价约为其年化收入的 80 余倍，市销率约 86 倍。作为对照，2018 年微软收购 GitHub 花了 75 亿美元，约为当年收入的 25 倍。</span>
+      </p>
+    </section>
+
+    <section style="display:flex;margin:0 0 28px;">
+      <section style="flex:1;border:1px solid #E4E4E7;padding:22px 16px;margin-right:8px;text-align:center;">
+        <p style="font-size:32px;font-weight:900;color:#27272A;margin:0 0 6px;line-height:1;letter-spacing:-1px;"><span leaf="">129.3 亿</span></p>
+        <p style="font-size:11px;color:#A1A1AA;margin:0;letter-spacing:1px;"><span leaf="">美元 · 收购对价</span></p>
+      </section>
+      <section style="flex:1;border:1px solid #E4E4E7;padding:22px 16px;text-align:center;">
+        <p style="font-size:32px;font-weight:900;color:#27272A;margin:0 0 6px;line-height:1;letter-spacing:-1px;"><span leaf="">86 倍</span></p>
+        <p style="font-size:11px;color:#A1A1AA;margin:0;letter-spacing:1px;"><span leaf="">市销率 · 约年化收入 80 余倍</span></p>
+      </section>
+    </section>
+
+    <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+      <span leaf="">英伟达买的显然</span>
+      <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">不是现金流</span></span>
+      <span leaf="">，而是 Hugging Face 在 AI 世界里的</span>
+      <span style="background:#F4F4F5;color:#27272A;padding:2px 7px;border-radius:3px;font-weight:700;font-size:14px;"><span leaf="">位置</span></span>
+      <span leaf="">。</span>
+    </p>
+
+    <section style="border-left:3px solid #52525B;padding:16px 0 16px 24px;margin:0 0 28px;">
+      <p style="font-size:16px;font-weight:700;color:#27272A;margin:0;line-height:1.7;letter-spacing:0.5px;">
+        <span leaf="">「卖铲子的人，买下了淘金者的广场。」</span>
+      </p>
+    </section>
+  </section>
+
+  <!-- 章节分割线 -->
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:#E4E4E7;margin:0;">
+      <span leaf=""><br></span>
+    </section>
+  </section>
+
+  <!-- 5. 第二章 -->
+  <section style="margin-top:56px;margin-bottom:32px;padding:0 10px;">
+    <section style="position:relative;padding-bottom:20px;border-bottom:1px solid #E4E4E7;">
+      <p style="font-size:48px;font-weight:900;color:#E4E4E7;margin:0;line-height:1;letter-spacing:-2px;">
+        <span leaf="">02</span>
+      </p>
+      <section style="margin-top:-8px;">
+        <p style="font-size:10px;color:#A1A1AA;font-weight:500;letter-spacing:3px;margin:0 0 6px;text-transform:uppercase;">
+          <span leaf="">ORIGIN</span>
+        </p>
+        <h3 style="font-size:20px;font-weight:800;color:#27272A;margin:0;letter-spacing:0.5px;line-height:1.4;">
+          <span leaf="">Hugging Face 是什么：从“陪聊机器人”到“AI 界的 GitHub”</span>
+        </h3>
+      </section>
+    </section>
+
+    <section style="padding-top:24px;">
+      <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+        <span leaf="">很多人以为 Hugging Face 是个“模型网站”，其实它的</span>
+        <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">起点完全不是这样</span></span>
+        <span leaf="">。</span>
+      </p>
+
+      <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+        <span leaf="">2016 年，Clément Delangue 等三位创始人在纽约创办了这家公司，最初的产品是一款</span>
+        <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">“陪你聊天的机器人”</span></span>
+        <span leaf="">——用户可以给它起名字、交换表情，主打一个陪伴。2018 年，公司</span>
+        <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">每天要处理约 100 万条消息</span></span>
+        <span leaf="">。</span>
+      </p>
+
+      <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+        <span leaf="">真正的转折发生在 2017 年。Google 发表《Attention Is All You Need》，Transformer 架构横空出世，BERT、GPT 等预训练模型接连出现。模型越来越强，问题也越来越现实：论文出来了，普通开发者却很难把模型用起来——</span>
+        <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">不同模型有不同代码、不同配置、不同调用方式</span></span>
+        <span leaf="">，换一个模型等于重新学一套工程。</span>
+      </p>
+
+      <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+        <span leaf="">Hugging Face 干了一件大事：2018 年，他们把主流模型做进</span>
+        <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">一个统一的开源库 Transformers</span></span>
+        <span leaf="">。几行代码，就能下载、调用、微调主流模型。这个项目在 GitHub 上很快突破</span>
+        <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">10 万星</span></span>
+        <span leaf="">。2020 年，Hugging Face Hub 上线，模型、数据集、在线演示开始在同一平台汇聚。</span>
+      </p>
+
+      <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+        <span leaf="">从此它一路长成了“AI 界的 GitHub”：开发者在这里发现模型、下载模型、微调模型、发布自己的模型，还能直接跑在线演示。</span>
+      </p>
+
+      <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+        <span leaf="">今天的 Hugging Face 有多大？按黄仁勋官宣博客的口径：</span>
+        <strong style="color:#27272A;"><span leaf="">超过 1800 万名开发者、300 万个模型、50 万个数据集、100 万个应用</span></strong>
+        <span leaf="">，超过 20 万家公司靠它做模型的发现、评估、定制和部署。</span>
+      </p>
+    </section>
+
+    <section style="border:1px solid #E4E4E7;padding:4px;margin:0 0 8px;">
+      <section style="margin:0;overflow:hidden;">
+        <span leaf=""><img src="images/plaza.jpeg" style="max-width:100%;height:auto;display:block;margin:0 auto;"></span>
+      </section>
+    </section>
+    <p style="font-size:12px;color:#A1A1AA;text-align:center;margin:0 0 28px;letter-spacing:0.5px;">
+      <span leaf="">— 开发者围绕模型协作的网络，正是 Hugging Face 最值钱的部分（示意图）</span>
+    </p>
+
+    <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+      <span leaf="">为什么这个位置这么难替代？因为单个模型文件可以搬走，但</span>
+      <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">围绕模型长出来的关系网搬不走</span></span>
+      <span leaf="">：模型说明、下载量、讨论、微调版本、量化版本、几十上百个衍生模型、配套工具链——这些才是一个平台的真正资产。</span>
+    </p>
+
+    <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+      <span leaf="">可以这样理解：</span>
+      <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">GitHub 之于代码，就是 Hugging Face 之于 AI 模型</span></span>
+      <span leaf="">。</span>
+    </p>
+  </section>
+
+  <!-- 章节分割线 -->
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:#E4E4E7;margin:0;">
+      <span leaf=""><br></span>
+    </section>
+  </section>
+
+  <!-- 6. 第三章 -->
+  <section style="margin-top:56px;margin-bottom:32px;padding:0 10px;">
+    <section style="position:relative;padding-bottom:20px;border-bottom:1px solid #E4E4E7;">
+      <p style="font-size:48px;font-weight:900;color:#E4E4E7;margin:0;line-height:1;letter-spacing:-2px;">
+        <span leaf="">03</span>
+      </p>
+      <section style="margin-top:-8px;">
+        <p style="font-size:10px;color:#A1A1AA;font-weight:500;letter-spacing:3px;margin:0 0 6px;text-transform:uppercase;">
+          <span leaf="">MOTIVE</span>
+        </p>
+        <h3 style="font-size:20px;font-weight:800;color:#27272A;margin:0;letter-spacing:0.5px;line-height:1.4;">
+          <span leaf="">英伟达为什么非买不可：“卖铲子”的巨头，看上了淘金者的广场</span>
+        </h3>
+      </section>
+    </section>
+
+    <section style="padding-top:24px;">
+      <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+        <span leaf="">英伟达的逻辑，一句话就能说清：</span>
+        <strong style="color:#27272A;"><span leaf="">模型越多、跑模型的人越多，训练和推理对 GPU 的需求就越大。</span></strong>
+      </p>
+
+      <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+        <span leaf="">黄仁勋在采访里说得更直白：</span>
+        <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">英伟达一半的业务，早已由开源模型驱动</span></span>
+        <span leaf="">。开放模型让企业能自主掌控模型和数据，不用把一切绑在闭源服务商身上；而企业跑模型，就要买算力——这就是英伟达的生意。</span>
+      </p>
+
+      <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+        <span leaf="">为了这笔生意，英伟达这两年一直在重仓开源：今年 3 月宣布</span>
+        <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">未来五年投入 260 亿美元</span></span>
+        <span leaf="">构建开放模型生态，组建了包括 Mistral、Perplexity、Cursor 等在内的 Nemotron 联盟，还宣布推进至少 1 万亿参数的开源模型 Nemotron 4。而 Hugging Face，正是</span>
+        <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">开放模型最大的分发入口</span></span>
+        <span leaf="">。</span>
+      </p>
+
+      <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+        <span leaf="">有意思的是，这笔收购还是 Hugging Face 主动找上门的。今年夏天，Hugging Face 团队意识到开源 AI 到了一个需要更多算力、更大规模、更高影响力的节点——再加上闭源模型接连暴露安全问题，让他们更加确信</span>
+        <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">“只有开源才能兜住 AI 安全的底”</span></span>
+        <span leaf="">。于是他们主动找到黄仁勋，说“我们想把开源 AI 做大”，黄仁勋回了一句：</span>
+      </p>
+    </section>
+
+    <section style="border-left:3px solid #52525B;padding:16px 0 16px 24px;margin:0 0 28px;">
+      <p style="font-size:16px;font-weight:700;color:#27272A;margin:0;line-height:1.7;letter-spacing:0.5px;">
+        <span leaf="">「那就一起做。」</span>
+      </p>
+    </section>
+
+    <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+      <span leaf="">据黄仁勋透露，当时市场上有多家竞购方，他原本希望 Hugging Face 保持独立运营，但形势不允许：“我本想让它独立，但有其他竞购者。”最后英伟达以 129 亿美元高价接盘，还配套了</span>
+      <strong style="color:#27272A;"><span leaf="">10 亿美元的人才留任计划</span></strong>
+      <span leaf="">，Hugging Face 创始团队和全体员工都将留下。</span>
+    </p>
+
+    <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+      <span leaf="">要知道，就在一年前，Hugging Face 还拒绝过英伟达 5 亿美元的投资要约，理由是</span>
+      <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">不希望出现一个能影响决策的主导投资者</span></span>
+      <span leaf="">。从“拒绝入股”到“主动卖身”，只隔了不到一年——说明开源 AI 这场仗，</span>
+      <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">已经打到拼资源的阶段</span></span>
+      <span leaf="">了。</span>
+    </p>
+  </section>
+
+  <!-- 章节分割线 -->
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:#E4E4E7;margin:0;">
+      <span leaf=""><br></span>
+    </section>
+  </section>
+
+  <!-- 7. 第四章 -->
+  <section style="margin-top:56px;margin-bottom:32px;padding:0 10px;">
+    <section style="position:relative;padding-bottom:20px;border-bottom:1px solid #E4E4E7;">
+      <p style="font-size:48px;font-weight:900;color:#E4E4E7;margin:0;line-height:1;letter-spacing:-2px;">
+        <span leaf="">04</span>
+      </p>
+      <section style="margin-top:-8px;">
+        <p style="font-size:10px;color:#A1A1AA;font-weight:500;letter-spacing:3px;margin:0 0 6px;text-transform:uppercase;">
+          <span leaf="">NEUTRALITY</span>
+        </p>
+        <h3 style="font-size:20px;font-weight:800;color:#27272A;margin:0;letter-spacing:0.5px;line-height:1.4;">
+          <span leaf="">对 AI 界：从“中立广场”到“巨头后院”？</span>
+        </h3>
+      </section>
+    </section>
+
+    <section style="padding-top:24px;">
+      <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+        <span leaf="">Hugging Face 过去有个外号，叫“AI 界的瑞士”——它同时支持英伟达，也支持 AMD、英特尔等英伟达的竞争对手，谁的模型都托管，谁的硬件都兼容。这种</span>
+        <span style="background:#F4F4F5;color:#27272A;padding:2px 7px;border-radius:3px;font-weight:700;font-size:14px;"><span leaf="">中立</span></span>
+        <span leaf="">，是整个开源生态信任它的基础。</span>
+      </p>
+    </section>
+
+    <p style="font-size:15px;margin:0 0 24px;text-align:center;color:#27272A;font-weight:700;letter-spacing:1px;border-top:1px solid #E4E4E7;border-bottom:1px solid #E4E4E7;padding:14px 10px;">
+      <span leaf="">现在，“瑞士”被“军火商”买下了。</span>
+    </p>
+
+    <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+      <span leaf="">最直接的担忧是：一个中立平台变成行业最强势基础设施公司的资产，它还能保持中立吗？英国科技媒体 The Register 的评价很尖锐：</span>
+      <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">监管机构应该阻止这笔交易</span></span>
+      <span leaf="">。</span>
+    </p>
+
+    <section style="background:#FAFAFA;border:1px solid #E4E4E7;padding:20px 22px;margin:0 0 28px;">
+      <p style="font-size:11px;color:#A1A1AA;margin:0 0 8px;letter-spacing:2px;font-weight:500;">
+        <span leaf="">REFERENCE</span>
+      </p>
+      <p style="font-size:15px;color:#3F3F46;margin:0;line-height:1.8;text-align:left;">
+        <span leaf="">这相当于</span>
+        <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">“不允许汽车制造商收购主要的燃料分销渠道”</span></span>
+        <span leaf="">。</span>
+      </p>
+    </section>
+
+    <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+      <span leaf="">更微妙的是，英伟达不需要做任何粗暴的事，就能悄悄改变竞争天平：给自家产品更完整的文档、让新模型第一时间在英伟达硬件上跑通、用廉价的英伟达算力补贴开发者……这些</span>
+      <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">“软倾斜”很难被抓住把柄</span></span>
+      <span leaf="">，但足以影响开发者用脚投票的方向。</span>
+    </p>
+
+    <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+      <span leaf="">历史也提供过警示。2018 年微软 75 亿美元收购 GitHub 时，社区同样恐慌，事后微软确实保持了 GitHub 多年的独立。但</span>
+      <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">2025 年以后，GitHub 与微软 AI 战略的组织边界明显变薄</span></span>
+      <span leaf="">，独立的 GitHub CEO 也不再设立。</span>
+    </p>
+
+    <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+      <span leaf="">当然，也要看到利好的一面：Hugging Face 是</span>
+      <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">资本密集型生意</span></span>
+      <span leaf="">，存储海量模型和数据、提供海量下载带宽都极其烧钱。有了英伟达的钱和基础设施，平台大概率会更稳、更快、更安全。双方也承诺：Hugging Face 继续开放，继续支持多云、多加速器，不强制绑定英伟达。</span>
+    </p>
+
+    <section style="border-left:3px solid #F97316;padding:14px 0 14px 22px;margin:0 0 24px;">
+      <p style="font-size:14px;font-weight:700;color:#27272A;margin:0;line-height:1.8;">
+        <span leaf="">“开放”不是交易完成时就能确认、并且永久不变的状态——这句话，值得所有依赖开源生态的人记下来。</span>
+      </p>
+    </section>
+  </section>
+
+  <!-- 章节分割线 -->
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:#E4E4E7;margin:0;">
+      <span leaf=""><br></span>
+    </section>
+  </section>
+
+  <!-- 8. 第五章 -->
+  <section style="margin-top:56px;margin-bottom:32px;padding:0 10px;">
+    <section style="position:relative;padding-bottom:20px;border-bottom:1px solid #E4E4E7;">
+      <p style="font-size:48px;font-weight:900;color:#E4E4E7;margin:0;line-height:1;letter-spacing:-2px;">
+        <span leaf="">05</span>
+      </p>
+      <section style="margin-top:-8px;">
+        <p style="font-size:10px;color:#A1A1AA;font-weight:500;letter-spacing:3px;margin:0 0 6px;text-transform:uppercase;">
+          <span leaf="">GEOPOLITICS</span>
+        </p>
+        <h3 style="font-size:20px;font-weight:800;color:#27272A;margin:0;letter-spacing:0.5px;line-height:1.4;">
+          <span leaf="">中国、美国、欧洲，各自在盘算什么</span>
+        </h3>
+      </section>
+    </section>
+
+    <section style="padding-top:24px;">
+      <p style="font-size:15px;font-weight:800;color:#27272A;margin:0 0 14px;padding-left:12px;border-left:3px solid #52525B;line-height:1.4;">
+        <span leaf="">先说中国</span>
+      </p>
+
+      <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+        <span leaf="">短期看，影响有限：DeepSeek、Qwen、GLM 等国产模型早已形成</span>
+        <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">“双发布”惯例</span></span>
+        <span leaf="">——同一时间在 Hugging Face 和国内平台（如阿里魔搭 ModelScope）同步发布，并不依赖单一渠道。</span>
+      </p>
+
+      <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+        <span leaf="">但长期看，有两点值得注意。第一，中国其实是 Hugging Face 生态最大的受益者之一：以阿里 Qwen 为例，它在 Hugging Face 上的</span>
+        <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">衍生模型多达 15.1 万个，全球第一</span></span>
+        <span leaf="">，排在第二的谷歌只有 8.3 万个；而</span>
+        <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">中国开源模型的全球下载占比已达 41%</span></span>
+        <span leaf="">，首次超过美国。第二，如果平台未来的推荐算法、下载镜像、推理工具都向英伟达倾斜，国产芯片（昇腾、寒武纪等）的适配成本会更高，国产模型出海的</span>
+        <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">“无摩擦通道”可能变窄</span></span>
+        <span leaf="">。</span>
+      </p>
+
+      <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+        <span leaf="">这反而会加速一件事：</span>
+        <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">国产开源平台的自主建设</span></span>
+        <span leaf="">。阿里魔搭目前已有约 2500 万用户、17 万个开源模型；开源中国旗下的模力方舟在信创领域市占率超过 80%。有分析认为，</span>
+        <strong style="color:#27272A;"><span leaf="">“入口自主”很可能会和“算力自主”一样，被摆上桌面。</span></strong>
+      </p>
+
+      <p style="font-size:15px;font-weight:800;color:#27272A;margin:28px 0 14px;padding-left:12px;border-left:3px solid #52525B;line-height:1.4;">
+        <span leaf="">再说美国</span>
+      </p>
+
+      <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+        <span leaf="">美国面临的主要是</span>
+        <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">反垄断审查</span></span>
+        <span leaf="">。英伟达在 AI 芯片市场占据约 81% 的份额，再拿下全球最大的开源模型分发平台，等于“芯片＋软件＋模型＋社区”全线打通。这笔交易触发美国 HSR 反垄断申报，FTC 和司法部都会介入审查；欧盟的并购审查预计也会全面展开，英国的监管机构同样可能跟进。</span>
+      </p>
+    </section>
+
+    <section style="border:1px solid #E4E4E7;padding:4px;margin:0 0 8px;">
+      <section style="margin:0;overflow:hidden;">
+        <span leaf=""><img src="images/regions.jpeg" style="max-width:100%;height:auto;display:block;margin:0 auto;"></span>
+      </section>
+    </section>
+    <p style="font-size:12px;color:#A1A1AA;text-align:center;margin:0 0 28px;letter-spacing:0.5px;">
+      <span leaf="">— 中美欧三方，都在重新打量这个开源入口（示意图）</span>
+    </p>
+
+    <p style="font-size:15px;font-weight:800;color:#27272A;margin:0 0 14px;padding-left:12px;border-left:3px solid #52525B;line-height:1.4;">
+      <span leaf="">再说欧洲</span>
+    </p>
+
+    <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+      <span leaf="">欧洲的心情最复杂。Hugging Face 是法国—美国公司，总部在巴黎，欧洲的 Mistral、Aleph Alpha 等开源实验室都依赖它发布模型。交易完成后，欧洲将同时面对两个“卡脖子”环节：</span>
+      <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">芯片层和分发层</span></span>
+      <span leaf="">。欧盟正在讨论数字市场法是否适用于“AI 仓库”这类基础设施，也有声音担忧这会威胁欧洲的数字主权。</span>
+    </p>
+
+    <section style="border-left:2px solid #E4E4E7;padding:12px 0 12px 20px;margin:0 0 24px;">
+      <p style="font-size:13px;color:#A1A1AA;margin:0;line-height:1.8;text-align:left;">
+        <span leaf="">也有另一种声音：英伟达的注资反而可能让欧洲开源 AI 获得更多资源，甚至成为欧洲摆脱“中美夹击”的一条路——但持这种看法的人目前是少数。</span>
+      </p>
+    </section>
+  </section>
+
+  <!-- 章节分割线 -->
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:#E4E4E7;margin:0;">
+      <span leaf=""><br></span>
+    </section>
+  </section>
+
+  <!-- 9. 第六章 -->
+  <section style="margin-top:56px;margin-bottom:32px;padding:0 10px;">
+    <section style="position:relative;padding-bottom:20px;border-bottom:1px solid #E4E4E7;">
+      <p style="font-size:48px;font-weight:900;color:#E4E4E7;margin:0;line-height:1;letter-spacing:-2px;">
+        <span leaf="">06</span>
+      </p>
+      <section style="margin-top:-8px;">
+        <p style="font-size:10px;color:#A1A1AA;font-weight:500;letter-spacing:3px;margin:0 0 6px;text-transform:uppercase;">
+          <span leaf="">IMPACT</span>
+        </p>
+        <h3 style="font-size:20px;font-weight:800;color:#27272A;margin:0;letter-spacing:0.5px;line-height:1.4;">
+          <span leaf="">对我们普通人：好处、风险、该做什么</span>
+        </h3>
+      </section>
+    </section>
+
+    <section style="padding-top:24px;">
+      <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+        <span leaf="">先给结论：对绝大多数人，这笔交易</span>
+        <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">短期几乎没有直接影响</span></span>
+        <span leaf="">。你用豆包、ChatGPT、文心一言，模型托管在哪台服务器上，跟你没关系。</span>
+      </p>
+
+      <p style="margin-bottom:16px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+        <span leaf="">对不同的人，感受会不同：</span>
+      </p>
+    </section>
+
+    <section style="padding:0 10px;">
+      <section style="margin-bottom:14px;">
+        <p style="margin:0 0 6px;">
+          <span style="display:inline-block;font-size:14px;font-weight:700;color:#27272A;background:#F4F4F5;padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#52525B;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">如果你只是用 AI</span></span>
+        </p>
+        <p style="font-size:14px;color:#71717A;margin:0;line-height:1.7;text-align:left;">
+          <span leaf="">基本无感，该用还用，免费的开源模型大概率继续免费。</span>
+        </p>
+      </section>
+      <section style="margin-bottom:14px;">
+        <p style="margin:0 0 6px;">
+          <span style="display:inline-block;font-size:14px;font-weight:700;color:#27272A;background:#F4F4F5;padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#52525B;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">如果你做开发、做产品</span></span>
+        </p>
+        <p style="font-size:14px;color:#71717A;margin:0;line-height:1.7;text-align:left;">
+          <span leaf="">短期可能更爽：Hugging Face 有了钱和算力，平台会更稳更快，推理服务可能更便宜。但要注意，</span>
+          <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">别把工作流焊死在单一平台上</span></span>
+          <span leaf="">。</span>
+        </p>
+      </section>
+      <section style="margin-bottom:14px;">
+        <p style="margin:0 0 6px;">
+          <span style="display:inline-block;font-size:14px;font-weight:700;color:#27272A;background:#F4F4F5;padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#52525B;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">如果你是学生或研究者</span></span>
+        </p>
+        <p style="font-size:14px;color:#71717A;margin:0;line-height:1.7;text-align:left;">
+          <span leaf="">好消息是开源模型依然免费开放，未来几年应该还是</span>
+          <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">“想下就下”</span></span>
+          <span leaf="">。</span>
+        </p>
+      </section>
+      <section style="margin-bottom:14px;">
+        <p style="margin:0 0 6px;">
+          <span style="display:inline-block;font-size:14px;font-weight:700;color:#27272A;background:#F4F4F5;padding:3px 10px;border-radius:999px;"><span style="display:inline-block;width:6px;height:6px;background:#52525B;border-radius:50%;margin-right:5px;vertical-align:middle;"><span leaf=""><br></span></span><span leaf="">如果你是企业</span></span>
+        </p>
+        <p style="font-size:14px;color:#71717A;margin:0;line-height:1.7;text-align:left;">
+          <span leaf=""></span>
+          <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">数据主权和模型自主</span></span>
+          <span leaf="">的问题会越来越重要，选型时要给自己留退路。</span>
+        </p>
+      </section>
+    </section>
+
+    <p style="margin:24px 0 16px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+      <span leaf="">那普通人到底该做什么？三件事：</span>
+    </p>
+
+    <section style="padding:0 10px;margin-bottom:24px;">
+      <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#27272A;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">1</span></span>
+        <p style="font-size:15px;color:#52525B;margin:0;line-height:1.8;flex:1;"><span leaf="">重要的模型和数据集，</span><span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">别只存在一个平台</span></span><span leaf="">。多平台备份，魔搭、GitHub、官方渠道都留一份。</span></p>
+      </section>
+      <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#27272A;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">2</span></span>
+        <p style="font-size:15px;color:#52525B;margin:0;line-height:1.8;flex:1;"><span leaf=""></span><span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">别赌单一生态</span></span><span leaf="">。做开发，别只围着英伟达的 CUDA 转，保持“模型能跑在别家芯片上”的能力，你的选择权才在自己手里。</span></p>
+      </section>
+      <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#27272A;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">3</span></span>
+        <p style="font-size:15px;color:#52525B;margin:0;line-height:1.8;flex:1;"><span leaf=""></span><span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">盯住监管</span></span><span leaf="">。这笔交易要到 2027 年上半年才完成，反垄断审查的结果可能改变整件事的走向。</span></p>
+      </section>
+    </section>
+
+    <section style="border-left:3px solid #52525B;padding:16px 0 16px 24px;margin:0 0 28px;">
+      <p style="font-size:16px;font-weight:700;color:#27272A;margin:0;line-height:1.7;letter-spacing:0.5px;">
+        <span leaf="">「你不需要知道模型存在哪个服务器，但你要知道，你的</span>
+        <span style="border-bottom:2px solid #F97316;font-weight:700;color:#27272A;"><span leaf="">选择是在变多，还是在变少</span></span>
+        <span leaf="">。」</span>
+      </p>
+    </section>
+  </section>
+
+  <!-- 章节分割线 -->
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:#E4E4E7;margin:0;">
+      <span leaf=""><br></span>
+    </section>
+  </section>
+
+  <!-- 10. 结语章 -->
+  <section style="margin-top:56px;margin-bottom:32px;padding:0 10px;">
+    <section style="position:relative;padding-bottom:20px;border-bottom:1px solid #E4E4E7;">
+      <p style="font-size:48px;font-weight:900;color:#E4E4E7;margin:0;line-height:1;letter-spacing:-2px;">
+        <span leaf="">∞</span>
+      </p>
+      <section style="margin-top:-8px;">
+        <p style="font-size:10px;color:#A1A1AA;font-weight:500;letter-spacing:3px;margin:0 0 6px;text-transform:uppercase;">
+          <span leaf="">THE END</span>
+        </p>
+        <h3 style="font-size:20px;font-weight:800;color:#27272A;margin:0;letter-spacing:0.5px;line-height:1.4;">
+          <span leaf="">小智说两句</span>
+        </h3>
+      </section>
+    </section>
+
+    <section style="padding-top:24px;">
+      <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+        <span leaf="">聊完这些，我说三个自己的判断。</span>
+      </p>
+
+      <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+        <span leaf="">第一，“卖铲子的人，买下了淘金者的广场。”英伟达从卖算力，走向</span>
+        <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">算力、分发、生态通吃</span></span>
+        <span leaf="">——这是 AI 行业从“淘金热”走向“收编期”的标志。巨头开始抢的不是模型，而是</span>
+        <span style="background:#F4F4F5;color:#27272A;padding:2px 7px;border-radius:3px;font-weight:700;font-size:14px;"><span leaf="">分发权</span></span>
+        <span leaf="">。</span>
+      </p>
+
+      <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+        <span leaf="">第二，</span>
+        <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">中立不是一句承诺，而是一种能力</span></span>
+        <span leaf="">。Hugging Face 过去的中立，来自“谁都得罪不起”；现在它背后站着一个最大的金主，中立与否，要看</span>
+        <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">制度设计，也要看利益结构怎么摆</span></span>
+        <span leaf="">。</span>
+      </p>
+
+      <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+        <span leaf="">第三，对普通人，别恐慌，也别躺平。开源 AI 大概率还会继续免费、继续好用，但</span>
+        <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">“免费”的前提从来不是善良，而是有人愿意买单</span></span>
+        <span leaf="">。现在买单的人出现了——你只需要想清楚：自己是多准备几条路，还是把身家性命押在一条路上。</span>
+      </p>
+    </section>
+
+    <p style="font-size:15px;margin:0 0 24px;text-align:center;color:#27272A;font-weight:700;letter-spacing:1px;border-top:1px solid #E4E4E7;border-bottom:1px solid #E4E4E7;padding:14px 10px;">
+      <span leaf="">技术还在狂奔，但这条路上开始出现“收费站”了。对普通人来说，最好的姿势是：多用、多备份、别把鸡蛋放在一个篮子里。</span>
+    </p>
+
+    <section style="border:1px solid #E4E4E7;padding:4px;margin:0 0 8px;">
+      <section style="margin:0;overflow:hidden;">
+        <span leaf=""><img src="images/path.jpeg" style="max-width:100%;height:auto;display:block;margin:0 auto;"></span>
+      </section>
+    </section>
+    <p style="font-size:12px;color:#A1A1AA;text-align:center;margin:0 0 28px;letter-spacing:0.5px;">
+      <span leaf="">— 选择变多还是变少，取决于你给自己留了几条路（示意图）</span>
+    </p>
+
+    <p style="margin-bottom:22px;font-size:15px;line-height:1.8;text-align:left;color:#52525B;letter-spacing:0.3px;">
+      <span leaf="">你平时在 Hugging Face 下载过模型吗？对这 129 亿美元的收购，你怎么看？</span>
+      <span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">评论区聊聊</span></span>
+      <span leaf="">。</span>
+    </p>
+  </section>
+
+  <!-- 11. 资料来源 -->
+  <section style="background:#FAFAFA;border-top:2px solid #27272A;padding:18px 22px;margin:0 10px 24px;">
+    <p style="font-size:11px;color:#A1A1AA;margin:0 0 10px;letter-spacing:2px;font-weight:500;">
+      <span leaf="">SOURCES</span>
+    </p>
+    <p style="font-size:12px;color:#A1A1AA;margin:0 0 8px;letter-spacing:0.5px;">
+      <span leaf="">资料来源（核验日期 2026-09-16）：</span>
+    </p>
+    <p style="font-size:14px;color:#52525B;margin:0 0 6px;line-height:1.8;">
+      <span leaf="">英伟达官方博客《NVIDIA 将收购 Hugging Face》</span>
+    </p>
+    <p style="font-size:14px;color:#52525B;margin:0 0 6px;line-height:1.8;">
+      <span leaf="">新浪财经《129 亿美元买下“AI 界 GitHub”：英伟达在下什么棋？》</span>
+    </p>
+    <p style="font-size:14px;color:#52525B;margin:0 0 6px;line-height:1.8;">
+      <span leaf="">36 氪《129 亿美元卖身英伟达之后，是时候重新理解 Hugging Face 了》</span>
+    </p>
+    <p style="font-size:14px;color:#52525B;margin:0 0 6px;line-height:1.8;">
+      <span leaf="">虎嗅网（InfoQ）《Hugging Face 太重要，绝不能落入英伟达手中？》</span>
+    </p>
+    <p style="font-size:14px;color:#52525B;margin:0 0 6px;line-height:1.8;">
+      <span leaf="">电子工程专辑《英伟达 129 亿美元收购 Hugging Face：开源 AI 生态控制权易主》</span>
+    </p>
+    <p style="font-size:14px;color:#52525B;margin:0;line-height:1.8;">
+      <span leaf="">新浪财经《英伟达拟以 129 亿美元收购 Hugging Face，开源生态进入“收费站”时代》</span>
+    </p>
+  </section>
+
+  <!-- 12. END 分割线 -->
+  <section style="padding:0 10px;">
+    <section style="text-align:center;margin:0 0 36px;">
+      <section style="display:flex;align-items:center;justify-content:center;">
+        <span style="height:1px;width:48px;background:#E4E4E7;margin-right:16px;"><span leaf=""><br></span></span>
+        <span style="font-size:10px;color:#A1A1AA;letter-spacing:4px;font-weight:500;"><span leaf="">END</span></span>
+        <span style="height:1px;width:48px;background:#E4E4E7;margin-left:16px;"><span leaf=""><br></span></span>
+      </section>
+    </section>
+  </section>
+
+  <!-- 13. 尾部签名 -->
+  <section style="padding:0 10px 24px;">
+    <section style="border-top:1px solid #E4E4E7;padding-top:28px;">
+      <p style="margin-bottom:16px;font-size:15px;line-height:1.8;color:#52525B;text-align:left;">
+        <span leaf="">我是小智，热衷于分享 AI 观察与干货。</span>
+      </p>
+      <p style="margin-bottom:0;font-size:15px;line-height:1.8;color:#52525B;text-align:left;">
+        <span leaf="">如果你觉得今天这篇有收获，欢迎</span>
+        <strong style="color:#27272A;"><span leaf="">点赞、在看、转发</span></strong>
+        <span leaf="">三连，我们下篇见。</span>
+      </p>
+    </section>
+  </section>
+
+</section>
+  </div>
+</div>
+<script>
+  function gzhShowToast(msg){
+    var t=document.getElementById('gzhToast');
+    t.textContent=msg;t.classList.add('show');
+    clearTimeout(t._timer);
+    t._timer=setTimeout(function(){t.classList.remove('show');},2800);
+  }
+  function gzhCopy(){
+    var el=document.getElementById('gzh-content');
+    // 选中渲染后的富文本节点并复制（等价于手动 Ctrl+A / Ctrl+C，保留全部样式）
+    var range=document.createRange();
+    range.selectNodeContents(el);
+    var sel=window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    var ok=false;
+    try{ok=document.execCommand('copy');}catch(e){ok=false;}
+    sel.removeAllRanges();
+    var btn=document.getElementById('gzhCopyBtn');
+    if(ok){
+      gzhShowToast('✅ 已复制！去公众号编辑器按 Ctrl/⌘+V 粘贴即可');
+      var old=btn.textContent;btn.textContent='✅ 已复制';
+      setTimeout(function(){btn.textContent=old;},2200);
+    }else{
+      gzhShowToast('⚠ 自动复制失败，请手动全选(Ctrl/⌘+A)再复制(Ctrl/⌘+C)');
+    }
+  }
+</script>
+</body>
+</html>

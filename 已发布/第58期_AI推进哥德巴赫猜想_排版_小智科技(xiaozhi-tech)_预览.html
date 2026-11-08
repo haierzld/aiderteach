@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第58期_AI推进哥德巴赫猜想_排版_小智科技(xiaozhi-tech) · 公众号排版预览</title>
+<style>
+  body{margin:0;background:#eef0f2;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;-webkit-text-size-adjust:100%;}
+  .gzh-toolbar{position:fixed;top:0;left:0;right:0;height:54px;background:#ffffff;box-shadow:0 1px 10px rgba(0,0,0,.08);display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:99;}
+  .gzh-hint{font-size:13px;color:#6b7280;line-height:1.4;}
+  .gzh-hint b{color:#111827;}
+  .gzh-copy{background:#059669;color:#fff;border:0;border-radius:9px;padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 3px 10px rgba(5,150,105,.28);white-space:nowrap;transition:transform .08s,background .15s;}
+  .gzh-copy:hover{background:#047857;}
+  .gzh-copy:active{transform:translateY(1px);}
+  .gzh-toast{position:fixed;top:66px;left:50%;transform:translateX(-50%);background:#111827;color:#fff;padding:11px 20px;border-radius:10px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .25s;z-index:100;box-shadow:0 6px 20px rgba(0,0,0,.25);max-width:88vw;text-align:center;}
+  .gzh-toast.show{opacity:1;}
+  .gzh-stage{max-width:700px;margin:78px auto 64px;padding:0 8px;}
+  @media(max-width:520px){.gzh-hint{max-width:150px;}}
+</style>
+</head>
+<body>
+<div class="gzh-toolbar">
+  <span class="gzh-hint">👇 下方是排版效果 · 点右侧 <b>复制</b> 直接粘到公众号</span>
+  <button class="gzh-copy" id="gzhCopyBtn" onclick="gzhCopy()">📋 复制到公众号</button>
+</div>
+<div class="gzh-toast" id="gzhToast"></div>
+<div class="gzh-stage">
+  <div id="gzh-content">
+<section style="max-width:677px;margin:0 auto;background:#FFFFFF;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:#1F2937;line-height:1.75;letter-spacing:0.3px;">
+
+  <!-- 组件2 渐变封面头图卡 -->
+  <section style="background:#FFFFFF;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(37,99,235,0.08);">
+    <section style="background:linear-gradient(135deg,#2563EB,#7C3AED);padding:26px 28px 22px;">
+      <section style="display:flex;align-items:center;gap:8px;margin-bottom:18px;">
+        <span style="width:6px;height:6px;background:#93C5FD;border-radius:50%;display:inline-block;"><span leaf="">&nbsp;</span></span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:3px;color:rgba(255,255,255,0.85);"><span leaf="">AI FRONTIER · 第58期</span></span>
+        <section style="flex:1;height:1px;background:rgba(255,255,255,0.25);"><span leaf="">&nbsp;</span></section>
+        <span style="font-size:10px;color:rgba(255,255,255,0.7);font-weight:500;"><span leaf="">2026.09</span></span>
+      </section>
+      <p style="font-size:24px;font-weight:800;color:#FFFFFF;margin:0 0 10px;line-height:1.15;letter-spacing:-0.75px;"><span leaf="">AI 两页纸推进哥德巴赫猜想</span></p>
+      <p style="font-size:14px;color:rgba(255,255,255,0.75);margin:0;line-height:1.7;letter-spacing:0.3px;"><span leaf="">数学家要慌吗？别急，先看清它到底证明了什么</span></p>
+    </section>
+    <section style="padding:18px 28px;display:flex;align-items:center;justify-content:space-between;">
+      <p style="font-size:12px;color:#6B7280;margin:0;font-weight:500;"><span leaf="">2026 年 9 月 23 日核验 · 哥德巴赫猜想 / Lean 4 形式化验证 / 三个启发</span></p>
+      <section style="display:flex;gap:6px;">
+        <span style="background:#EEF2FF;color:#2563EB;padding:2px 10px;border-radius:20px;font-size:10px;font-weight:600;"><span leaf="">哥德巴赫猜想</span></span>
+        <span style="background:#EEF2FF;color:#2563EB;padding:2px 10px;border-radius:20px;font-size:10px;font-weight:600;"><span leaf="">Lean 4</span></span>
+      </section>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:24px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">大家好，我是小智。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">这两天朋友圈又被刷屏了，标题一个比一个吓人：“AI 证明了哥德巴赫猜想！”“数学家失业倒计时！”“两页纸干掉 284 年难题！”</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">小智翻了原帖、看了证明代码、查了社区验证结果，先给你吃个定心丸</span></span>
+    <span leaf="">。</span>
+  </p>
+
+  <!-- 组件9 导语/强调段落 -->
+  <section style="background:#F8FAFF;border-left:3px solid #2563EB;padding:16px 18px;margin-top:24px;border-radius:0 12px 12px 0;">
+    <p style="font-size:15px;font-weight:600;color:#1E3A8A;line-height:1.8;margin:0;letter-spacing:0.3px;"><span leaf="">哥德巴赫猜想本身还没被证明，这次 AI 推进的是一个弱化版本。但这件事确实值得聊——不是因为它证明了什么，而是因为它用什么方法证明的。今天不堆公式，说三件事：到底证明了啥、真正值得关注的是什么、以及这事儿跟咱们普通人有什么关系。</span></p>
+  </section>
+
+  <!-- 组件26 无序列表：本文看点 -->
+  <p style="font-size:14px;font-weight:700;color:#111827;margin:20px 0 10px;"><span leaf="">📌 本文看点</span></p>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#2563EB;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">先别急着转发：<span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">AI 到底证明了哥德巴赫猜想的哪一部分</span></span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#06B6D4;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">真正让人坐不住的不是结果，是方法——<span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">这次不是暴力穷举，是“像人一样推理”</span></span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#7C3AED;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">Lean 4 形式化验证是什么？为什么<span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">“机器验过”比“人说对了”更重要</span></span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#2563EB;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">对普通人的三个启发</span>：跟数学没关系，但跟你的工作有关系</span></p>
+  </section>
+  <section style="display:flex;gap:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#06B6D4;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">小智说两句：别被标题吓到，真正的变化是这个</span></p>
+  </section>
+
+  <!-- 组件13 信息提示卡：说明 -->
+  <section style="background:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:16px 18px;margin-top:24px;display:flex;gap:12px;">
+    <section style="flex-shrink:0;width:24px;height:24px;background:linear-gradient(135deg,#2563EB,#06B6D4);border-radius:6px;color:#FFFFFF;text-align:center;line-height:24px;font-size:13px;font-weight:800;"><span leaf="">i</span></section>
+    <section>
+      <p style="font-size:14px;font-weight:700;color:#111827;margin:0 0 4px;"><span leaf="">说明：数学细节以同行评议为准</span></p>
+      <p style="font-size:13px;color:#6B7280;line-height:1.7;margin:0;"><span leaf="">本文基于 2026 年 9 月 21 日网友 Captain Sude 在 X 上发布的公开信息、36 氪及新智元等媒体报道、以及 Lean 4 开源仓库的独立复编译结果。数学细节以原仓库和数学界同行评议为准。</span></p>
+    </section>
+  </section>
+
+  <!-- 组件33 渐变分隔线 -->
+  <section style="height:1px;background:linear-gradient(to right,transparent,#2563EB,#06B6D4,transparent);margin-top:24px;"><span leaf="">&nbsp;</span></section>
+
+  <!-- 组件5 章节标题 01 -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:24px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">01</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">先别急着转发：它到底证明了什么？</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">FACT · 皇冠上的明珠还挂在那儿</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:20px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">先花一分钟搞清楚：</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">哥德巴赫猜想是啥？</span></span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">1742 年，哥德巴赫给欧拉写了封信，提出一个猜想：</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">任何大于 2 的偶数，都能写成两个素数之和</span></span>
+    <span leaf="">。比如 4=2+2，6=3+3，10=3+7，100=3+97……</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">听起来简单吧？但从 1742 年到今天，</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">284 年了，没有人能严格证明它一定成立</span></span>
+    <span leaf="">。这就是为什么它被称为“数学皇冠上的明珠”。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">陈景润在 1966 年证明了“1+2”（每个充分大的偶数都能写成一个素数和一个不超过两个素数乘积之和），</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">这是人类目前最接近的一步</span></span>
+    <span leaf="">。再往前一步“1+1”（就是原版哥德巴赫猜想），到现在没人跨过去。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">那这次 GPT-6 Astra 做了什么？</span>
+  </p>
+
+  <!-- 组件9 导语/强调段落 -->
+  <section style="background:#F8FAFF;border-left:3px solid #2563EB;padding:16px 18px;margin-top:24px;border-radius:0 12px 12px 0;">
+    <p style="font-size:15px;font-weight:600;color:#1E3A8A;line-height:1.8;margin:0;letter-spacing:0.3px;"><span leaf="">它证明的不是原版哥德巴赫猜想，而是一个叫“Liouville（刘维尔）弱形式”的版本。</span></p>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:12px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">打个比方：原版哥德巴赫猜想是“登顶珠峰”，刘维尔弱形式是“登顶了珠峰旁边的一座八千级卫峰”。很高、很难、值得庆祝，但</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">不是珠峰本身</span></span>
+    <span leaf="">。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">具体来说：</span>
+  </p>
+
+  <!-- 组件26 无序列表 -->
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#2563EB;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">以前人类证明这个弱化版，有两个限制条件：得假设“广义黎曼猜想”成立（这本身也是个没被证明的大猜想）；只对“足够大”的偶数成立（小偶数不管）</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#06B6D4;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">Astra 这次把这两个限制都去掉了——<span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">无条件证明了所有大于 2 的偶数都满足这个弱化形式</span></span></p>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:12px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">顺便说两个数字。</span>
+  </p>
+
+  <!-- 组件23 指标卡 -->
+  <section style="display:flex;gap:12px;margin-top:24px;">
+    <section style="flex:1;background:linear-gradient(180deg,#EEF2FF,#F8FAFF);border:1px solid #E5E7EB;border-radius:12px;padding:16px 12px;text-align:center;">
+      <p style="font-size:9px;color:#6B7280;margin:0 0 6px;letter-spacing:1px;"><span leaf="">猜想悬置</span></p>
+      <p style="font-size:22px;font-weight:800;color:#2563EB;margin:0 0 4px;line-height:1;"><span leaf="">284 年</span></p>
+      <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf="">从 1742 年到现在</span></p>
+    </section>
+    <section style="flex:1;background:linear-gradient(180deg,#EEF2FF,#F8FAFF);border:1px solid #E5E7EB;border-radius:12px;padding:16px 12px;text-align:center;">
+      <p style="font-size:9px;color:#6B7280;margin:0 0 6px;letter-spacing:1px;"><span leaf="">证明正文</span></p>
+      <p style="font-size:22px;font-weight:800;color:#2563EB;margin:0 0 4px;line-height:1;"><span leaf="">两页纸</span></p>
+      <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf="">这次 AI 给出的篇幅</span></p>
+    </section>
+    <section style="flex:1;background:linear-gradient(180deg,#EEF2FF,#F8FAFF);border:1px solid #E5E7EB;border-radius:12px;padding:16px 12px;text-align:center;">
+      <p style="font-size:9px;color:#6B7280;margin:0 0 6px;letter-spacing:1px;"><span leaf="">用时</span></p>
+      <p style="font-size:22px;font-weight:800;color:#2563EB;margin:0 0 4px;line-height:1;"><span leaf="">两天</span></p>
+      <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf="">从入手到写完</span></p>
+    </section>
+  </section>
+
+  <!-- 组件12 左竖线引用 -->
+  <section style="border-left:3px solid #2563EB;padding-left:16px;margin-top:24px;">
+    <p style="font-size:15px;color:#111827;line-height:1.8;margin:0 0 6px;font-weight:600;"><span leaf="">一句话总结：它没摘下皇冠上的明珠，但它把皇冠旁边那颗小宝石擦得锃亮，而且擦的方式让数学家后背一凉。</span></p>
+    <p style="font-size:11px;color:#9CA3AF;margin:0;"><span leaf="">—— 小智的总结</span></p>
+  </section>
+
+  <!-- 组件33 渐变分隔线 -->
+  <section style="height:1px;background:linear-gradient(to right,transparent,#2563EB,#06B6D4,transparent);margin-top:24px;"><span leaf="">&nbsp;</span></section>
+
+  <!-- 组件5 章节标题 02 -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:24px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">02</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">真正让人坐不住的不是结果，是方法</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">METHOD · 从“算得快”到“想得对”</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:20px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">如果只是“AI 又解决了一道数学题”，这事没那么大。真正让数学圈震动的，是它</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">怎么</span></span>
+    <span leaf="">证明的。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">以前 AI 做数学，说白了就两条路：</span>
+  </p>
+
+  <!-- 组件27 有序列表 -->
+  <section style="display:flex;gap:10px;margin-bottom:10px;margin-top:20px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">1</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">暴力穷举</span>：算到天荒地老，把所有可能都试一遍。就像让猴子打字，打够了总能打出莎士比亚。</span></p>
+  </section>
+  <section style="display:flex;gap:10px;margin-bottom:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">2</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">套用已有方法</span>：人类数学家已经走过的路，AI 沿着走一遍，优化优化。</span></p>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:12px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">这次 Astra 不是。根据原帖作者 Captain Sude 的描述和社区拆解，它用的是：</span>
+  </p>
+
+  <!-- 组件26 无序列表 -->
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#2563EB;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">反证法</span>：先假设“这个偶数不能拆成两个素数之和”，然后一步步推出矛盾，说明假设不成立</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#06B6D4;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">初等代数技巧</span>：把加法上的困难“拧”成乘法上的矛盾</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#7C3AED;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">二次互反律</span>：借这个数论工具逼出一个“正一等于负一”的矛盾等式</span></p>
+  </section>
+  <section style="display:flex;gap:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#2563EB;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">全程没有暴力穷举，没有拿算力硬压</span></p>
+  </section>
+
+  <!-- 组件9 导语/强调段落 -->
+  <section style="background:#F8FAFF;border-left:3px solid #2563EB;padding:16px 18px;margin-top:24px;border-radius:0 12px 12px 0;">
+    <p style="font-size:15px;font-weight:600;color:#1E3A8A;line-height:1.8;margin:0;letter-spacing:0.3px;"><span leaf="">用大白话说：以前 AI 做数学是“算得快”，这次它是“想得对”。</span></p>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:12px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">这区别有多大？打个比方：</span>
+  </p>
+
+  <!-- 组件28 双卡对比 -->
+  <section style="display:flex;gap:12px;margin-top:24px;">
+    <section style="flex:1;border:1.5px solid #E5E7EB;border-radius:12px;padding:16px 14px;background:#FFFFFF;">
+      <p style="font-size:12px;font-weight:800;color:#6B7280;margin:0 0 8px;"><span leaf="">以前的 AI：计算器神童</span></p>
+      <p style="font-size:12px;color:#374151;line-height:1.7;margin:0;"><span leaf="">你出一道题，它算得比谁都快，但你让它自己出题、自己想思路，它不会。</span></p>
+    </section>
+    <section style="flex:1;border:1.5px solid #BFDBFE;border-radius:12px;padding:16px 14px;background:#F8FAFF;">
+      <p style="font-size:12px;font-weight:800;color:#2563EB;margin:0 0 8px;"><span leaf="">这次的 Astra：数学系研究生</span></p>
+      <p style="font-size:12px;color:#374151;line-height:1.7;margin:0;"><span leaf="">给它一个问题，它能自己想思路、试方法、走不通就换一条路，最后给出一个优雅的证明。</span></p>
+    </section>
+  </section>
+
+  <!-- 组件12 左竖线引用 -->
+  <section style="border-left:3px solid #2563EB;padding-left:16px;margin-top:24px;">
+    <p style="font-size:15px;color:#111827;line-height:1.8;margin:0 0 6px;font-weight:600;"><span leaf="">“想出解题思路”这件事，以前被认为是人类数学家最核心的能力——直觉、灵感、创造力。现在 AI 在这一步上，开始做出像样的东西了。这才是让数学家后背发凉的原因。</span></p>
+    <p style="font-size:11px;color:#9CA3AF;margin:0;"><span leaf="">—— 重点在这句话</span></p>
+  </section>
+
+  <!-- 组件33 渐变分隔线 -->
+  <section style="height:1px;background:linear-gradient(to right,transparent,#2563EB,#06B6D4,transparent);margin-top:24px;"><span leaf="">&nbsp;</span></section>
+
+  <!-- 组件5 章节标题 03 -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:24px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">03</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">Lean 4 是什么？为什么“机器验过”比“人说对了”更重要</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">VERIFY · 验证环节被加速了</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:20px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">还有一个细节很多报道没提，但小智觉得很重要：</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">这个证明通过了 Lean 4 的形式化验证</span></span>
+    <span leaf="">。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">Lean 4 是个什么东西？你可以把它理解成一个极其严格的“数学编译器”。</span>
+  </p>
+
+  <!-- 组件16 概念说明卡 -->
+  <section style="background:#EEF2FF;border:1px solid #C7D2FE;border-radius:12px;padding:16px 18px;margin-top:24px;">
+    <p style="font-size:10px;font-weight:700;letter-spacing:2px;color:#4F46E5;margin:0 0 8px;"><span leaf="">CONCEPT · 术语</span></p>
+    <p style="font-size:15px;font-weight:700;color:#1E1B4B;margin:0 0 6px;"><span leaf="">Lean 4：一个“数学编译器”</span></p>
+    <p style="font-size:13px;color:#4338CA;line-height:1.7;margin:0;"><span leaf="">它要求你把证明写成一行一行的代码，每一步推理都必须严格成立，机器才认。只要有一行对不上，它就报错——没有“这里应该没问题吧”这种模糊地带。</span></p>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:12px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">普通数学家写证明，是用自然语言加公式写在论文里，其他数学家审稿看几年——</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">看得对不对、有没有跳步、有没有漏洞，全靠人脑</span></span>
+    <span leaf="">。人总会看漏，会有偏见，会有模糊地带。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">这次 Astra 写出的证明，在 Lean 4 里：</span>
+  </p>
+
+  <!-- 组件27 有序列表 -->
+  <section style="display:flex;gap:10px;margin-bottom:10px;margin-top:20px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">1</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">零 sorry</span>：没有“这里先假设成立”的偷懒跳过</span></p>
+  </section>
+  <section style="display:flex;gap:10px;margin-bottom:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">2</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">零自定义公理</span>：没有自己偷偷加假设</span></p>
+  </section>
+  <section style="display:flex;gap:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">3</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">社区独立复编译通过</span>：别人拿代码自己跑，结果一样</span></p>
+  </section>
+
+  <!-- 组件15 成功/亮点卡 -->
+  <section style="background:#F0FDF4;border-left:3px solid #10B981;border-radius:0 12px 12px 0;padding:14px 18px;margin-top:24px;display:flex;gap:12px;">
+    <section style="flex-shrink:0;width:22px;height:22px;background:#10B981;border-radius:50%;color:#FFFFFF;text-align:center;line-height:22px;font-size:12px;font-weight:800;"><span leaf="">✓</span></section>
+    <section>
+      <p style="font-size:14px;font-weight:700;color:#065F46;margin:0 0 4px;"><span leaf="">这意味着什么？</span></p>
+      <p style="font-size:13px;color:#047857;line-height:1.7;margin:0;"><span leaf="">这个证明不是“看起来好像对”，而是“机器证明它一定对”。</span></p>
+    </section>
+  </section>
+
+  <!-- 组件28 双卡对比 -->
+  <section style="display:flex;gap:12px;margin-top:24px;">
+    <section style="flex:1;border:1.5px solid #E5E7EB;border-radius:12px;padding:16px 14px;background:#FFFFFF;">
+      <p style="font-size:12px;font-weight:800;color:#6B7280;margin:0 0 8px;"><span leaf="">以前的流程</span></p>
+      <p style="font-size:12px;color:#374151;line-height:1.7;margin:0;"><span leaf="">数学家写证明 → 其他数学家审好几年 → 大家慢慢接受。</span></p>
+    </section>
+    <section style="flex:1;border:1.5px solid #BFDBFE;border-radius:12px;padding:16px 14px;background:#F8FAFF;">
+      <p style="font-size:12px;font-weight:800;color:#2563EB;margin:0 0 8px;"><span leaf="">现在的流程</span></p>
+      <p style="font-size:12px;color:#374151;line-height:1.7;margin:0;"><span leaf="">AI 写证明 → Lean 4 秒验 → 社区复编译 → 基本可以信任。</span></p>
+    </section>
+  </section>
+
+  <!-- 组件12 左竖线引用 -->
+  <section style="border-left:3px solid #2563EB;padding-left:16px;margin-top:24px;">
+    <p style="font-size:15px;color:#111827;line-height:1.8;margin:0 0 6px;font-weight:600;"><span leaf="">这个流程变化，比证明本身的数学意义还大。它意味着数学发现的“验证环节”被极大地加速了。就像以前写文章要靠编辑一字一句校对错别字，现在有了语法检查器——不是说文章变好了，而是错别字能被秒抓。</span></p>
+    <p style="font-size:11px;color:#9CA3AF;margin:0;"><span leaf="">—— 小智的判断</span></p>
+  </section>
+
+  <!-- 组件33 渐变分隔线 -->
+  <section style="height:1px;background:linear-gradient(to right,transparent,#2563EB,#06B6D4,transparent);margin-top:24px;"><span leaf="">&nbsp;</span></section>
+
+  <!-- 组件5 章节标题 04 -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:24px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">04</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">对普通人的三个启发</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">INSIGHT · 跟数学无关，跟你的工作有关</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:20px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">聊完技术，说点跟你我有关系的。你可能会说：“哥德巴赫猜想跟我有啥关系？我又不是数学家。”</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">确实没关系。但</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">这件事背后的三个信号，跟你的工作和生活有关系</span></span>
+    <span leaf="">。</span>
+  </p>
+
+  <!-- 组件7 小节标题 -->
+  <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">启发一：AI 的能力边界，正在从“做题”扩展到“出题”</span></p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">以前你用 AI，是你出一道题，它给你一个答案。你让它写周报，它写；你让它翻译，它翻。</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">题是你出的，它只是答题</span></span>
+    <span leaf="">。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">但这次不一样。哥德巴赫猜想的弱化版，不是谁出给 AI 的考试题，是它在探索“这个领域还有哪些未解的问题”。Astra 在 8 月份就一口气给出了 10 个数学开放问题的解答，其中 3 个是</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">Erdős 数学收藏集中编号列出的难题</span></span>
+    <span leaf="">。</span>
+  </p>
+
+  <!-- 组件9 导语/强调段落 -->
+  <section style="background:#F8FAFF;border-left:3px solid #2563EB;padding:16px 18px;margin-top:24px;border-radius:0 12px 12px 0;">
+    <p style="font-size:15px;font-weight:600;color:#1E3A8A;line-height:1.8;margin:0;letter-spacing:0.3px;"><span leaf="">翻译成人话：AI 开始不只是“你问它答”了，它开始在“没人知道答案”的地方探路了。</span></p>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:12px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">这对你意味着什么？以后你用 AI，可能不只是“帮我写个方案”，而是</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">“帮我看看这个问题还有什么没被想到的角度”</span></span>
+    <span leaf="">。它从“答题机器”往“研究助手”走了一步。</span>
+  </p>
+
+  <!-- 组件7 小节标题 -->
+  <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">启发二：把“凭感觉”变成“可检查的清单”，这个思路你也能用</span></p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">Lean 4 为什么重要？因为它把“证明对不对”从</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">“数学家的直觉判断”变成了“机器可验证的规则”</span></span>
+    <span leaf="">。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">这个思路在你的工作里一样成立。想想你每天做的事：</span>
+  </p>
+
+  <!-- 组件26 无序列表 -->
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#2563EB;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">“我觉得这个方案没问题”——问题在哪？如果换个人，他能检查吗？</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#06B6D4;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">“我感觉这个客户会买”——感觉是什么？哪些信号？</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#7C3AED;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">“我记得这个流程是对的”——真的对吗？上次改没改过？</span></p>
+  </section>
+
+  <!-- 组件12 左竖线引用 -->
+  <section style="border-left:3px solid #2563EB;padding-left:16px;margin-top:24px;">
+    <p style="font-size:15px;color:#111827;line-height:1.8;margin:0 0 6px;font-weight:600;"><span leaf="">高手和新手的区别，很多时候不是高手更聪明，而是高手把“凭感觉”拆成了一条条可检查的步骤。Lean 4 做的就是这件事——把数学家“我觉得这步没问题”拆成机器能验的每一步。</span></p>
+    <p style="font-size:11px;color:#9CA3AF;margin:0;"><span leaf="">—— 可以照搬到工作里</span></p>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:12px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">你不需要学 Lean 4，但你可以学这个思路：</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">把你工作中“凭经验”的部分，一条一条写下来，变成新人也能照着检查的清单</span></span>
+    <span leaf="">。这件事，AI 可以帮你做——你口述经验，它帮你整理成清单。</span>
+  </p>
+
+  <!-- 组件7 小节标题 -->
+  <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">启发三：数学家没失业，别自己吓自己</span></p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">最后说回焦虑。标题党会告诉你“AI 证明了哥德巴赫猜想，数学家要失业了”。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">事实是什么？</span>
+  </p>
+
+  <!-- 组件26 无序列表 -->
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#2563EB;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">数学家陈景润当年证明“1+2”，用了十几年</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#06B6D4;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">这次 AI 证明弱化版，用了两天——但<span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">提出“该证明哪个弱化版”、“用什么方法切入”、“怎么验证证明是对的”的，还是人</span>（网友 Captain Sude 提出了项目，数学家社区做了评审）</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#7C3AED;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">经典哥德巴赫猜想（“1+1”）仍然没被证明</span></p>
+  </section>
+
+  <!-- 组件9 导语/强调段落 -->
+  <section style="background:#F8FAFF;border-left:3px solid #2563EB;padding:16px 18px;margin-top:24px;border-radius:0 12px 12px 0;">
+    <p style="font-size:15px;font-weight:600;color:#1E3A8A;line-height:1.8;margin:0;letter-spacing:0.3px;"><span leaf="">AI 替代的是“重复推导和验算”，不是“提出好问题”和“判断什么值得证”。</span></p>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:12px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">就像计算器没让数学家失业——以前数学家花大量时间算积分，现在计算器一秒算完，但</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">数学家去做更前沿的问题了</span></span>
+    <span leaf="">。AI 也是一样：它帮你把苦活累活干了，你省下来的时间，应该去做更需要判断力和创造力的事。</span>
+  </p>
+
+  <!-- 组件12 左竖线引用 -->
+  <section style="border-left:3px solid #2563EB;padding-left:16px;margin-top:24px;">
+    <p style="font-size:15px;color:#111827;line-height:1.8;margin:0 0 6px;font-weight:600;"><span leaf="">对你我来说，这不是“我要被取代了”的故事，而是“我的工作里哪些部分是重复推导、哪些部分是提出问题”的故事。想清楚这个，比担心 AI 强不强有用得多。</span></p>
+    <p style="font-size:11px;color:#9CA3AF;margin:0;"><span leaf="">—— 小智</span></p>
+  </section>
+
+  <!-- 组件33 渐变分隔线 -->
+  <section style="height:1px;background:linear-gradient(to right,transparent,#2563EB,#06B6D4,transparent);margin-top:24px;"><span leaf="">&nbsp;</span></section>
+
+  <!-- 组件5 章节标题 05 -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:24px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">05</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">小智说两句</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">SUMMARY · 三个判断</span></p>
+    </section>
+  </section>
+
+  <!-- 组件27 有序列表 -->
+  <section style="display:flex;gap:10px;margin-bottom:10px;margin-top:20px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">1</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">别被“AI 证明了哥德巴赫猜想”的标题骗了</span>：这次证明的是弱化版，原版“1+1”还在那儿，284 年没人跨过去。但这不代表这事小——它第一次展示了 AI 在“需要灵感的推理”这件事上，能做出像样的东西。这个信号比证明本身重要。</span></p>
+  </section>
+  <section style="display:flex;gap:10px;margin-bottom:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">2</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">Lean 4 形式化验证的出现，可能比 AI 本身更值得关注</span>：当“验证”这件事可以交给机器，人类专家的精力就可以从“检查对错”解放出来，去做“判断方向”。这个变化会从数学蔓延到法律、医学、工程——凡是需要“严格审查”的领域，都会经历一遍。</span></p>
+  </section>
+  <section style="display:flex;gap:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">3</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">对普通人来说，真正该做的不是学数学，而是学会“把你的工作交给 AI 做验算，把你的脑子留给判断”</span>：你不需要会证明哥德巴赫猜想，你需要会的是——知道你工作中哪些部分是“推导和验算”（可以交出去），哪些部分是“判断和决策”（必须自己留）。</span></p>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:12px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">下期咱们回到实用线——国庆快到了，聊聊</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">怎么把国庆行程规划交给 AI</span></span>
+    <span leaf="">。</span>
+  </p>
+
+  <!-- 组件17 渐变 CTA：下期预告 -->
+  <section style="background:linear-gradient(135deg,#2563EB,#7C3AED);border-radius:12px;padding:22px 24px;margin-top:24px;text-align:center;">
+    <p style="font-size:16px;font-weight:800;color:#FFFFFF;margin:0 0 6px;letter-spacing:0.5px;"><span leaf="">你有没有让 AI 帮你“探索过一个新领域”？</span></p>
+    <p style="font-size:12px;color:rgba(255,255,255,0.8);margin:0 0 14px;"><span leaf="">不是问问题，而是让它帮你看看“这个领域还有什么是我没想到的”。评论区聊聊。</span></p>
+    <span style="display:inline-block;background:#FFFFFF;color:#2563EB;font-size:13px;font-weight:700;padding:8px 22px;border-radius:24px;"><span leaf="">下期见 · 评论区聊聊</span></span>
+  </section>
+
+  <!-- 组件18 关注引导卡 -->
+  <section style="background:#FFFFFF;border:1.5px solid #2563EB;border-radius:12px;padding:18px 20px;margin-top:24px;display:flex;align-items:center;gap:14px;">
+    <span leaf=""><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/zeT1IrhsLLib9UkBbgKv2A7jfpyv4T5O3uAscIOuib1wHH4NibKALu7iaeSER3aC9jgFPZPgvHib0LWgYd5hhs5KjEvIcRia2aua48aUibYFNvibf2g/0?wx_fmt=jpeg&from=appmsg" alt="公众号二维码" style="width:84px;height:84px;display:block;flex-shrink:0;border-radius:10px;"></span>
+    <section style="flex:1;min-width:0;">
+      <p style="font-size:15px;font-weight:800;color:#111827;margin:0 0 4px;"><span leaf="">小智科技</span></p>
+      <p style="font-size:12px;color:#6B7280;line-height:1.6;margin:0 0 6px;"><span leaf="">分享 AI 观察与干货，用得上、看得懂</span></p>
+      <p style="font-size:11px;font-weight:600;color:#2563EB;margin:0;"><span leaf="">长按识别二维码 · 关注不迷路</span></p>
+    </section>
+    <span style="flex-shrink:0;background:#2563EB;color:#FFFFFF;font-size:12px;font-weight:700;padding:6px 14px;border-radius:20px;"><span leaf="">关注</span></span>
+  </section>
+
+  <!-- 组件30 作者信息卡 -->
+  <section style="background:#F8FAFF;border:1px solid #E5E7EB;border-radius:12px;padding:18px 20px;margin-top:24px;display:flex;gap:14px;align-items:center;">
+    <section style="flex-shrink:0;width:48px;height:48px;background:linear-gradient(135deg,#2563EB,#7C3AED);border-radius:50%;color:#FFFFFF;text-align:center;line-height:48px;font-size:18px;font-weight:800;"><span leaf="">智</span></section>
+    <section style="flex:1;">
+      <p style="font-size:14px;font-weight:800;color:#111827;margin:0 0 3px;"><span leaf="">小智</span></p>
+      <p style="font-size:12px;color:#6B7280;line-height:1.6;margin:0;"><span leaf="">热衷于分享 AI 观察与干货，每周更新。</span></p>
+    </section>
+  </section>
+
+  <!-- 组件32 页脚签名条 -->
+  <section style="padding:20px 8px 8px;margin-top:24px;text-align:center;">
+    <p style="font-size:11px;color:#9CA3AF;letter-spacing:2px;margin:0 0 8px;"><span leaf="">真正强大的人，是让科技为他服务的人。</span></p>
+    <section style="display:flex;align-items:center;gap:8px;justify-content:center;">
+      <section style="flex:0 0 60px;height:1px;background:linear-gradient(to right,transparent,#2563EB);"><span leaf="">&nbsp;</span></section>
+      <span style="font-size:10px;color:#2563EB;font-weight:700;"><span leaf="">▲</span></span>
+      <section style="flex:0 0 60px;height:1px;background:linear-gradient(to left,transparent,#2563EB);"><span leaf="">&nbsp;</span></section>
+    </section>
+  </section>
+
+</section>
+  </div>
+</div>
+<script>
+  function gzhShowToast(msg){
+    var t=document.getElementById('gzhToast');
+    t.textContent=msg;t.classList.add('show');
+    clearTimeout(t._timer);
+    t._timer=setTimeout(function(){t.classList.remove('show');},2800);
+  }
+  function gzhCopy(){
+    var el=document.getElementById('gzh-content');
+    // 选中渲染后的富文本节点并复制（等价于手动 Ctrl+A / Ctrl+C，保留全部样式）
+    var range=document.createRange();
+    range.selectNodeContents(el);
+    var sel=window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    var ok=false;
+    try{ok=document.execCommand('copy');}catch(e){ok=false;}
+    sel.removeAllRanges();
+    var btn=document.getElementById('gzhCopyBtn');
+    if(ok){
+      gzhShowToast('✅ 已复制！去公众号编辑器按 Ctrl/⌘+V 粘贴即可');
+      var old=btn.textContent;btn.textContent='✅ 已复制';
+      setTimeout(function(){btn.textContent=old;},2200);
+    }else{
+      gzhShowToast('⚠ 自动复制失败，请手动全选(Ctrl/⌘+A)再复制(Ctrl/⌘+C)');
+    }
+  }
+</script>
+</body>
+</html>

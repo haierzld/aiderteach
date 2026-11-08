@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第28期_OpenAI断供Cursor_排版_红白色系(red-white) · 公众号排版预览</title>
+<style>
+  body{margin:0;background:#eef0f2;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;-webkit-text-size-adjust:100%;}
+  .gzh-toolbar{position:fixed;top:0;left:0;right:0;height:54px;background:#ffffff;box-shadow:0 1px 10px rgba(0,0,0,.08);display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:99;}
+  .gzh-hint{font-size:13px;color:#6b7280;line-height:1.4;}
+  .gzh-hint b{color:#111827;}
+  .gzh-copy{background:#059669;color:#fff;border:0;border-radius:9px;padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 3px 10px rgba(5,150,105,.28);white-space:nowrap;transition:transform .08s,background .15s;}
+  .gzh-copy:hover{background:#047857;}
+  .gzh-copy:active{transform:translateY(1px);}
+  .gzh-toast{position:fixed;top:66px;left:50%;transform:translateX(-50%);background:#111827;color:#fff;padding:11px 20px;border-radius:10px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .25s;z-index:100;box-shadow:0 6px 20px rgba(0,0,0,.25);max-width:88vw;text-align:center;}
+  .gzh-toast.show{opacity:1;}
+  .gzh-stage{max-width:700px;margin:78px auto 64px;padding:0 8px;}
+  @media(max-width:520px){.gzh-hint{max-width:150px;}}
+</style>
+</head>
+<body>
+<div class="gzh-toolbar">
+  <span class="gzh-hint">👇 下方是排版效果 · 点右侧 <b>复制</b> 直接粘到公众号</span>
+  <button class="gzh-copy" id="gzhCopyBtn" onclick="gzhCopy()">📋 复制到公众号</button>
+</div>
+<div class="gzh-toast" id="gzhToast"></div>
+<div class="gzh-stage">
+  <div id="gzh-content">
+<section style="max-width:677px;margin:0 auto;background:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:#374151;line-height:1.75;letter-spacing:0.5px;overflow-x:hidden;">
+
+<!-- ===== 顶部刊头 ===== -->
+<section style="padding:26px 10px 0;">
+  <p style="font-size:12px;font-weight:800;color:#DC2626;letter-spacing:2px;margin:0 0 4px;"><span leaf="">AI 周报 · 第 28 期</span></p>
+  <p style="font-size:10px;color:#9CA3AF;letter-spacing:1px;margin:0;"><span leaf="">2026.08.30 · 智趣AI资讯小站</span></p>
+</section>
+
+<!-- ===== 引言卡 ===== -->
+<section style="margin:16px 10px 32px;background:#ffffff;border-radius:12px;box-shadow:0 4px 24px -4px rgba(220,38,38,0.15);padding:28px 24px 22px;overflow:hidden;">
+  <p style="font-size:42px;color:#DC2626;font-weight:900;margin:0;line-height:0.6;"><span leaf="">"</span></p>
+  <p style="font-size:16px;font-weight:800;color:#1C1917;margin:12px 0 8px;line-height:1.75;padding-left:4px;">
+    <span style="background:#DC2626;color:#FFFFFF;padding:2px 8px;border-radius:4px;"><span leaf="">信任清算</span></span>
+    <span leaf="">不是恩怨，是生意——AI 圈正从“互相喂饭”走向“互相防着”，</span>
+    <span style="background:#DC2626;color:#FFFFFF;padding:2px 8px;border-radius:4px;"><span leaf="">中立人设</span></span>
+    <span leaf="">其实是供应商给的。</span>
+  </p>
+</section>
+
+<!-- ===== 前言正文 ===== -->
+<section style="padding:0 10px 8px;">
+  <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;">
+    <span leaf="">大家好，我是小智。今天这条新闻，几乎刷屏了整个科技圈：</span>
+    <span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">OpenAI 宣布不再给 Cursor 提供模型</span></span>
+    <span leaf="">，断供时间定在 11 月 12 日。</span>
+  </p>
+  <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;">
+    <span leaf="">为什么？因为半个月前，马斯克花了</span>
+    <span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">600 亿美元</span></span>
+    <span leaf="">把 Cursor 的母公司买走了。OpenAI 的解释就四个字：不信任你。今天咱就把来龙去脉讲透，再聊聊这件事背后更大的信号。</span>
+  </p>
+</section>
+
+<!-- ===== 前言导读 ===== -->
+<section style="padding:0 10px 32px;">
+  <p style="font-size:14px;color:#9CA3AF;margin:0 0 14px;letter-spacing:1px;"><span leaf="">📌 本文看点</span></p>
+  <section style="display:flex;justify-content:space-between;">
+    <section style="flex:1;background:#FEF2F2;border-radius:10px;padding:16px 12px;margin-right:8px;text-align:center;border:1px solid #FEE2E2;">
+      <p style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:12px;font-weight:800;padding:2px 10px;border-radius:4px;margin:0 0 8px;"><span leaf="">01</span></p>
+      <p style="font-size:13px;font-weight:700;color:#1C1917;margin:0;"><span leaf="">一条公告</span></p>
+      <p style="font-size:11px;color:#9CA3AF;margin:4px 0 0;"><span leaf="">11月12日断供，Astra 永远不给</span></p>
+    </section>
+    <section style="flex:1;background:#FEF2F2;border-radius:10px;padding:16px 12px;margin-right:8px;text-align:center;border:1px solid #FEE2E2;">
+      <p style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:12px;font-weight:800;padding:2px 10px;border-radius:4px;margin:0 0 8px;"><span leaf="">02</span></p>
+      <p style="font-size:13px;font-weight:700;color:#1C1917;margin:0;"><span leaf="">两桩旧账</span></p>
+      <p style="font-size:11px;color:#9CA3AF;margin:4px 0 0;"><span leaf="">马斯克凭啥被“拉黑”</span></p>
+    </section>
+    <section style="flex:1;background:#FEF2F2;border-radius:10px;padding:16px 12px;text-align:center;border:1px solid #FEE2E2;">
+      <p style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:12px;font-weight:800;padding:2px 10px;border-radius:4px;margin:0 0 8px;"><span leaf="">03</span></p>
+      <p style="font-size:13px;font-weight:700;color:#1C1917;margin:0;"><span leaf="">影响多大</span></p>
+      <p style="font-size:11px;color:#9CA3AF;margin:4px 0 0;"><span leaf="">只有 5%？毛毛雨？</span></p>
+    </section>
+  </section>
+</section>
+
+<!-- ===== 第一章 ===== -->
+<section style="margin-top:16px;margin-bottom:28px;padding:0 10px;">
+  <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+    <section style="display:flex;align-items:center;">
+      <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">01</span></span>
+      <section>
+        <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">NEWS</span></p>
+        <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">一条公告，炸了开发者圈</span></h3>
+      </section>
+    </section>
+  </section>
+
+  <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">8月28日，OpenAI 在官网发了一则公告，说得很直接：</span></p>
+
+  <section style="margin-bottom:24px;">
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+      <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#DC2626;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">1</span></span>
+      <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span leaf="">已正式通知 SpaceX：计划终止向编程工具 Cursor 供应模型的合同</span></p>
+    </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+      <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#DC2626;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">2</span></span>
+      <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span leaf="">拟定断供日期：</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">2026年11月12日</span></span><span leaf="">（合同允许的最长通知期，给开发者留足迁移时间）</span></p>
+    </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+      <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#DC2626;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">3</span></span>
+      <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span leaf="">下一代最强模型 </span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">Astra 永远不给 Cursor</span></span></p>
+    </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+      <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#DC2626;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">4</span></span>
+      <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span leaf="">双方合作已经</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">接近四年</span></span><span leaf="">，OpenAI 在公告里还客套了一句“尊重 Cursor 团队和产品”</span></p>
+    </section>
+  </section>
+
+  <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;">
+    <span leaf="">“但我们无法确信，你的新老板会按我们的服务条款使用技术。”——这句没说出口的话，才是重点。</span>
+  </p>
+
+  <section style="background:#FEF2F2;border-radius:0 10px 10px 0;border-left:4px solid #DC2626;padding:18px 22px;margin-bottom:24px;">
+    <p style="font-size:16px;font-weight:800;color:#991B1B;margin:0;line-height:1.8;"><span leaf="">「不是产品出问题了，是模型方先撤了。」</span></p>
+  </section>
+</section>
+
+<!-- ===== 分割线 ===== -->
+<section style="padding:0 10px;">
+  <section style="height:1px;background:linear-gradient(to right,transparent,#FCA5A5,#DC2626,#FCA5A5,transparent);margin:0;"><span leaf=""><br></span></section>
+</section>
+
+<!-- ===== 第二章 ===== -->
+<section style="margin-top:48px;margin-bottom:28px;padding:0 10px;">
+  <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+    <section style="display:flex;align-items:center;">
+      <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">02</span></span>
+      <section>
+        <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">TAKEOVER</span></p>
+        <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">导火索：马斯克600亿买下Cursor</span></h3>
+      </section>
+    </section>
+  </section>
+
+  <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">事情得从半个月前说起。</span></p>
+
+  <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;">
+    <span leaf="">2026年8月，马斯克旗下的 SpaceX 以 </span>
+    <span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">600 亿美元</span></span>
+    <span leaf="">完成了对 Cursor 母公司 Anysphere 的收购。消息一出，全球开发者就炸了锅——那款被无数人当成“日常工具”的编辑器，换东家了。</span>
+  </p>
+
+  <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;">
+    <span leaf="">大家当时就在猜：换了老板，还是原来的味道吗？半个月后，答案来了——</span>
+    <span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">不是产品不行，是模型方先撤了</span></span>
+    <span leaf="">。</span>
+  </p>
+
+  <p style="font-size:15px;margin:0 0 24px;text-align:center;color:#DC2626;font-weight:700;letter-spacing:1px;border-top:1px solid #FEE2E2;border-bottom:1px solid #FEE2E2;padding:14px 10px;"><span leaf="">“你老板有前科，我不放心。”</span></p>
+</section>
+
+<!-- ===== 分割线 ===== -->
+<section style="padding:0 10px;">
+  <section style="height:1px;background:linear-gradient(to right,transparent,#FCA5A5,#DC2626,#FCA5A5,transparent);margin:0;"><span leaf=""><br></span></section>
+</section>
+
+<!-- ===== 第三章 ===== -->
+<section style="margin-top:48px;margin-bottom:28px;padding:0 10px;">
+  <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+    <section style="display:flex;align-items:center;">
+      <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">03</span></span>
+      <section>
+        <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">TRUST</span></p>
+        <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">OpenAI凭啥说“不信任”？两桩旧账</span></h3>
+      </section>
+    </section>
+  </section>
+
+  <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;">
+    <span leaf="">OpenAI 没有指控 Cursor 违约，而是翻出了马斯克的</span>
+    <span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">两桩旧账</span></span>
+    <span leaf="">：</span>
+  </p>
+
+  <p style="font-size:15px;font-weight:800;color:#1C1917;margin:28px 0 14px;padding-left:10px;border-left:3px solid #DC2626;line-height:1.4;"><span leaf="">旧账1：推特数据断供（2022年）</span></p>
+
+  <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;">
+    <span leaf="">马斯克买下推特后，认为 OpenAI 每年只花约 </span>
+    <span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">200 万美元</span></span>
+    <span leaf="">就拿走全量推文数据流，太便宜了，直接切断了 OpenAI 对推文数据的访问。</span>
+  </p>
+
+  <p style="font-size:15px;font-weight:800;color:#1C1917;margin:28px 0 14px;padding-left:10px;border-left:3px solid #DC2626;line-height:1.4;"><span leaf="">旧账2：xAI 偷偷“抄作业”（今年）</span></p>
+
+  <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;">
+    <span leaf="">马斯克在宣誓证词里亲口承认：xAI 曾违反 OpenAI 服务条款，</span>
+    <span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">用 OpenAI 模型的输出去训练自家 Grok</span></span>
+    <span leaf="">——圈里管这叫“蒸馏”。</span>
+  </p>
+
+  <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;">
+    <span leaf="">OpenAI 全球政策负责人的原话：</span>
+    <strong style="color:#DC2626;"><span leaf="">“归根结底是信任问题。”</span></strong>
+  </p>
+
+  <section style="background:#FEF2F2;border-radius:0 10px 10px 0;border-left:4px solid #DC2626;padding:18px 22px;margin-bottom:24px;">
+    <p style="font-size:16px;font-weight:800;color:#991B1B;margin:0;line-height:1.8;"><span leaf="">「他偷过你家的菜，现在他成了你邻居的新房东，你还能放心把菜园交出去吗？」</span></p>
+  </section>
+</section>
+
+<!-- ===== 分割线 ===== -->
+<section style="padding:0 10px;">
+  <section style="height:1px;background:linear-gradient(to right,transparent,#FCA5A5,#DC2626,#FCA5A5,transparent);margin:0;"><span leaf=""><br></span></section>
+</section>
+
+<!-- ===== 第四章 ===== -->
+<section style="margin-top:48px;margin-bottom:28px;padding:0 10px;">
+  <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+    <section style="display:flex;align-items:center;">
+      <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">04</span></span>
+      <section>
+        <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">THE REAL GAME</span></p>
+        <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">更深处：不是恩怨，是生意</span></h3>
+      </section>
+    </section>
+  </section>
+
+  <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;">
+    <span leaf="">表面上是“信任问题”，但懂行的人都知道，这更是一场</span>
+    <span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">商业博弈</span></span>
+    <span leaf="">：</span>
+  </p>
+
+  <p style="font-size:15px;font-weight:800;color:#1C1917;margin:28px 0 14px;padding-left:10px;border-left:3px solid #DC2626;line-height:1.4;"><span leaf="">原因1：数据不能流给敌人</span></p>
+
+  <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;">
+    <span leaf="">Cursor 是全球最大的 AI 编程入口之一，每天涌进海量的代码和提示词数据。收购之后，这些数据可能流向马斯克体系——对训练 Grok 来说，这可是</span>
+    <span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">“顶级养料”</span></span>
+    <span leaf="">。</span>
+  </p>
+
+  <p style="font-size:15px;font-weight:800;color:#1C1917;margin:28px 0 14px;padding-left:10px;border-left:3px solid #DC2626;line-height:1.4;"><span leaf="">原因2：xAI 正在抢同一块蛋糕</span></p>
+
+  <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;">
+    <span leaf="">马斯克的 xAI 正全力做 AI 编程（Grok Build 刚上线），和 Cursor、OpenAI 的 Codex 正面竞争。OpenAI 等于是在给竞争对手</span>
+    <span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">递刀子</span></span>
+    <span leaf="">。</span>
+  </p>
+
+  <p style="font-size:15px;font-weight:800;color:#1C1917;margin:28px 0 14px;padding-left:10px;border-left:3px solid #DC2626;line-height:1.4;"><span leaf="">原因3：模型越强，“谁能用”越要管</span></p>
+
+  <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;">
+    <span leaf="">OpenAI 特别点名 Astra 具备更强的联网能力——</span>
+    <span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">前沿模型的分发权，正在成为比模型本身更稀缺的东西</span></span>
+    <span leaf="">。</span>
+  </p>
+
+  <p style="font-size:15px;font-weight:800;color:#1C1917;margin:28px 0 14px;padding-left:10px;border-left:3px solid #DC2626;line-height:1.4;"><span leaf="">原因4：合同里的“分手按钮”</span></p>
+
+  <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;">
+    <span leaf="">B2B 合同里都有个“控制权变更条款”：合作方一旦被收购，另一方有权选择退出。这次触发条款的不是“换老板”本身，而是</span>
+    <span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">新老板是谁</span></span>
+    <span leaf="">。</span>
+  </p>
+
+  <section style="background:#FEF2F2;border-radius:0 10px 10px 0;border-left:4px solid #DC2626;padding:18px 22px;margin-bottom:24px;">
+    <p style="font-size:16px;font-weight:800;color:#991B1B;margin:0;line-height:1.8;"><span leaf="">「这一刀，砍的不是旧账，是 Grok 的未来。」</span></p>
+  </section>
+</section>
+
+<!-- ===== 分割线 ===== -->
+<section style="padding:0 10px;">
+  <section style="height:1px;background:linear-gradient(to right,transparent,#FCA5A5,#DC2626,#FCA5A5,transparent);margin:0;"><span leaf=""><br></span></section>
+</section>
+
+<!-- ===== 第五章 ===== -->
+<section style="margin-top:48px;margin-bottom:28px;padding:0 10px;">
+  <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+    <section style="display:flex;align-items:center;">
+      <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">05</span></span>
+      <section>
+        <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">IMPACT</span></p>
+        <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">影响多大？Cursor表示“毛毛雨”</span></h3>
+      </section>
+    </section>
+  </section>
+
+  <section style="display:flex;margin-bottom:24px;padding:0;">
+    <section style="flex:1;background:#FEF2F2;border-radius:10px;padding:18px 16px;margin-right:8px;text-align:center;border:1px solid #FEE2E2;">
+      <p style="font-size:28px;font-weight:900;color:#DC2626;margin:0 0 4px;line-height:1;"><span leaf="">600亿</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">收购价（美元）</span></p>
+    </section>
+    <section style="flex:1;background:#FEF2F2;border-radius:10px;padding:18px 16px;margin-right:8px;text-align:center;border:1px solid #FEE2E2;">
+      <p style="font-size:28px;font-weight:900;color:#DC2626;margin:0 0 4px;line-height:1;"><span leaf="">5%</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">OpenAI 流量占比</span></p>
+    </section>
+    <section style="flex:1;background:#FEF2F2;border-radius:10px;padding:18px 16px;text-align:center;border:1px solid #FEE2E2;">
+      <p style="font-size:28px;font-weight:900;color:#DC2626;margin:0 0 4px;line-height:1;"><span leaf="">76天</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">最长缓冲期</span></p>
+    </section>
+  </section>
+
+  <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;">
+    <span leaf="">听起来很吓人，但 Cursor 联合创始人 Michael Truell 当晚就回应了：</span>
+  </p>
+
+  <section style="margin-bottom:24px;">
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+      <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#DC2626;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">1</span></span>
+      <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span leaf="">OpenAI 模型只占 Cursor 用户 AI 流量的约 </span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">5%</span></span></p>
+    </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+      <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#DC2626;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">2</span></span>
+      <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span leaf="">主力早已转向 Claude 和自研模型，断供伤不到筋骨</span></p>
+    </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+      <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#DC2626;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">3</span></span>
+      <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span leaf="">开发者</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">自带 OpenAI API key</span></span><span leaf="">的通道不受影响</span></p>
+    </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;">
+      <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#DC2626;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">4</span></span>
+      <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span leaf="">OpenAI 还会继续维护 Cursor 的插件扩展</span></p>
+    </section>
+  </section>
+
+  <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;">
+    <span leaf="">真正让 Cursor 肉痛的，是</span>
+    <span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">未来最强模型 Astra 拿不到了</span></span>
+    <span leaf="">——“顶级模型”的号召力可是卖点之一。</span>
+  </p>
+
+  <section style="background:#FEF2F2;border-radius:0 10px 10px 0;border-left:4px solid #DC2626;padding:18px 22px;margin-bottom:24px;">
+    <p style="font-size:16px;font-weight:800;color:#991B1B;margin:0;line-height:1.8;"><span leaf="">「断供的伤害有限，但信号很刺眼：中立人设，是供应商给的，不是自己说的。」</span></p>
+  </section>
+</section>
+
+<!-- ===== 分割线 ===== -->
+<section style="padding:0 10px;">
+  <section style="height:1px;background:linear-gradient(to right,transparent,#FCA5A5,#DC2626,#FCA5A5,transparent);margin:0;"><span leaf=""><br></span></section>
+</section>
+
+<!-- ===== 第六章 ===== -->
+<section style="margin-top:48px;margin-bottom:28px;padding:0 10px;">
+  <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+    <section style="display:flex;align-items:center;">
+      <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">06</span></span>
+      <section>
+        <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">HISTORY</span></p>
+        <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">这不是第一次：AI圈的“互相断供”大戏</span></h3>
+      </section>
+    </section>
+  </section>
+
+  <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;">
+    <span leaf="">把时间线拉长，你会发现这事</span>
+    <span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">早有先例</span></span>
+    <span leaf="">：</span>
+  </p>
+
+  <section style="display:flex;margin-bottom:24px;">
+    <section style="display:flex;flex-direction:column;align-items:center;margin-right:16px;flex-shrink:0;">
+      <section style="width:14px;height:14px;border-radius:50%;border:3px solid #DC2626;background:#fff;margin-top:4px;"><span leaf=""><br></span></section>
+      <section style="width:2px;background:#FEE2E2;flex:1;margin-top:4px;min-height:44px;"><span leaf=""><br></span></section>
+    </section>
+    <section style="flex:1;padding-bottom:12px;">
+      <p style="margin:0 0 6px;font-size:15px;font-weight:800;color:#1C1917;"><span leaf="">2025年6月 ｜ Windsurf 被“拉黑”</span></p>
+      <p style="font-size:15px;margin:0;color:#374151;line-height:1.8;text-align:left;"><span leaf="">传闻 OpenAI 要收购 Windsurf，Anthropic 直接切断了对它的 Claude 供应。</span></p>
+    </section>
+  </section>
+
+  <section style="display:flex;margin-bottom:24px;">
+    <section style="display:flex;flex-direction:column;align-items:center;margin-right:16px;flex-shrink:0;">
+      <section style="width:14px;height:14px;border-radius:50%;border:3px solid #DC2626;background:#fff;margin-top:4px;"><span leaf=""><br></span></section>
+      <section style="width:2px;background:#FEE2E2;flex:1;margin-top:4px;min-height:44px;"><span leaf=""><br></span></section>
+    </section>
+    <section style="flex:1;padding-bottom:12px;">
+      <p style="margin:0 0 6px;font-size:15px;font-weight:800;color:#1C1917;"><span leaf="">2025年8月 ｜ OpenAI 被“拉黑”</span></p>
+      <p style="font-size:15px;margin:0;color:#374151;line-height:1.8;text-align:left;"><span leaf="">Anthropic 撤销了 OpenAI 的 API 权限——理由是 OpenAI 偷偷用 Claude 跑 GPT-5 的内部基准。</span></p>
+    </section>
+  </section>
+
+  <section style="display:flex;margin-bottom:24px;">
+    <section style="display:flex;flex-direction:column;align-items:center;margin-right:16px;flex-shrink:0;">
+      <section style="width:14px;height:14px;border-radius:50%;border:3px solid #DC2626;background:#fff;margin-top:4px;"><span leaf=""><br></span></section>
+    </section>
+    <section style="flex:1;">
+      <p style="margin:0 0 6px;font-size:15px;font-weight:800;color:#1C1917;"><span leaf="">2026年8月 ｜ 轮到 OpenAI</span></p>
+      <p style="font-size:15px;margin:0;color:#374151;line-height:1.8;text-align:left;"><span leaf="">这次是 OpenAI 切断 Cursor——也就是咱们今天聊的这件事。</span></p>
+    </section>
+  </section>
+
+  <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;">
+    <span leaf="">看出来了吗？</span>
+    <span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">谁越强，对“谁能用我”越敏感。</span></span>
+  </p>
+
+  <p style="font-size:15px;margin:0 0 24px;text-align:center;color:#DC2626;font-weight:700;letter-spacing:1px;border-top:1px solid #FEE2E2;border-bottom:1px solid #FEE2E2;padding:14px 10px;"><span leaf="">当模型成为战略武器，供应商和客户的关系，就从“互相喂饭”变成了“互相防着”。</span></p>
+</section>
+
+<!-- ===== 分割线 ===== -->
+<section style="padding:0 10px;">
+  <section style="height:1px;background:linear-gradient(to right,transparent,#FCA5A5,#DC2626,#FCA5A5,transparent);margin:0;"><span leaf=""><br></span></section>
+</section>
+
+<!-- ===== 第七章 结语 ===== -->
+<section style="margin-top:48px;margin-bottom:28px;padding:0 10px;">
+  <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+    <section style="display:flex;align-items:center;">
+      <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">∞</span></span>
+      <section>
+        <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">EPILOGUE</span></p>
+        <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">小智说两句</span></h3>
+      </section>
+    </section>
+  </section>
+
+  <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;">
+    <span leaf="">这件事最值得琢磨的，不是马斯克和奥特曼的恩怨，而是</span>
+    <span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">三个趋势</span></span>
+    <span leaf="">：</span>
+  </p>
+
+  <section style="margin-bottom:24px;">
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+      <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#DC2626;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">1</span></span>
+      <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span leaf="">模型公司开始</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">“挑客户”</span></span><span leaf="">：不是谁给钱就卖给谁，得看你的老板是谁、数据流向哪里</span></p>
+    </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+      <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#DC2626;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">2</span></span>
+      <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span leaf="">应用公司的“中立”是暂时的：Cursor 一直标榜“模型无关”，但断供一纸公告，就撕掉了这层包装</span></p>
+    </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;">
+      <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#DC2626;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">3</span></span>
+      <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span leaf="">开发者得学会</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">“多条腿走路”</span></span><span leaf="">：别把命脉押在一家供应商身上，核心流程留好备选方案</span></p>
+    </section>
+  </section>
+
+  <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;">
+    <span leaf="">对咱们普通用户和开发者，其实就一句提醒：</span>
+    <strong style="color:#DC2626;"><span leaf="">AI 圈的地震会越来越多，但你的工具箱，永远要有备用钥匙。</span></strong>
+  </p>
+
+  <section style="background:#FEF2F2;border-left:4px solid #DC2626;border-radius:0 8px 8px 0;padding:14px 20px;margin-bottom:24px;">
+    <p style="font-size:14px;font-weight:700;color:#991B1B;margin:0;line-height:1.8;"><span leaf="">💡 核心观点：模型越强，“谁能用”越要管——AI 行业已经进入“信任清算”时代。</span></p>
+  </section>
+
+  <section style="background:#FEF2F2;border-radius:10px;padding:18px 20px;margin-bottom:24px;border:1px solid #FECACA;">
+    <p style="font-size:15px;font-weight:800;color:#991B1B;margin:0 0 8px;"><span leaf="">💬 今日互动</span></p>
+    <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;text-align:left;"><span leaf="">你用过 Cursor 吗？对“买下它就断供”这件事怎么看？留言聊聊！</span></p>
+  </section>
+</section>
+
+<!-- ===== 下期预告 ===== -->
+<p style="font-size:15px;margin:0 10px 24px;text-align:center;color:#DC2626;font-weight:700;letter-spacing:1px;border-top:1px solid #FEE2E2;border-bottom:1px solid #FEE2E2;padding:14px 10px;"><span leaf="">📌 下期预告：AI 能克隆声音，也能克隆脸——骗子“装熟人”的套路升级了，普通人怎么防？</span></p>
+
+<!-- ===== END 结尾分割线 ===== -->
+<section style="padding:0 10px;">
+  <section style="text-align:center;margin:0 0 32px;">
+    <section style="display:flex;align-items:center;justify-content:center;">
+      <span style="height:2px;width:60px;background:#DC2626;margin-right:12px;"><span leaf=""><br></span></span>
+      <span style="font-size:11px;color:#DC2626;letter-spacing:3px;font-weight:700;"><span leaf="">END</span></span>
+      <span style="height:2px;width:60px;background:#DC2626;margin-left:12px;"><span leaf=""><br></span></span>
+    </section>
+  </section>
+</section>
+
+<!-- ===== 尾部签名区 ===== -->
+<section style="padding:0 10px;">
+  <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">我是小智，每天一分钟，把 AI 讲成妈妈都能听懂的话。</span></p>
+  <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;">
+    <span leaf="">如果你觉得今天这篇有收获，欢迎</span>
+    <strong style="color:#DC2626;"><span leaf="">点赞、在看、转发</span></strong>
+    <span leaf="">三连，我们下篇见。</span>
+  </p>
+  <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:center;">
+    <span style="display:inline-block;background:#FEE2E2;color:#991B1B;padding:2px 10px;border-radius:4px;font-weight:700;"><span leaf="">📮 关注【智趣AI资讯小站】</span></span>
+    <span leaf="">，每天一分钟，AI 变轻松。</span>
+  </p>
+</section>
+
+</section>
+  </div>
+</div>
+<script>
+  function gzhShowToast(msg){
+    var t=document.getElementById('gzhToast');
+    t.textContent=msg;t.classList.add('show');
+    clearTimeout(t._timer);
+    t._timer=setTimeout(function(){t.classList.remove('show');},2800);
+  }
+  function gzhCopy(){
+    var el=document.getElementById('gzh-content');
+    // 选中渲染后的富文本节点并复制（等价于手动 Ctrl+A / Ctrl+C，保留全部样式）
+    var range=document.createRange();
+    range.selectNodeContents(el);
+    var sel=window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    var ok=false;
+    try{ok=document.execCommand('copy');}catch(e){ok=false;}
+    sel.removeAllRanges();
+    var btn=document.getElementById('gzhCopyBtn');
+    if(ok){
+      gzhShowToast('✅ 已复制！去公众号编辑器按 Ctrl/⌘+V 粘贴即可');
+      var old=btn.textContent;btn.textContent='✅ 已复制';
+      setTimeout(function(){btn.textContent=old;},2200);
+    }else{
+      gzhShowToast('⚠ 自动复制失败，请手动全选(Ctrl/⌘+A)再复制(Ctrl/⌘+C)');
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第63期_DevDay上篇_AI从对话框变成同事_dots与ChatGPT Space_排版_红白色系(red-white) · 公众号排版预览</title>
+<style>
+  body{margin:0;background:#eef0f2;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;-webkit-text-size-adjust:100%;}
+  .gzh-toolbar{position:fixed;top:0;left:0;right:0;height:54px;background:#ffffff;box-shadow:0 1px 10px rgba(0,0,0,.08);display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:99;}
+  .gzh-hint{font-size:13px;color:#6b7280;line-height:1.4;}
+  .gzh-hint b{color:#111827;}
+  .gzh-copy{background:#059669;color:#fff;border:0;border-radius:9px;padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 3px 10px rgba(5,150,105,.28);white-space:nowrap;transition:transform .08s,background .15s;}
+  .gzh-copy:hover{background:#047857;}
+  .gzh-copy:active{transform:translateY(1px);}
+  .gzh-toast{position:fixed;top:66px;left:50%;transform:translateX(-50%);background:#111827;color:#fff;padding:11px 20px;border-radius:10px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .25s;z-index:100;box-shadow:0 6px 20px rgba(0,0,0,.25);max-width:88vw;text-align:center;}
+  .gzh-toast.show{opacity:1;}
+  .gzh-stage{max-width:700px;margin:78px auto 64px;padding:0 8px;}
+  @media(max-width:520px){.gzh-hint{max-width:150px;}}
+</style>
+</head>
+<body>
+<div class="gzh-toolbar">
+  <span class="gzh-hint">👇 下方是排版效果 · 点右侧 <b>复制</b> 直接粘到公众号</span>
+  <button class="gzh-copy" id="gzhCopyBtn" onclick="gzhCopy()">📋 复制到公众号</button>
+</div>
+<div class="gzh-toast" id="gzhToast"></div>
+<div class="gzh-stage">
+  <div id="gzh-content">
+<section style="max-width:677px;margin:0 auto;background:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:#374151;line-height:1.75;letter-spacing:0.5px;overflow-x:hidden;">
+
+  <section style="margin:10px 10px 32px;padding:30px 26px 26px;background:linear-gradient(135deg,#DC2626 0%,#991B1B 100%);border-radius:16px;text-align:center;color:#fff;box-shadow:0 8px 28px -6px rgba(220,38,38,0.38);">
+    <p style="font-size:30px;color:rgba(255,255,255,0.5);font-weight:900;margin:0 0 4px;line-height:1;text-align:left;"><span leaf="">“</span></p>
+    <p style="font-size:17px;font-weight:800;color:#FFFFFF;margin:0 0 14px;line-height:1.8;text-align:center;"><span leaf="">过去我们用 AI 是“开一个新对话”，现在 OpenAI 想让它变成“一个一直在岗的同事”。</span></p>
+    <p style="font-size:12px;color:rgba(255,255,255,0.78);margin:0;letter-spacing:1px;text-align:right;"><span leaf="">—— 小智</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">先把背景补上。</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">从 9 月 20 日到 9 月 30 日，AI 圈没放过假：Anthropic 和 OpenAI 相隔 90 分钟各自发旗舰、小米和美团把开源模型的价格打到骨折、阿里在云栖重写了基础设施的账本、OpenAI 承认智能体越界并暂停了最强模型的训练。</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">然后，9 月 29 日（北京时间 9 月 30 日凌晨），OpenAI 在旧金山开了 DevDay。</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">山姆·奥特曼讲了 53 分钟，一共抛出 </span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">25 项更新</span></span><span leaf="">，被官方称为历届规模最大的一次。发布会现场一度因为服务压力卡成 PPT，演示也翻了几次车 —— 侧面说明这次的量确实不小。</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">这一篇讲其中最“产品”的两件事：</span><strong><span leaf="">dots</span></strong><span leaf=""> 和 </span><strong><span leaf="">ChatGPT Space</span></strong><span leaf="">。</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <section style="background:#FFF;border-radius:12px;padding:6px;border:1px solid #E5E7EB;box-shadow:0 4px 12px -2px rgba(0,0,0,0.08);margin-bottom:8px;">
+      <section style="margin:0;border-radius:8px;overflow:hidden;">
+        <span leaf=""><img src="images/第63期/63_01_封面_dots官方发布图.png" style="max-width:100%;height:auto;display:block;margin:0 auto;"></span>
+      </section>
+    </section>
+    <p style="font-size:12px;color:#9CA3AF;text-align:center;margin:0 0 24px;"><span leaf="">— 配图01｜封面｜dots 官方发布图</span></p>
+  </section>
+  <section style="margin-top:16px;margin-bottom:28px;padding:0 10px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+      <section style="display:flex;align-items:center;">
+        <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">01</span></span>
+        <section>
+          <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">DOTS</span></p>
+          <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">一、dots：一个不下班的同事</span></h3>
+        </section>
+      </section>
+    </section>
+    <p style="font-size:15px;font-weight:800;color:#1C1917;margin:28px 0 14px;padding-left:10px;border-left:3px solid #DC2626;line-height:1.4;"><span leaf="">它是什么？</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">dots 是一款 24 小时在线的常驻个人智能体，由 GPT-6 Astra 驱动。最关键的一句是：</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">每一个 dot 都自带一台云电脑、一个浏览器和一套执行环境</span></span><span leaf="">。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">这意味着它不是“你问它答”，而是“你交代一句，它自己去干”。它可以写代码、操作网页、调用工具，也可以继承你在 ChatGPT 里已经连好的应用 —— OpenAI 说生态里已经有 </span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">4000 多个</span></span><span leaf="">应用可以和 dots 协作，包括 Slack、Teams、Notion、邮件和短信。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">你不在的时候它继续干活。更准确地说，它会“主动研究”：自己遍历你的工作流，主动提醒你漏掉的事。官方举的例子是，你下班后同行突然发了竞品，你可以给自己的 dot 打个电话，让它连夜重做产品定位和发布会物料。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">沟通方式目前是文字和语音，官方预告了后面两个入口：</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">短信和电话</span></span><span leaf="">。</span></p>
+    <p style="font-size:15px;font-weight:800;color:#1C1917;margin:28px 0 14px;padding-left:10px;border-left:3px solid #DC2626;line-height:1.4;"><span leaf="">它像谁？</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">这个问题在中文圈讨论最多。dots 明显对标的是 Grok Bot 和最近登顶 App Store 的 Muse 这一路“个人 Agent”。业内还提到一个渊源：开源项目 OpenClaw 的作者 Peter 今年 2 月已经入职 OpenAI，而 Muse 团队也公开说过从 OpenClaw 获得了极大灵感 —— 半年之后，这个赛道又长回了“小龙虾”的样子。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">dot 的外观和名字都可以自己改，三角饭团、画家帽云朵、大眼青蛙随你设计。顺带一个小花絮：</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">dot.com 这个域名被马斯克买了</span></span><span leaf="">，现在点进去看到的是 Grok Bot。</span></p>
+    <p style="font-size:15px;font-weight:800;color:#1C1917;margin:28px 0 14px;padding-left:10px;border-left:3px solid #DC2626;line-height:1.4;"><span leaf="">安全怎么管？</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">这是我最关注的部分。OpenAI 给 dots 配了三样东西：</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">Custom Rules（自定义规则）、权限控制、自动操作审查</span></span><span leaf="">，用来防止它乱发敏感信息或者误改密码。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">这个时间点很微妙 —— 就在同一周，OpenAI 披露了智能体越界访问联邦机构网站、泄露 53 张用户图片，并暂停了最强模型的训练（这件事我会在假期里专门写一篇）。</span><strong><span leaf="">一个 7×24 在线、握着你的账号和应用权限、还会自己找活干的智能体，风险面显然比“问一句答一句”大得多。</span></strong></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">企业侧还有 </span><strong><span leaf="">Specialist dots</span></strong><span leaf="">：由公司统一配置身份、权限和凭证，像法务、会计这样的专职虚拟同事，共享公司给定的目标、上下文和反馈。</span></p>
+    <p style="font-size:15px;font-weight:800;color:#1C1917;margin:28px 0 14px;padding-left:10px;border-left:3px solid #DC2626;line-height:1.4;"><span leaf="">谁能用？</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">首批向 ChatGPT Pro、Business Premium 和 Enterprise 推出。</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">每个套餐包含一只免费的 dot</span></span><span leaf="">，而且跟 dot 聊天本身不消耗普通 ChatGPT 额度；想加更多 dot，或者让它调用 Codex、ChatGPT Work 干活，还是要另外付钱。未来支持按月付费添加 dot 或提升它的工作速度。</span></p>
+    <section style="background:#FFF;border-radius:12px;padding:6px;border:1px solid #E5E7EB;box-shadow:0 4px 12px -2px rgba(0,0,0,0.08);margin-bottom:8px;">
+      <section style="margin:0;border-radius:8px;overflow:hidden;">
+        <span leaf=""><img src="images/第63期/63_02_dots的一天_官方场景图.png" style="max-width:100%;height:auto;display:block;margin:0 auto;"></span>
+      </section>
+    </section>
+    <p style="font-size:12px;color:#9CA3AF;text-align:center;margin:0 0 24px;"><span leaf="">— 配图02｜dots 的一天｜官方场景图：dot「Iggy」在云电脑里修订 iOS 测试清单</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:linear-gradient(to right,transparent,#FECACA,#DC2626,#FECACA,transparent);margin:0;"><span leaf=""><br></span></section>
+  </section>
+  <section style="margin-top:48px;margin-bottom:28px;padding:0 10px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+      <section style="display:flex;align-items:center;">
+        <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">02</span></span>
+        <section>
+          <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">SPACE</span></p>
+          <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">二、ChatGPT Space：人和 Agent 同处一页</span></h3>
+        </section>
+      </section>
+    </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">有了“员工”，就得有办公室。ChatGPT Space 就是这个办公室 —— 一个</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">从第一天起就同时为人和智能体设计的工作空间</span></span><span leaf="">。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">它能做的事，拆开看有三块：</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><strong><span leaf="">动态页面。</span></strong><span leaf=""> 体验接近飞书文档，你和同事、ChatGPT、dots 可以一起编辑同一页；@ 一下 dot，它就去改文档或者实时更新数据。发布会现场让一个 dot 维护了一张每小时自动更新的动态图表。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><strong><span leaf="">协作式幻灯片。</span></strong><span leaf=""> 整个团队和 dots 一起做 PPT，每个人都能在线评论，dots 负责把修改一一实现。而且</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">只要创建项目的人有会员，其他人没会员也能评论</span></span><span leaf="">。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><strong><span leaf="">团队任务。</span></strong><span leaf=""> Business 和 Enterprise 用户可以建团队、共享任务，把“每周一整理项目进度”这种活直接交给 ChatGPT。任务可以定时触发，也可以由条件触发 —— 比如“收到一封邮件”“Slack 来了一条消息”。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">现场那句话我觉得说得挺准：过去几十年的软件都是 Human-first，接下来会越来越多变成 </span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">Human + Agent Native</span></span><span leaf="">。</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:linear-gradient(to right,transparent,#FECACA,#DC2626,#FECACA,transparent);margin:0;"><span leaf=""><br></span></section>
+  </section>
+  <section style="margin-top:48px;margin-bottom:28px;padding:0 10px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+      <section style="display:flex;align-items:center;">
+        <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">03</span></span>
+        <section>
+          <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">WHY</span></p>
+          <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">三、这件事真正的分量</span></h3>
+        </section>
+      </section>
+    </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">清单看完了，说点判断。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">dots 和 Space 组合起来，指向的是同一个转变：</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">AI 从“一次性的对话”，变成“一份持续存在的工作关系”</span></span><span leaf="">。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">这个转变带来三个具体变化：</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><strong><span leaf="">它在你不在的时候干活。</span></strong><span leaf=""> 任务不再以“你打开对话框”为起点。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><strong><span leaf="">它开始主动找活。</span></strong><span leaf=""> 从被动响应，到主动巡一遍你的工作流。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><strong><span leaf="">它有了身份和权限。</span></strong><span leaf=""> Specialist dots 这种设计，等于给了它一个岗位、一套凭据、一份职责范围。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">第三条恰恰是最需要我们提前想清楚的。一个长期持有你账号、权限和上下文的东西，一旦判断出错，影响不是“答错一句话”，而是</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">连续错一整段时间</span></span><span leaf="">。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">所以现在就能做的三件事：</span></p>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:6px;height:6px;background:#DC2626;border-radius:50%;flex-shrink:0;margin-top:10px;"><span leaf="">&nbsp;</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><strong><span leaf="">权限先给最小。</span></strong><span leaf=""> 能不给的账号先不给，能只读的别给写。</span></p>
+      </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:6px;height:6px;background:#DC2626;border-radius:50%;flex-shrink:0;margin-top:10px;"><span leaf="">&nbsp;</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><strong><span leaf="">敏感动作留人工确认。</span></strong><span leaf=""> 发邮件、改密码、动钱，让它先问你。</span></p>
+      </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:6px;height:6px;background:#DC2626;border-radius:50%;flex-shrink:0;margin-top:10px;"><span leaf="">&nbsp;</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><strong><span leaf="">一定要看日志。</span></strong><span leaf=""> 它干过什么，你要能查得到；查不到的产品，出事就是糊涂账。</span></p>
+      </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">这三件事我不久后会专门展开讲（10 月 3 日、4 日两篇）。</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:linear-gradient(to right,transparent,#FECACA,#DC2626,#FECACA,transparent);margin:0;"><span leaf=""><br></span></section>
+  </section>
+  <section style="margin-top:48px;margin-bottom:28px;padding:0 10px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+      <section style="display:flex;align-items:center;">
+        <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">∞</span></span>
+        <section>
+          <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">THE END</span></p>
+          <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">最后</span></h3>
+        </section>
+      </section>
+    </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">明天同一天还有下篇：GPT-6.1 Sol、500 美元的 Pro 会员、被砍半的额度，以及 Codex 全面上云。那篇更“硬”，关系到你的账单。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">先说一句可能有点扫兴的话：</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">新东西很好，但不必急着第一个用</span></span><span leaf="">。常驻型智能体这类产品，先让别人踩一个月坑，往往更划算。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">假期愉快，我们下篇见。</span></p>
+    <section style="background:#FFF;border-radius:12px;padding:6px;border:1px solid #E5E7EB;box-shadow:0 4px 12px -2px rgba(0,0,0,0.08);margin-bottom:8px;">
+      <section style="margin:0;border-radius:8px;overflow:hidden;">
+        <span leaf=""><img src="images/第63期/63_03_Space协作页_官方截图.png" style="max-width:100%;height:auto;display:block;margin:0 auto;"></span>
+      </section>
+    </section>
+    <p style="font-size:12px;color:#9CA3AF;text-align:center;margin:0 0 24px;"><span leaf="">— 配图03｜办公室｜官方截图：ChatGPT Space 页面上团队与 ChatGPT 同页协作</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:linear-gradient(to right,transparent,#FECACA,#DC2626,#FECACA,transparent);margin:0;"><span leaf=""><br></span></section>
+  </section>
+  <section style="padding:0 10px;">
+    <p style="font-size:12px;color:#9CA3AF;margin:0 0 24px;line-height:1.8;text-align:left;"><span leaf="">本文事实依据：OpenAI DevDay 2026（2026 年 9 月 29 日，旧金山 Fort Mason）发布会实录及多家媒体现场报道（爱范儿、量子位、数字生命卡兹克等交叉比对）。发布时间与开通范围以 OpenAI 官方公告为准，核查时间：2026 年 9 月 30 日。</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:linear-gradient(to right,transparent,#FECACA,#DC2626,#FECACA,transparent);margin:0;"><span leaf=""><br></span></section>
+  </section>
+
+  <section style="padding:0 10px;">
+    <section style="text-align:center;margin:0 0 32px;">
+      <section style="display:flex;align-items:center;justify-content:center;">
+        <span style="height:2px;width:60px;background:#DC2626;margin-right:12px;"><span leaf=""><br></span></span>
+        <span style="font-size:11px;color:#DC2626;letter-spacing:3px;font-weight:700;"><span leaf="">END</span></span>
+        <span style="height:2px;width:60px;background:#DC2626;margin-left:12px;"><span leaf=""><br></span></span>
+      </section>
+    </section>
+  </section>
+  <section style="margin:0 10px 24px;padding:24px 22px;background:linear-gradient(135deg,#DC2626 0%,#991B1B 100%);border-radius:16px;text-align:center;color:#fff;">
+    <p style="font-size:18px;font-weight:800;margin:0 0 10px;"><span leaf="">一个 7×24 在岗的 AI 同事，你敢用吗？</span></p>
+    <p style="font-size:14px;margin:0 0 18px;opacity:0.9;line-height:1.7;"><span leaf="">评论区聊聊：你最想让它替你干哪件事，又绝对不敢交给它哪件事。</span></p>
+    <p style="display:inline-block;margin:0;background:#fff;color:#DC2626;font-size:14px;font-weight:700;padding:10px 26px;border-radius:999px;"><span leaf="">下期见 · 评论区聊聊</span></p>
+  </section>
+  <section style="margin:0 10px 28px;padding:20px 18px;background:#fff;border:1.5px solid #DC2626;border-radius:16px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;gap:14px;">
+      <section style="flex:1;text-align:left;">
+        <p style="font-size:18px;font-weight:800;color:#DC2626;margin:0 0 8px;"><span leaf="">爱德数智</span></p>
+        <p style="font-size:14px;color:#374151;margin:0 0 14px;line-height:1.6;"><span leaf="">分享 AI 观察与干货，用得上、看得懂</span></p>
+        <p style="font-size:13px;color:#DC2626;margin:0;font-weight:600;"><span leaf="">长按识别二维码 · 关注不迷路</span></p>
+      </section>
+      <section style="flex:0 0 110px;width:110px;height:110px;background:#fff;border-radius:10px;overflow:hidden;border:1px solid #FEE2E2;">
+        <span leaf=""><img src="images/pub/qrcode.jpg" style="width:100%;height:100%;display:block;" alt="公众号二维码"></span>
+      </section>
+    </section>
+  </section>
+    <section style="padding:0 10px;">
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">如果你觉得今天这篇有收获，欢迎 </span><strong><span leaf="">点赞、在看、转发</span></strong><span leaf=""> 三连，我们下篇见。</span></p>
+  </section>
+  <!-- 组件32 页脚签名条（随机名言版） -->
+<section style="padding:20px 0;margin-top:24px;text-align:center;">
+  <p style="font-size:12px;font-weight:600;color:#991B1B;line-height:1.9;margin:0 0 10px;letter-spacing:0.5px;"><span leaf="">小智：智者善用AI，愚者被AI所用。</span></p>
+  <section style="display:flex;align-items:center;gap:8px;justify-content:center;">
+    <section style="flex:0 0 60px;height:1px;background:linear-gradient(to right,transparent,#DC2626);"><span leaf="">&nbsp;</span></section>
+    <span style="font-size:10px;color:#DC2626;font-weight:700;"><span leaf="">▲</span></span>
+    <section style="flex:0 0 60px;height:1px;background:linear-gradient(to left,transparent,#DC2626);"><span leaf="">&nbsp;</span></section>
+  </section>
+</section>
+
+</section>
+  </div>
+</div>
+<script>
+  function gzhShowToast(msg){
+    var t=document.getElementById('gzhToast');
+    t.textContent=msg;t.classList.add('show');
+    clearTimeout(t._timer);
+    t._timer=setTimeout(function(){t.classList.remove('show');},2800);
+  }
+  function gzhCopy(){
+    var el=document.getElementById('gzh-content');
+    // 选中渲染后的富文本节点并复制（等价于手动 Ctrl+A / Ctrl+C，保留全部样式）
+    var range=document.createRange();
+    range.selectNodeContents(el);
+    var sel=window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    var ok=false;
+    try{ok=document.execCommand('copy');}catch(e){ok=false;}
+    sel.removeAllRanges();
+    var btn=document.getElementById('gzhCopyBtn');
+    if(ok){
+      gzhShowToast('✅ 已复制！去公众号编辑器按 Ctrl/⌘+V 粘贴即可');
+      var old=btn.textContent;btn.textContent='✅ 已复制';
+      setTimeout(function(){btn.textContent=old;},2200);
+    }else{
+      gzhShowToast('⚠ 自动复制失败，请手动全选(Ctrl/⌘+A)再复制(Ctrl/⌘+C)');
+    }
+  }
+</script>
+</body>
+</html>

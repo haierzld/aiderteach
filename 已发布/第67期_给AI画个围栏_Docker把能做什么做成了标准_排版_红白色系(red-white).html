@@ -1,0 +1,236 @@
+<section style="max-width:677px;margin:0 auto;background:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:#374151;line-height:1.75;letter-spacing:0.5px;overflow-x:hidden;">
+
+  <section style="margin:10px 10px 32px;padding:30px 26px 26px;background:linear-gradient(135deg,#DC2626 0%,#991B1B 100%);border-radius:16px;text-align:center;color:#fff;box-shadow:0 8px 28px -6px rgba(220,38,38,0.38);">
+    <p style="font-size:30px;color:rgba(255,255,255,0.5);font-weight:900;margin:0 0 4px;line-height:1;text-align:left;"><span leaf="">“</span></p>
+    <p style="font-size:17px;font-weight:800;color:#FFFFFF;margin:0 0 14px;line-height:1.8;text-align:center;"><span leaf="">昨天说它推开了那扇没关的窗，今天说说怎么把窗户也装上锁。</span></p>
+    <p style="font-size:12px;color:rgba(255,255,255,0.78);margin:0;letter-spacing:1px;text-align:right;"><span leaf="">—— 小智</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">昨天那篇讲了“HTTP 封了、DNS 没封”的尴尬：很多团队以为关上了门，其实只关了正门。</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">今天讲一个好消息：</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">有人开始给 AI 画围栏了</span></span><span leaf="">，而且是把围栏做成了一份谁都能用的开放标准。</span></p>
+  </section>
+  <section style="padding:0 10px;">
+      <section style="margin:24px 0;padding:0 10px;">
+    <section style="border-radius:12px;overflow:hidden;background:#FFFFFF;border:1px solid #E5E7EB;">
+      <img src="images/第67期/67_01_封面.jpg" alt="围栏与标准" style="max-width:100%;height:auto;display:block;margin:0 auto;">
+    </section>
+    <p style="text-align:center;font-size:12px;color:#9CA3AF;margin:10px 0 0;line-height:1.7;"><span leaf="">围栏与标准</span></p>
+  </section>
+  </section>
+  <section style="margin-top:16px;margin-bottom:28px;padding:0 10px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+      <section style="display:flex;align-items:center;">
+        <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">01</span></span>
+        <section>
+          <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">SPEC</span></p>
+          <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">一、Docker 交出去的那份规范</span></h3>
+        </section>
+      </section>
+    </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">9 月下旬，Docker 把自家的</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">智能体沙箱规范 v3</span></span><span leaf=""> 捐给了 Linux 基金会与 CNCF（云原生计算基金会），推动它成为中立开放标准。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">具体捐的是什么？简单说，就是把“一个智能体能干什么”这件事，装进了一个普通的 OCI 镜像里：</span></p>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:6px;height:6px;background:#DC2626;border-radius:50%;flex-shrink:0;margin-top:10px;"><span leaf="">&nbsp;</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><strong><span leaf="">网络规则</span></strong><span leaf="">：它能连哪些地址、能不能出公网；</span></p>
+      </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:6px;height:6px;background:#DC2626;border-radius:50%;flex-shrink:0;margin-top:10px;"><span leaf="">&nbsp;</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><strong><span leaf="">凭据</span></strong><span leaf="">：它能拿到哪些密钥、以什么方式注入；</span></p>
+      </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:6px;height:6px;background:#DC2626;border-radius:50%;flex-shrink:0;margin-top:10px;"><span leaf="">&nbsp;</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><strong><span leaf="">卷</span></strong><span leaf="">：它能读写哪些目录；</span></p>
+      </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:6px;height:6px;background:#DC2626;border-radius:50%;flex-shrink:0;margin-top:10px;"><span leaf="">&nbsp;</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><strong><span leaf="">工具权限</span></strong><span leaf="">：它能调用哪些工具、命令行能不能用。</span></p>
+      </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">这四样东西一旦进了镜像，性质就变了。</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:linear-gradient(to right,transparent,#FECACA,#DC2626,#FECACA,transparent);margin:0;"><span leaf=""><br></span></section>
+  </section>
+  <section style="margin-top:48px;margin-bottom:28px;padding:0 10px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+      <section style="display:flex;align-items:center;">
+        <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">02</span></span>
+        <section>
+          <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">FIRST</span></p>
+          <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">二、三个“第一次”</span></h3>
+        </section>
+      </section>
+    </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">为什么说这件事重要？因为它带来了三个之前没有的属性。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><strong><span leaf="">可版本化。</span></strong><span leaf=""> 权限配置进了镜像，就可以像代码一样提交、diff、回滚。上周它能连外网、这周不能，改动记录一清二楚。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><strong><span leaf="">可审查。</span></strong><span leaf=""> 安全同事可以像 review 代码一样 review 权限 —— </span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">不用再靠开会问“这个 Agent 到底开了哪些口子”</span></span><span leaf="">。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><strong><span leaf="">可复现。</span></strong><span leaf=""> 同一份规范，在你机器上和我机器上跑出来的边界是一样的。出事之后，也能原样回放。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">打个比方：以前给 AI 权限，像</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">配一把万能钥匙</span></span><span leaf="">；现在是给它一张门禁卡，哪扇门能进、几点能进、进了留不留痕，全都写在卡里。</span></p>
+    <section style="background:#FEF2F2;border-radius:0 10px 10px 0;border-left:4px solid #DC2626;padding:18px 22px;margin-bottom:24px;">
+      <p style="font-size:16px;font-weight:800;color:#991B1B;margin:0;line-height:1.8;"><span leaf="">“Agent 被允许做什么”第一次变得可版本化、可审查、可复现。</span></p>
+    </section>
+  </section>
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:linear-gradient(to right,transparent,#FECACA,#DC2626,#FECACA,transparent);margin:0;"><span leaf=""><br></span></section>
+  </section>
+  <section style="margin-top:48px;margin-bottom:28px;padding:0 10px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+      <section style="display:flex;align-items:center;">
+        <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">03</span></span>
+        <section>
+          <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">WHY</span></p>
+          <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">三、为什么现在才有人做</span></h3>
+        </section>
+      </section>
+    </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">因为之前没人觉得需要。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">早期的 AI 只是“你问它答”，输出一段文字，不需要网络、不需要文件、不需要凭据。给它一个 API key 就够了。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">但 2026 年的智能体会自己调工具、写代码、跑命令、访问网页、读你的文件。</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">它的权限边界，已经和一个刚入职的实习生差不多</span></span><span leaf="">。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">问题在于：我们给实习生办入职，会签保密协议、开最小权限、装行为审计；给 AI 配环境的时候，这些步骤全被跳过了 —— 默认“都给你”。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">所以这份规范真正的意义不是技术多先进，而是</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">把一件本来凭自觉的事，变成了流程里必须有的一步</span></span><span leaf="">。</span></p>
+      <section style="margin:24px 0;padding:0 10px;">
+    <section style="border-radius:12px;overflow:hidden;background:#FFFFFF;border:1px solid #E5E7EB;">
+      <img src="images/第67期/67_02_四格门禁卡.jpg" alt="门禁卡" style="max-width:100%;height:auto;display:block;margin:0 auto;">
+    </section>
+    <p style="text-align:center;font-size:12px;color:#9CA3AF;margin:10px 0 0;line-height:1.7;"><span leaf="">门禁卡</span></p>
+  </section>
+  </section>
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:linear-gradient(to right,transparent,#FECACA,#DC2626,#FECACA,transparent);margin:0;"><span leaf=""><br></span></section>
+  </section>
+  <section style="margin-top:48px;margin-bottom:28px;padding:0 10px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+      <section style="display:flex;align-items:center;">
+        <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">04</span></span>
+        <section>
+          <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">TIPS</span></p>
+          <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">四、四条能马上用的实践</span></h3>
+        </section>
+      </section>
+    </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">不管你用不用 Docker，这四条今天就能照做：</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><strong><span leaf="">一、最小权限。</span></strong><span leaf=""> 先什么都不给，报错了再加。反过来做（先给全、出问题再收）基本收不回来。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><strong><span leaf="">二、出口白名单。</span></strong><span leaf=""> 别只封 HTTP。</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">DNS、ICMP、代理端口都要一起管</span></span><span leaf=""> —— 昨天那起 DNS 隧道逃逸就是活例子。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><strong><span leaf="">三、凭据不落地。</span></strong><span leaf=""> 密钥走环境变量或临时注入，别写进配置文件、别让智能体能读到自己的凭据文件。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><strong><span leaf="">四、行为可回放。</span></strong><span leaf=""> 把“它执行了什么命令、访问了什么地址”记下来。没有日志，出事就是一笔糊涂账。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">顺带说一句：OpenAI 那套替代监控方案，要对每个采样 token 跑激活分类器，额外增加约 </span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">20% 的推理算力</span></span><span leaf="">。工程侧的围栏和规范侧的围栏，</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">都是要花钱的</span></span><span leaf=""> —— 这笔账迟早会算进价格里。</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:linear-gradient(to right,transparent,#FECACA,#DC2626,#FECACA,transparent);margin:0;"><span leaf=""><br></span></section>
+  </section>
+  <section style="margin-top:48px;margin-bottom:28px;padding:0 10px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+      <section style="display:flex;align-items:center;">
+        <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">05</span></span>
+        <section>
+          <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">YOU</span></p>
+          <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">五、不用写代码的人，该看什么</span></h3>
+        </section>
+      </section>
+    </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">你可能会说：我又不管服务器。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">但这套思路可以平移到你用的每一个 AI 产品上。挑产品时问四个问题：</span></p>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#DC2626;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">1</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">能不能关掉联网？</span></span><span leaf=""> 关掉之后核心功能还在不在？</span></p>
+      </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#DC2626;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">2</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">敏感动作会不会先问我？</span></span><span leaf=""> 转账、发消息、删文件，有没有确认环节？</span></p>
+      </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#DC2626;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">3</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">有没有操作记录？</span></span><span leaf=""> 它干过什么，我能不能看到？</span></p>
+      </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#DC2626;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">4</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">数据出不出本地？</span></span><span leaf=""> 有没有明确的存储与删除说明？</span></p>
+      </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">四个问题里有一个答不上来，就把它当“还没装围栏”来用 —— 也就是：</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">别给它钱和隐私相关的活</span></span><span leaf="">。</span></p>
+      <section style="margin:24px 0;padding:0 10px;">
+    <section style="border-radius:12px;overflow:hidden;background:#FFFFFF;border:1px solid #E5E7EB;">
+      <img src="images/第67期/67_03_小白的四个问题.jpg" alt="四个问题" style="max-width:100%;height:auto;display:block;margin:0 auto;">
+    </section>
+    <p style="text-align:center;font-size:12px;color:#9CA3AF;margin:10px 0 0;line-height:1.7;"><span leaf="">四个问题</span></p>
+  </section>
+  </section>
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:linear-gradient(to right,transparent,#FECACA,#DC2626,#FECACA,transparent);margin:0;"><span leaf=""><br></span></section>
+  </section>
+  <section style="margin-top:48px;margin-bottom:28px;padding:0 10px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:14px;border-bottom:3px solid #DC2626;">
+      <section style="display:flex;align-items:center;">
+        <span style="display:inline-block;background:#DC2626;color:#FFFFFF;font-size:18px;font-weight:900;padding:4px 14px;border-radius:6px;margin-right:14px;line-height:1.3;"><span leaf="">∞</span></span>
+        <section>
+          <p style="font-size:10px;color:#DC2626;font-weight:700;letter-spacing:3px;margin:0 0 2px;text-transform:uppercase;"><span leaf="">THE END</span></p>
+          <h3 style="font-size:18px;font-weight:800;color:#1C1917;margin:0;letter-spacing:0.5px;"><span leaf="">最后</span></h3>
+        </section>
+      </section>
+    </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">这两天的三篇其实是连贯的：</span></p>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:6px;height:6px;background:#DC2626;border-radius:50%;flex-shrink:0;margin-top:10px;"><span leaf="">&nbsp;</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span leaf="">10 月 2 日讲它变便宜了（于是你会让它干更多活）；</span></p>
+      </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:6px;height:6px;background:#DC2626;border-radius:50%;flex-shrink:0;margin-top:10px;"><span leaf="">&nbsp;</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span leaf="">10 月 3 日讲它跑出去了（干更多活就要冒更多险）；</span></p>
+      </section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:6px;height:6px;background:#DC2626;border-radius:50%;flex-shrink:0;margin-top:10px;"><span leaf="">&nbsp;</span></span>
+        <p style="font-size:15px;color:#374151;margin:0;line-height:1.8;flex:1;"><span leaf="">今天讲怎么画围栏（让冒险这件事有边界）。</span></p>
+      </section>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">技术会继续往前跑，围栏也会跟着长。对我们这些用的人来说，</span><span style="border-bottom:2px solid #FECACA;font-weight:600;"><span leaf="">知道围栏在哪、知道自己有没有开权限</span></span><span leaf="">，比知道模型多少分更重要。</span></p>
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">明天（10 月 5 日）换个角度：dots、豆包、CodeBuddy、WorkBuddy 这几类“AI 同事”到底有什么不一样 —— 用我们第 7 期讲过的“七层”把它们摆在一起看一遍。</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:linear-gradient(to right,transparent,#FECACA,#DC2626,#FECACA,transparent);margin:0;"><span leaf=""><br></span></section>
+  </section>
+  <section style="padding:0 10px;">
+    <p style="font-size:12px;color:#9CA3AF;margin:0 0 24px;line-height:1.8;text-align:left;"><span leaf="">本文事实依据：Docker 于 2026 年 9 月下旬将智能体沙箱规范 v3 捐赠给 Linux 基金会与 CNCF 的公开信息、OpenAI 9 月披露的监控方案成本、近期智能体沙箱逃逸事件报道。核查时间：2026 年 9 月 28 日。</span></p>
+  </section>
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:linear-gradient(to right,transparent,#FECACA,#DC2626,#FECACA,transparent);margin:0;"><span leaf=""><br></span></section>
+  </section>
+
+  <section style="padding:0 10px;">
+    <section style="text-align:center;margin:0 0 32px;">
+      <section style="display:flex;align-items:center;justify-content:center;">
+        <span style="height:2px;width:60px;background:#DC2626;margin-right:12px;"><span leaf=""><br></span></span>
+        <span style="font-size:11px;color:#DC2626;letter-spacing:3px;font-weight:700;"><span leaf="">END</span></span>
+        <span style="height:2px;width:60px;background:#DC2626;margin-left:12px;"><span leaf=""><br></span></span>
+      </section>
+    </section>
+  </section>
+  <section style="margin:0 10px 24px;padding:24px 22px;background:linear-gradient(135deg,#DC2626 0%,#991B1B 100%);border-radius:16px;text-align:center;color:#fff;">
+    <p style="font-size:18px;font-weight:800;margin:0 0 10px;"><span leaf="">你给 AI 开的权限，有几项是它其实用不到的？</span></p>
+    <p style="font-size:14px;margin:0 0 18px;opacity:0.9;line-height:1.7;"><span leaf="">评论区聊聊，小智攒一攒，节后做一期「AI 权限清单」。</span></p>
+    <p style="display:inline-block;margin:0;background:#fff;color:#DC2626;font-size:14px;font-weight:700;padding:10px 26px;border-radius:999px;"><span leaf="">下期见 · 评论区聊聊</span></p>
+  </section>
+  <section style="margin:0 10px 28px;padding:20px 18px;background:#fff;border:1.5px solid #DC2626;border-radius:16px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;gap:14px;">
+      <section style="flex:1;text-align:left;">
+        <p style="font-size:18px;font-weight:800;color:#DC2626;margin:0 0 8px;"><span leaf="">爱德数智</span></p>
+        <p style="font-size:14px;color:#374151;margin:0 0 14px;line-height:1.6;"><span leaf="">分享 AI 观察与干货，用得上、看得懂</span></p>
+        <p style="font-size:13px;color:#DC2626;margin:0;font-weight:600;"><span leaf="">长按识别二维码 · 关注不迷路</span></p>
+      </section>
+      <section style="flex:0 0 110px;width:110px;height:110px;background:#fff;border-radius:10px;overflow:hidden;border:1px solid #FEE2E2;">
+        <span leaf=""><img src="images/pub/qrcode.jpg" style="width:100%;height:100%;display:block;" alt="公众号二维码"></span>
+      </section>
+    </section>
+  </section>
+    <section style="padding:0 10px;">
+    <p style="margin-bottom:20px;font-size:15px;line-height:1.8;text-align:left;"><span leaf="">如果你觉得今天这篇有收获，欢迎 </span><strong><span leaf="">点赞、在看、转发</span></strong><span leaf=""> 三连，我们下篇见。</span></p>
+  </section>
+  <!-- 组件32 页脚签名条（随机名言版） -->
+<section style="padding:20px 0;margin-top:24px;text-align:center;">
+  <p style="font-size:12px;font-weight:600;color:#991B1B;line-height:1.9;margin:0 0 10px;letter-spacing:0.5px;"><span leaf="">小智：AI时代最大的能力，是持续提出好问题。</span></p>
+  <section style="display:flex;align-items:center;gap:8px;justify-content:center;">
+    <section style="flex:0 0 60px;height:1px;background:linear-gradient(to right,transparent,#DC2626);"><span leaf="">&nbsp;</span></section>
+    <span style="font-size:10px;color:#DC2626;font-weight:700;"><span leaf="">▲</span></span>
+    <section style="flex:0 0 60px;height:1px;background:linear-gradient(to left,transparent,#DC2626);"><span leaf="">&nbsp;</span></section>
+  </section>
+</section>
+
+</section>

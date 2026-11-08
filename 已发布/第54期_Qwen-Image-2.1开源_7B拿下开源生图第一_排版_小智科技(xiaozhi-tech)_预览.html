@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第54期_Qwen-Image-2.1开源_7B拿下开源生图第一_排版_小智科技(xiaozhi-tech) · 公众号排版预览</title>
+<style>
+  body{margin:0;background:#eef0f2;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;-webkit-text-size-adjust:100%;}
+  .gzh-toolbar{position:fixed;top:0;left:0;right:0;height:54px;background:#ffffff;box-shadow:0 1px 10px rgba(0,0,0,.08);display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:99;}
+  .gzh-hint{font-size:13px;color:#6b7280;line-height:1.4;}
+  .gzh-hint b{color:#111827;}
+  .gzh-copy{background:#059669;color:#fff;border:0;border-radius:9px;padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 3px 10px rgba(5,150,105,.28);white-space:nowrap;transition:transform .08s,background .15s;}
+  .gzh-copy:hover{background:#047857;}
+  .gzh-copy:active{transform:translateY(1px);}
+  .gzh-toast{position:fixed;top:66px;left:50%;transform:translateX(-50%);background:#111827;color:#fff;padding:11px 20px;border-radius:10px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .25s;z-index:100;box-shadow:0 6px 20px rgba(0,0,0,.25);max-width:88vw;text-align:center;}
+  .gzh-toast.show{opacity:1;}
+  .gzh-stage{max-width:700px;margin:78px auto 64px;padding:0 8px;}
+  @media(max-width:520px){.gzh-hint{max-width:150px;}}
+</style>
+</head>
+<body>
+<div class="gzh-toolbar">
+  <span class="gzh-hint">👇 下方是排版效果 · 点右侧 <b>复制</b> 直接粘到公众号</span>
+  <button class="gzh-copy" id="gzhCopyBtn" onclick="gzhCopy()">📋 复制到公众号</button>
+</div>
+<div class="gzh-toast" id="gzhToast"></div>
+<div class="gzh-stage">
+  <div id="gzh-content">
+<section style="max-width:677px;margin:0 auto;background:#FFFFFF;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:#1F2937;line-height:1.75;letter-spacing:0.3px;">
+
+  <!-- 组件2 渐变封面头图卡 -->
+  <section style="background:#FFFFFF;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(37,99,235,0.08);">
+    <section style="background:linear-gradient(135deg,#2563EB,#7C3AED);padding:26px 28px 22px;">
+      <section style="display:flex;align-items:center;gap:8px;margin-bottom:18px;">
+        <span style="width:6px;height:6px;background:#93C5FD;border-radius:50%;display:inline-block;"><span leaf="">&nbsp;</span></span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:3px;color:rgba(255,255,255,0.85);"><span leaf="">AI FRONTIER · 第54期</span></span>
+        <section style="flex:1;height:1px;background:rgba(255,255,255,0.25);"><span leaf="">&nbsp;</span></section>
+        <span style="font-size:10px;color:rgba(255,255,255,0.7);font-weight:500;"><span leaf="">2026.09</span></span>
+      </section>
+      <p style="font-size:24px;font-weight:800;color:#FFFFFF;margin:0 0 10px;line-height:1.15;letter-spacing:-0.75px;"><span leaf="">7B 小模型，拿下开源生图第一</span></p>
+      <p style="font-size:14px;color:rgba(255,255,255,0.75);margin:0;line-height:1.7;letter-spacing:0.3px;"><span leaf="">Qwen-Image-2.1 开源：抠图、改字、拼素材这三件烦事，一次解决</span></p>
+    </section>
+    <section style="padding:18px 28px;display:flex;align-items:center;justify-content:space-between;">
+      <p style="font-size:12px;color:#6B7280;margin:0;font-weight:500;"><span leaf="">2026 年 9 月 21 日核验 · 7B 主干 / 60.28 分 / 原生透明图</span></p>
+      <section style="display:flex;gap:6px;">
+        <span style="background:#EEF2FF;color:#2563EB;padding:2px 10px;border-radius:20px;font-size:10px;font-weight:600;"><span leaf="">开源模型</span></span>
+        <span style="background:#EEF2FF;color:#2563EB;padding:2px 10px;border-radius:20px;font-size:10px;font-weight:600;"><span leaf="">图像编辑</span></span>
+      </section>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:24px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">大家好，我是小智。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">你有没有过这种体验：让 AI 生成一张图，图确实挺好看，但</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">离能交稿还差三步</span></span>
+    <span leaf="">——人得抠出来、字得改掉、商品得重新摆一遍。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">这三步，正是</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">设计师、电商运营</span></span>
+    <span leaf="">、还有每天给公众号找封面的小编们，最烦、也最费时间的地方。</span>
+  </p>
+
+  <!-- 组件9 导语/强调段落 -->
+  <section style="background:#F8FAFF;border-left:3px solid #2563EB;padding:16px 18px;margin-top:24px;border-radius:0 12px 12px 0;">
+    <p style="font-size:15px;font-weight:600;color:#1E3A8A;line-height:1.8;margin:0;letter-spacing:0.3px;"><span leaf="">9 月 20 日，阿里千问开源了新图像模型 Qwen-Image-2.1，官方对它的定位是“千问图像系列当前最平衡、性价比最高的开源生图模型”。</span></p>
+  </section>
+
+  <!-- 组件26 无序列表：三个关键点 -->
+  <section style="display:flex;gap:8px;margin-top:20px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#2563EB;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">视觉生成部分只有 7B 参数</span>；</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#06B6D4;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">文生图和改图</span>，塞进了同一个模型；</span></p>
+  </section>
+  <section style="display:flex;gap:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#7C3AED;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">原生支持透明图</span>——它可以一步生成“背景已经被抠干净”的素材。</span></p>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:12px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">在千问自己的公开评测 Qwen-Image-Bench 上，它拿到</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">60.28 分</span></span>
+    <span leaf="">，超过闭源的 Nano Banana 2.0（59.82）和 GPT Image 1.5（59.65）。</span>
+  </p>
+
+  <!-- 组件23 指标卡：Bench 分数 -->
+  <section style="display:flex;gap:12px;margin-top:24px;">
+    <section style="flex:1;background:linear-gradient(180deg,#EEF2FF,#F8FAFF);border:1px solid #E5E7EB;border-radius:12px;padding:16px 12px;text-align:center;">
+      <p style="font-size:9px;color:#6B7280;margin:0 0 6px;letter-spacing:1px;"><span leaf="">QWEN-IMAGE-2.1</span></p>
+      <p style="font-size:22px;font-weight:800;color:#2563EB;margin:0 0 4px;line-height:1;"><span leaf="">60.28</span></p>
+      <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf="">开源 · 7B 主干</span></p>
+    </section>
+    <section style="flex:1;background:linear-gradient(180deg,#EEF2FF,#F8FAFF);border:1px solid #E5E7EB;border-radius:12px;padding:16px 12px;text-align:center;">
+      <p style="font-size:9px;color:#6B7280;margin:0 0 6px;letter-spacing:1px;"><span leaf="">NANO BANANA 2.0</span></p>
+      <p style="font-size:22px;font-weight:800;color:#2563EB;margin:0 0 4px;line-height:1;"><span leaf="">59.82</span></p>
+      <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf="">闭源</span></p>
+    </section>
+    <section style="flex:1;background:linear-gradient(180deg,#EEF2FF,#F8FAFF);border:1px solid #E5E7EB;border-radius:12px;padding:16px 12px;text-align:center;">
+      <p style="font-size:9px;color:#6B7280;margin:0 0 6px;letter-spacing:1px;"><span leaf="">GPT IMAGE 1.5</span></p>
+      <p style="font-size:22px;font-weight:800;color:#2563EB;margin:0 0 4px;line-height:1;"><span leaf="">59.65</span></p>
+      <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf="">闭源</span></p>
+    </section>
+  </section>
+
+  <!-- 组件9 导语/强调段落：点题 -->
+  <section style="background:#F8FAFF;border-left:3px solid #2563EB;padding:16px 18px;margin-top:24px;border-radius:0 12px 12px 0;">
+    <p style="font-size:15px;font-weight:600;color:#1E3A8A;line-height:1.8;margin:0;letter-spacing:0.3px;"><span leaf="">参数更小、分数更高、还顺手解决了抠图这件事——这期咱们就聊三件事：它到底强在哪、你能拿它干嘛，以及“开源”这两个字背后，有个坑你得先看清楚。</span></p>
+  </section>
+
+  <!-- 组件26 无序列表：本文看点 -->
+  <p style="font-size:14px;font-weight:700;color:#111827;margin:20px 0 10px;"><span leaf="">📌 本文看点</span></p>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#2563EB;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">从 <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">20B 缩到 7B</span>：小了，怎么反而更强了？</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#06B6D4;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">三个最实用的能力：<span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">透明图直接出</span>、最多 10 张参考图、圈哪改哪</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#7C3AED;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">四类人该怎么用它（设计师 / 电商 / 自媒体 / 开发者）</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#2563EB;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">想上手怎么办：普通人和有显卡的人，两条不同的路</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#06B6D4;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">三个冷思考</span>：开源 ≠ 能免费商用、7B ≠ 小显存、60.28 分该怎么看</span></p>
+  </section>
+  <section style="display:flex;gap:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#7C3AED;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">最后给三条今天就能做的准备</span></p>
+  </section>
+
+  <!-- 组件13 信息提示卡：核验说明 -->
+  <section style="background:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:16px 18px;margin-top:24px;display:flex;gap:12px;">
+    <section style="flex-shrink:0;width:24px;height:24px;background:linear-gradient(135deg,#2563EB,#06B6D4);border-radius:6px;color:#FFFFFF;text-align:center;line-height:24px;font-size:13px;font-weight:800;"><span leaf="">i</span></section>
+    <section>
+      <p style="font-size:14px;font-weight:700;color:#111827;margin:0 0 4px;"><span leaf="">说明：请以官方公告为准</span></p>
+      <p style="font-size:13px;color:#6B7280;line-height:1.7;margin:0;"><span leaf="">文中信息为 2026 年 9 月 21 日的公开口径（模型于 9 月 20 日开源）。截至目前，官方只放出了模型权重与技术报告，尚未公告线上体验入口；文中涉及许可证、显存门槛的内容来自第三方仓库与社区拆解，请以 GitHub / Hugging Face 仓库中的 LICENSE 文件与官方后续公告为准。</span></p>
+    </section>
+  </section>
+
+  <!-- 组件33 渐变分隔线 -->
+  <section style="height:1px;background:linear-gradient(to right,transparent,#2563EB,#06B6D4,transparent);margin-top:24px;"><span leaf="">&nbsp;</span></section>
+
+  <!-- 组件5 章节标题 01 -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:24px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">01</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">这次到底发布了什么</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">RELEASE · 7B 是怎么算出来的</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:20px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">先把参数这件事说清楚，因为它</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">最容易被误读</span></span>
+    <span leaf="">。</span>
+  </p>
+
+  <!-- 组件9 导语/强调段落：官方口径 -->
+  <section style="background:#F8FAFF;border-left:3px solid #2563EB;padding:16px 18px;margin-top:24px;border-radius:0 12px 12px 0;">
+    <p style="font-size:15px;font-weight:600;color:#1E3A8A;line-height:1.8;margin:0;letter-spacing:0.3px;"><span leaf="">官方口径：Qwen-Image-2.1 的“视觉生成部分”包含 32 层 Single-Stream DiT，参数量为 7B。</span></p>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:12px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">注意“视觉生成部分”这几个字——</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">7B 指的是图像生成这块主干</span></span>
+    <span leaf="">，文本编码器等组件另算。所以看到“7B 打败 20B”这类说法，别理解成整个模型只有 7B。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">对比一下它的上一代就好懂了：</span>
+  </p>
+
+  <!-- 组件24 数据表格：版本对比 -->
+  <table style="width:100%;border-collapse:collapse;font-size:12px;line-height:1.7;margin-top:24px;">
+    <tr>
+      <th style="background:#F8FAFC;color:#2563EB;font-weight:700;padding:8px 10px;border:1px solid #E5E7EB;text-align:left;"><span leaf="">版本</span></th>
+      <th style="background:#F8FAFC;color:#2563EB;font-weight:700;padding:8px 10px;border:1px solid #E5E7EB;text-align:left;"><span leaf="">视觉生成主干</span></th>
+      <th style="background:#F8FAFC;color:#2563EB;font-weight:700;padding:8px 10px;border:1px solid #E5E7EB;text-align:left;"><span leaf="">关键特性</span></th>
+      <th style="background:#F8FAFC;color:#2563EB;font-weight:700;padding:8px 10px;border:1px solid #E5E7EB;text-align:left;"><span leaf="">许可证（第三方口径）</span></th>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">Qwen-Image（2025 年 8 月开源）</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">约 20B，MMDiT 架构</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">主打中英文文字渲染、精准图像编辑</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">Apache 2.0</span></td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">Qwen-Image-2.1（2026 年 9 月 20 日开源）</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">7B，32 层 Single-Stream DiT</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">生图与编辑合一、原生透明图、最多 10 张参考图、原生 2K</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">Qwen Research License（研究用途，商用需单独授权，以仓库 LICENSE 为准）</span></td>
+    </tr>
+  </table>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:12px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">主干从 20B 砍到 7B，能力反而更全了</span></span>
+    <span leaf="">，这背后有两个工程上的关键动作：</span>
+  </p>
+
+  <!-- 组件7 小节标题 -->
+  <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">一是换了“注意力”的算账方式</span></p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">模型用的是混合粒度注意力结构：文本部分（系统前缀、编辑指令）按</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">Token 级因果掩码逐词算</span></span>
+    <span leaf="">，保证语义理解连贯；图像生成部分按</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">Chunk 级掩码分块算</span></span>
+    <span leaf="">。</span>
+  </p>
+
+  <!-- 组件7 小节标题 -->
+  <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">二是 KV Cache 复用</span></p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">在一次改图任务里，你给的参考图和编辑指令其实从头到尾没变——每一步去噪都重新算一遍纯属浪费。所以模型把这些“静态内容”</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">在第一步就预计算并缓存</span></span>
+    <span leaf="">下来，后面每一步直接复用。</span>
+  </p>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">打个比方：</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">以前的模型像每画一笔，都把参考照片从头看一遍；现在的模型是先看懂、记下来，再动笔。</span></span>
+    <span leaf="">参考图越多（这次最多能给 10 张），这个优化省下的时间和显存就越明显。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">输出方面，它原生支持</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">2048×2048（2K）</span></span>
+    <span leaf="">，并支持多种宽高比。</span>
+  </p>
+
+  <!-- 组件33 渐变分隔线 -->
+  <section style="height:1px;background:linear-gradient(to right,transparent,#2563EB,#06B6D4,transparent);margin-top:24px;"><span leaf="">&nbsp;</span></section>
+
+  <!-- 组件5 章节标题 02 -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:24px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">02</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">三个最实用的能力</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">CAPABILITY · 透明图 / 多参考图 / 圈哪改哪</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:20px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">发布稿里写了四个亮点，但站在“用得上”的角度，真正</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">改变工作方式</span></span>
+    <span leaf="">的是这三个。</span>
+  </p>
+
+  <!-- 组件7 小节标题 -->
+  <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">① 原生透明图：直接给你“能贴的素材”</span></p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">我们平时说的图片，基本都是带背景的。想把一个主体贴到海报或详情页上，得先抠图——处理轮廓、发丝、缝隙，</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">边缘还常常留一圈白边</span></span>
+    <span leaf="">。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">透明图多了一个“透明度通道”，能记录画面每一处的透明程度，背景自然就透出来了，叠放到任何底图上都干净。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">Qwen-Image-2.1 的做法更省事：</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">它根据提示词自动决定输出普通图还是透明图</span></span>
+    <span leaf="">。你只要在描述里说清楚，就能直接拿到带透明通道的素材——贴纸、节庆插画、装饰元素、人物素材，甚至由多个对象组成的复杂组合。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">而且这些透明素材还能接着改。</span></span>
+    <span leaf="">同一个插画人物可以改表情；素材里的文字可以直接改内容（官方示例是把 “BLOOM” 改成 “Qwen-Image”）。这非常贴近真实需求——活动名称换了，图案得留着；表情要轻松点，人还得是那个人。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">它甚至能处理真实照片：输入一张普通照片，让模型提取你要的主体，</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">直接输出带透明通道的图层</span></span>
+    <span leaf="">。老照片、库存图，都能变成可复用的素材。</span>
+  </p>
+
+  <!-- 组件7 小节标题 -->
+  <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">② 最多 10 张参考图：从“拼凑”到“调度”</span></p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">以前的改图，大多是“一张图 + 一句话”。现在最多能塞进去 10 张参考图，难度完全不一样——模型得</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">区分哪个是人、哪个是商品</span></span>
+    <span leaf="">，把它们摆到合理的位置，还得各自保留特征。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">官方给了几个很直观的例子：</span>
+  </p>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#2563EB;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">6 张人像 → 一张合照</span>（把分散的单人照拼成一张自然的合影）；</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#06B6D4;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">模特 + 衣服 + 鞋子 + 包包 + 帽子共 5 张 → 一套完整穿搭</span>（比“衣服上身”更难，因为它要同时保住人和物的特征）；</span></p>
+  </section>
+  <section style="display:flex;gap:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#7C3AED;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">10 张家居图 → 一整套室内布置</span>。</span></p>
+  </section>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:12px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">机器之心的实测更夸张：他们用</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">7 张参考图</span></span>
+    <span leaf="">（两个人对峙的照片、背景房间、单人沙发、咖啡杯、落地灯、电壁炉、矮桌）生成了一张完整的场景图。</span>
+  </p>
+
+  <!-- 组件7 小节标题 -->
+  <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">③ 圈哪改哪：三种指定修改位置的方式</span></p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">改图最怕的是“</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">我说东它改西</span></span>
+    <span leaf="">”。这次给了三种把位置说清楚的办法：</span>
+  </p>
+  <section style="display:flex;gap:10px;margin-bottom:10px;margin-top:20px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">1</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">圈选</span>：用不同颜色的圆圈同时标出多个区域，一句话下达多个指令。官方示例是：去掉蓝圈里的金属手表、把红圈里的头发改成黑色、把绿圈换成灰色短袖亚麻睡衣——三个区域一次改完。</span></p>
+  </section>
+  <section style="display:flex;gap:10px;margin-bottom:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">2</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">涂抹</span>：直接在想加东西的位置刷一笔白色，模型就在这块区域里补内容（示例是在鲨鱼右侧加一名潜水员）。</span></p>
+  </section>
+  <section style="display:flex;gap:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">3</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">独立掩码</span>：圈选和涂抹都会遮住一部分原图。想保留完整原图信息，就把原图和一张单独的掩码图一起喂进去，模型按掩码指定的区域改，原图信息一点不丢。</span></p>
+  </section>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:12px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">对人像和商品来说，“</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">不丢”是最关键的</span></span>
+    <span leaf="">——换了发型和场景，人还得是那个人；商品换了摆放环境，包装上的字、纹理和形状不能跟着变。这次官方专门强化了这两类的一致性。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">另外它还支持全景图、信息图、三视图转分镜等任务，等于把</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">静态图像的生产链条</span></span>
+    <span leaf="">又拉长了一截。</span>
+  </p>
+
+  <!-- 组件33 渐变分隔线 -->
+  <section style="height:1px;background:linear-gradient(to right,transparent,#2563EB,#06B6D4,transparent);margin-top:24px;"><span leaf="">&nbsp;</span></section>
+
+  <!-- 组件5 章节标题 03 -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:24px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">03</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">四类人，该怎么用它</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">WHO · 看你是哪一类</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:20px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">能力很热闹，但落到你身上，</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">得看你是哪一类</span></span>
+    <span leaf="">。</span>
+  </p>
+
+  <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">① 设计师 / 美工</span></p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">最大的变化是</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">少工序</span></span>
+    <span leaf="">。透明素材直接出，意味着“生成 → 抠图 → 修边 → 合成”能压缩成“生成 → 合成”。真正省时间的是那句“</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">改字不改图</span></span>
+    <span leaf="">”——活动名、Slogan、价格标签变了，不用重画整张。</span>
+  </p>
+
+  <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">② 电商运营</span></p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">商品一致性</span></span>
+    <span leaf="">是直接对口的。同一个商品换场景、换摆放、换搭配，包装文字和纹理能保住，这才是能上架的图。多参考图组合也很适合做“搭配效果”和“场景图”。</span>
+  </p>
+
+  <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">③ 自媒体 / 内容创作者</span></p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">封面图、信息图、分镜图这条线最实用。尤其是公众号封面、小红书图文这类“</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">字比画多</span></span>
+    <span leaf="">”的场景，文字渲染一直是开源模型的弱项，这次是官方重点提升的方向之一。</span>
+  </p>
+
+  <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">④ 开发者 / 有显卡的玩家</span></p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">这次的生态配套相当完整——</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">ComfyUI 发布当天就支持</span></span>
+    <span leaf="">（Comfy-Org 提供了权重）、Diffusers 已合并对应支持、SGLang 与 vLLM-Omni 也在首日可用，适合做服务化部署和批量生成。</span>
+  </p>
+
+  <!-- 组件33 渐变分隔线 -->
+  <section style="height:1px;background:linear-gradient(to right,transparent,#2563EB,#06B6D4,transparent);margin-top:24px;"><span leaf="">&nbsp;</span></section>
+
+  <!-- 组件5 章节标题 04 -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:24px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">04</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">想上手怎么办：两条不同的路</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">GETTING STARTED · 没显卡 / 有显卡</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">如果你是普通人（没显卡、不写代码）：先别急</span></p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">目前官方放出的是模型权重和技术报告（GitHub、Hugging Face、魔搭），</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">尚未公告线上体验入口</span></span>
+    <span leaf="">。按以往节奏，权重开源到平台接入通常还要几天到几周。这期间你可以：</span>
+  </p>
+  <section style="display:flex;gap:10px;margin-bottom:10px;margin-top:20px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">1</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">关注千问官方渠道（千问 App、通义万相、Qwen Chat）的<span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">上线公告</span>；</span></p>
+  </section>
+  <section style="display:flex;gap:10px;margin-bottom:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">2</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">留意 ComfyUI 社区和第三方平台（如国内的在线生图站点）的接入消息；</span></p>
+  </section>
+  <section style="display:flex;gap:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">3</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">先用已有的在线生图工具把需求跑通，等接入后直接换模型。</span></p>
+  </section>
+
+  <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">如果你有显卡、想本地跑：先看清门槛</span></p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">这是本次</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">最容易被“7B”两个字骗到</span></span>
+    <span leaf="">的地方。据第三方实测（Mushroom Research Blog，2026-09-21），官方 H100 基准下：</span>
+  </p>
+
+  <!-- 组件24 数据表格：显存门槛 -->
+  <table style="width:100%;border-collapse:collapse;font-size:12px;line-height:1.7;margin-top:24px;">
+    <tr>
+      <th style="background:#F8FAFC;color:#2563EB;font-weight:700;padding:8px 10px;border:1px solid #E5E7EB;text-align:left;"><span leaf="">项目</span></th>
+      <th style="background:#F8FAFC;color:#2563EB;font-weight:700;padding:8px 10px;border:1px solid #E5E7EB;text-align:left;"><span leaf="">数值</span></th>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">精度 / 步数 / 分辨率</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">BF16，20 步，2048×2048，batch=1</span></td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">峰值显存</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">56.5 GB</span></td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">单张生成耗时</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">约 32.7 秒</span></td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">默认步数 / CFG</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">40 步 / 1.0（默认不启用引导）</span></td>
+    </tr>
+  </table>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:12px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">56.5 GB 意味着什么？</span></span>
+    <span leaf="">A100/H100（80GB）可以全精度跑；RTX 4090（24GB）只能靠 CPU offload，把峰值压到约 12–14 GB，代价是速度大幅下降，基本不实用。而且首日没有官方量化版本（无 GGUF / FP8 / INT8）。</span>
+  </p>
+
+  <!-- 组件14 警示卡 -->
+  <section style="background:#FFF7ED;border-left:3px solid #F97316;border-radius:0 12px 12px 0;padding:14px 18px;margin-top:24px;display:flex;gap:12px;">
+    <section style="flex-shrink:0;width:22px;height:22px;background:#F97316;border-radius:50%;color:#FFFFFF;text-align:center;line-height:22px;font-size:13px;font-weight:800;"><span leaf="">!</span></section>
+    <section>
+      <p style="font-size:14px;font-weight:700;color:#7C2D12;margin:0 0 4px;"><span leaf="">7B 不等于小显存</span></p>
+      <p style="font-size:13px;color:#9A3412;line-height:1.7;margin:0;"><span leaf="">给本地玩家的建议很直白：要么等社区量化版（大概率会有 GGUF / FP8），要么先在有大卡的云环境上体验。</span></p>
+    </section>
+  </section>
+
+  <!-- 组件13 信息提示卡：CFG -->
+  <section style="background:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:16px 18px;margin-top:24px;display:flex;gap:12px;">
+    <section style="flex-shrink:0;width:24px;height:24px;background:linear-gradient(135deg,#2563EB,#06B6D4);border-radius:6px;color:#FFFFFF;text-align:center;line-height:24px;font-size:13px;font-weight:800;"><span leaf="">i</span></section>
+    <section>
+      <p style="font-size:14px;font-weight:700;color:#111827;margin:0 0 4px;"><span leaf="">顺带一提：别拿旧经验硬套</span></p>
+      <p style="font-size:13px;color:#6B7280;line-height:1.7;margin:0;"><span leaf="">CFG 默认就是 1.0，玩惯了 FLUX 那套调 CFG 的手感在这里不适用。</span></p>
+    </section>
+  </section>
+
+  <!-- 组件33 渐变分隔线 -->
+  <section style="height:1px;background:linear-gradient(to right,transparent,#2563EB,#06B6D4,transparent);margin-top:24px;"><span leaf="">&nbsp;</span></section>
+
+  <!-- 组件5 章节标题 05 -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:24px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">05</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">三个冷思考</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">CAUTION · 热度之下，先看清</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:20px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">热度之下，有</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">三件事我觉得必须说清楚</span></span>
+    <span leaf="">。</span>
+  </p>
+
+  <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">第一，也是最重要的：开源 ≠ 可以免费商用</span></p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">多个第三方仓库与社区信息显示，Qwen-Image-2.1 的许可证是</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">Qwen Research License（研究用途）</span></span>
+    <span leaf="">，与上一代 Qwen-Image 的 Apache 2.0 不同，商用需要单独向阿里云获取授权。</span>
+  </p>
+
+  <!-- 组件14 警示卡 -->
+  <section style="background:#FFF7ED;border-left:3px solid #F97316;border-radius:0 12px 12px 0;padding:14px 18px;margin-top:24px;display:flex;gap:12px;">
+    <section style="flex-shrink:0;width:22px;height:22px;background:#F97316;border-radius:50%;color:#FFFFFF;text-align:center;line-height:22px;font-size:13px;font-weight:800;"><span leaf="">!</span></section>
+    <section>
+      <p style="font-size:14px;font-weight:700;color:#7C2D12;margin:0 0 4px;"><span leaf="">开源了两个字，不等于授权了两个字</span></p>
+      <p style="font-size:13px;color:#9A3412;line-height:1.7;margin:0;"><span leaf="">你可以拿它学习、研究、做实验；但想把它塞进自己的商业产品、或者用它给客户做交付型服务，得先拿到授权。如果你现在就需要一个能商用的开源生图底座，FLUX.1 Dev / Schnell（Apache 2.0）这类仍是更稳的选择。</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:12px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">再次强调：</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">具体条款请以 GitHub / Hugging Face 仓库中的 LICENSE 文件为准</span></span>
+    <span leaf="">，别只看新闻标题里的“开源”两个字。</span>
+  </p>
+
+  <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">第二，“7B”说的是主干，不是显存</span></p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">前面说过，7B 是视觉生成部分；把文本编码器等算上，整体规模要大得多。再叠加</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">56.5 GB 的峰值显存</span></span>
+    <span leaf="">，结论很清楚：</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">小模型不等于小门槛</span></span>
+    <span leaf="">。对绝大多数个人用户来说，本地跑这件事短期内不现实——这跟“模型多强”是两回事，得分开看。</span>
+  </p>
+
+  <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">第三，60.28 分该怎么看</span></p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">这个分数来自千问自己的 Qwen-Image-Bench，</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">不是第三方独立榜单</span></span>
+    <span leaf="">；官方目前也未公布 FID、CLIP score 这类可复核的量化指标。所以更稳妥的读法是：它在自家口径下超过了 Nano Banana 2.0 和 GPT Image 1.5，说明</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">开源模型第一次在这个量级上摸到了闭源模型的后背</span></span>
+    <span leaf="">，但别把它当成“碾压闭源”的结论。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">社区早期反馈里还有两个值得留意的点：</span>
+  </p>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#2563EB;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">参考图超过 3 张后，一致性会有下滑</span>——10 张是接口上限，不是质量承诺；</span></p>
+  </section>
+  <section style="display:flex;gap:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#06B6D4;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">人物解剖偶有错误</span>，密集人群场景里小人物的细节容易丢。</span></p>
+  </section>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:12px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">另外，首日没有</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">任何社区 LoRA 或 ControlNet</span></span>
+    <span leaf="">可用，微调生态也还是空白。这些都会随时间改善，但今天就是这个状态。</span>
+  </p>
+
+  <!-- 组件33 渐变分隔线 -->
+  <section style="height:1px;background:linear-gradient(to right,transparent,#2563EB,#06B6D4,transparent);margin-top:24px;"><span leaf="">&nbsp;</span></section>
+
+  <!-- 组件5 章节标题 ∞ -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:24px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">∞</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">小智说两句</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">THOUGHTS · 三个我自己的判断</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:20px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">聊完技术，说三个我自己的判断。</span>
+  </p>
+
+  <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">第一，AI 生图的竞争，正在从“能不能生成”转向“能不能改到能用”</span></p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">过去两年大家比的是“第一眼惊艳度”；现在比的是“</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">第七稿能不能改对</span></span>
+    <span leaf="">”。透明图、多参考图、圈哪改哪——这三件事指向同一个方向：让 AI 的产物能直接进工作流，而不是只能发朋友圈。</span>
+  </p>
+
+  <!-- 组件12 左竖线引用 -->
+  <section style="border-left:3px solid #2563EB;padding-left:16px;margin-top:24px;">
+    <p style="font-size:15px;color:#111827;line-height:1.8;margin:0 0 6px;font-weight:600;"><span leaf="">这才是“生产力工具”和“玩具”的分界线。</span></p>
+    <p style="font-size:11px;color:#9CA3AF;margin:0;"><span leaf="">—— 小智的判断</span></p>
+  </section>
+
+  <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">第二，对普通人来说，“等”是最省力的策略</span></p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">模型权重已经开源了，但离你在手机上随手用上，中间还隔着“</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">量化”和“平台接入”两步</span></span>
+    <span leaf="">。这两步通常由社区和平台在几周内补齐。你要做的不是抢着装环境，而是</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">先把自己的需求想清楚</span></span>
+    <span leaf="">。</span>
+  </p>
+
+  <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">第三，给你三条今天就能做的准备</span></p>
+  <section style="display:flex;gap:10px;margin-bottom:10px;margin-top:20px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">1</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">建一个“参考图库”</span>：把你常用的产品图、人物形象、风格样张整理好。多参考图是新能力的核心，素材质量直接决定出图效果。</span></p>
+  </section>
+  <section style="display:flex;gap:10px;margin-bottom:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">2</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">练习“说清位置和边界”</span>：别再说“把这里改一下”，试着说“去掉左腕的金属手表、把头发改成黑色、把上衣换成灰色亚麻短袖”。会描述修改范围，正在变成一项硬技能。</span></p>
+  </section>
+  <section style="display:flex;gap:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">3</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;">养成看许可证的习惯</span>：尤其是你打算把 AI 生成的图用在商业交付里的时候。开源了两个字，不等于授权了两个字。</span></p>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:12px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">技术的进步从来不是先问你愿不愿意，而是</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">先悄悄出现在你同事的电脑上</span></span>
+    <span leaf="">。</span>
+  </p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">你平时做图最烦的是哪一步——</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">抠图、改字，还是拼素材</span></span>
+    <span leaf="">？如果这些都能一句话解决，你最想先交给 AI 哪件活？评论区聊聊。</span>
+  </p>
+
+  <!-- 组件7 小节标题：资料来源 -->
+  <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">资料来源（核验日期 2026-09-21）</span></p>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#2563EB;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:13px;color:#6B7280;line-height:1.8;margin:0;"><span leaf="">千问大模型公众号《Qwen-Image-2.1 开源：轻量高能，创作编辑一体化》（2026-09-20）</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#06B6D4;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:13px;color:#6B7280;line-height:1.8;margin:0;"><span leaf="">千问官方 Blog：qwen.ai/blog?id=qwen-image-2.1</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#7C3AED;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:13px;color:#6B7280;line-height:1.8;margin:0;"><span leaf="">GitHub：github.com/QwenLM/Qwen-Image-2.1</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#2563EB;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:13px;color:#6B7280;line-height:1.8;margin:0;"><span leaf="">Hugging Face：huggingface.co/Qwen/Qwen-Image-2.1</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#06B6D4;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:13px;color:#6B7280;line-height:1.8;margin:0;"><span leaf="">ModelScope（魔搭）：modelscope.cn/models/Qwen/Qwen-Image-2.1</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#7C3AED;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:13px;color:#6B7280;line-height:1.8;margin:0;"><span leaf="">机器之心《拿下开源生图第一，千问 Qwen-Image-2.1 把生图卷出新高度》（2026-09-20）</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#2563EB;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:13px;color:#6B7280;line-height:1.8;margin:0;"><span leaf="">IT之家《阿里千问开源 Qwen-Image-2.1 图像模型：可生成、编辑透明图像，支持最多 10 张参考图》（2026-09-20）</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#06B6D4;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:13px;color:#6B7280;line-height:1.8;margin:0;"><span leaf="">快科技《7B 小模型超越闭源！千问 Qwen-Image-2.1 开源》（2026-09-21）</span></p>
+  </section>
+  <section style="display:flex;gap:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#7C3AED;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:13px;color:#6B7280;line-height:1.8;margin:0;"><span leaf="">Mushroom Research Blog《Qwen-Image-2.1 工程实践：7B DiT + 原生 RGBA，阿里开源图像生成模型本地部署指南》（2026-09-21，显存门槛与许可证部分）</span></p>
+  </section>
+
+  <!-- 组件31 结尾总结区 -->
+  <section style="border-top:3px solid #2563EB;padding:24px 8px 8px;margin-top:24px;">
+    <p style="font-size:10px;font-weight:700;letter-spacing:3px;color:#2563EB;margin:0 0 12px;"><span leaf="">SUMMARY</span></p>
+    <p style="font-size:15px;font-weight:700;color:#111827;line-height:1.8;margin:0 0 8px;"><span leaf="">7B 主干拿下开源第一，靠的不是堆参数，而是把“能用”这件事做进了模型里。</span></p>
+    <p style="font-size:13px;color:#6B7280;line-height:1.8;margin:0;"><span leaf="">透明图、多参考图、圈哪改哪，指向同一件事：让 AI 的图能直接进工作流。但请记住三件事——开源 ≠ 能免费商用、7B ≠ 小显存、60.28 分是自家口径。普通人最好的策略是等平台接入，先把参考图库和“说清位置”的本事准备好。</span></p>
+  </section>
+
+  <!-- 组件17 渐变 CTA：互动引导 -->
+  <section style="background:linear-gradient(135deg,#2563EB,#7C3AED);border-radius:12px;padding:22px 24px;margin-top:24px;text-align:center;">
+    <p style="font-size:16px;font-weight:800;color:#FFFFFF;margin:0 0 6px;letter-spacing:0.5px;"><span leaf="">你最想把哪件活交给 AI？</span></p>
+    <p style="font-size:12px;color:rgba(255,255,255,0.8);margin:0 0 14px;"><span leaf="">抠图、改字，还是拼素材？评论区聊聊，我攒一攒下次做个实战篇。</span></p>
+    <span style="display:inline-block;background:#FFFFFF;color:#2563EB;font-size:13px;font-weight:700;padding:8px 22px;border-radius:24px;"><span leaf="">评论区见</span></span>
+  </section>
+
+  <!-- 组件18 关注引导卡 -->
+  <section style="background:#FFFFFF;border:1.5px solid #2563EB;border-radius:12px;padding:18px 20px;margin-top:24px;display:flex;align-items:center;gap:14px;">
+    <span leaf=""><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/zeT1IrhsLLib9UkBbgKv2A7jfpyv4T5O3uAscIOuib1wHH4NibKALu7iaeSER3aC9jgFPZPgvHib0LWgYd5hhs5KjEvIcRia2aua48aUibYFNvibf2g/0?wx_fmt=jpeg&amp;from=appmsg" alt="公众号二维码" style="width:84px;height:84px;display:block;flex-shrink:0;border-radius:10px;"></span>
+    <section style="flex:1;min-width:0;">
+      <p style="font-size:15px;font-weight:800;color:#111827;margin:0 0 4px;"><span leaf="">小智科技</span></p>
+      <p style="font-size:12px;color:#6B7280;line-height:1.6;margin:0 0 6px;"><span leaf="">分享 AI 观察与干货，用得上、看得懂</span></p>
+      <p style="font-size:11px;font-weight:600;color:#2563EB;margin:0;"><span leaf="">长按识别二维码 · 关注不迷路</span></p>
+    </section>
+    <span style="flex-shrink:0;background:#2563EB;color:#FFFFFF;font-size:12px;font-weight:700;padding:6px 14px;border-radius:20px;"><span leaf="">关注</span></span>
+  </section>
+
+  <!-- 组件30 作者信息卡 -->
+  <section style="background:#F8FAFF;border:1px solid #E5E7EB;border-radius:12px;padding:18px 20px;margin-top:24px;display:flex;gap:14px;align-items:center;">
+    <section style="flex-shrink:0;width:48px;height:48px;background:linear-gradient(135deg,#2563EB,#7C3AED);border-radius:50%;color:#FFFFFF;text-align:center;line-height:48px;font-size:18px;font-weight:800;"><span leaf="">智</span></section>
+    <section style="flex:1;">
+      <p style="font-size:14px;font-weight:800;color:#111827;margin:0 0 3px;"><span leaf="">小智</span></p>
+      <p style="font-size:12px;color:#6B7280;line-height:1.6;margin:0;"><span leaf="">热衷于分享 AI 观察与干货，每周更新。</span></p>
+    </section>
+  </section>
+
+  <!-- 组件32 页脚签名条 -->
+  <section style="padding:20px 8px 8px;margin-top:24px;text-align:center;">
+    <p style="font-size:11px;color:#9CA3AF;letter-spacing:2px;margin:0 0 8px;"><span leaf="">小智科技 · 每周更新 AI 观察与干货</span></p>
+    <section style="display:flex;align-items:center;gap:8px;justify-content:center;">
+      <section style="flex:0 0 60px;height:1px;background:linear-gradient(to right,transparent,#2563EB);"><span leaf="">&nbsp;</span></section>
+      <span style="font-size:10px;color:#2563EB;font-weight:700;"><span leaf="">▲</span></span>
+      <section style="flex:0 0 60px;height:1px;background:linear-gradient(to left,transparent,#2563EB);"><span leaf="">&nbsp;</span></section>
+    </section>
+  </section>
+
+
+</section>
+  </div>
+</div>
+<script>
+  function gzhShowToast(msg){
+    var t=document.getElementById('gzhToast');
+    t.textContent=msg;t.classList.add('show');
+    clearTimeout(t._timer);
+    t._timer=setTimeout(function(){t.classList.remove('show');},2800);
+  }
+  function gzhCopy(){
+    var el=document.getElementById('gzh-content');
+    // 选中渲染后的富文本节点并复制（等价于手动 Ctrl+A / Ctrl+C，保留全部样式）
+    var range=document.createRange();
+    range.selectNodeContents(el);
+    var sel=window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    var ok=false;
+    try{ok=document.execCommand('copy');}catch(e){ok=false;}
+    sel.removeAllRanges();
+    var btn=document.getElementById('gzhCopyBtn');
+    if(ok){
+      gzhShowToast('✅ 已复制！去公众号编辑器按 Ctrl/⌘+V 粘贴即可');
+      var old=btn.textContent;btn.textContent='✅ 已复制';
+      setTimeout(function(){btn.textContent=old;},2200);
+    }else{
+      gzhShowToast('⚠ 自动复制失败，请手动全选(Ctrl/⌘+A)再复制(Ctrl/⌘+C)');
+    }
+  }
+</script>
+</body>
+</html>

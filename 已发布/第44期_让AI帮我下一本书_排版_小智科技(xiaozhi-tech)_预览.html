@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第44期_让AI帮我下一本书_排版_小智科技(xiaozhi-tech) · 公众号排版预览</title>
+<style>
+  body{margin:0;background:#eef0f2;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;-webkit-text-size-adjust:100%;}
+  .gzh-toolbar{position:fixed;top:0;left:0;right:0;height:54px;background:#ffffff;box-shadow:0 1px 10px rgba(0,0,0,.08);display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:99;}
+  .gzh-hint{font-size:13px;color:#6b7280;line-height:1.4;}
+  .gzh-hint b{color:#111827;}
+  .gzh-copy{background:#059669;color:#fff;border:0;border-radius:9px;padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 3px 10px rgba(5,150,105,.28);white-space:nowrap;transition:transform .08s,background .15s;}
+  .gzh-copy:hover{background:#047857;}
+  .gzh-copy:active{transform:translateY(1px);}
+  .gzh-toast{position:fixed;top:66px;left:50%;transform:translateX(-50%);background:#111827;color:#fff;padding:11px 20px;border-radius:10px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .25s;z-index:100;box-shadow:0 6px 20px rgba(0,0,0,.25);max-width:88vw;text-align:center;}
+  .gzh-toast.show{opacity:1;}
+  .gzh-stage{max-width:700px;margin:78px auto 64px;padding:0 8px;}
+  @media(max-width:520px){.gzh-hint{max-width:150px;}}
+</style>
+</head>
+<body>
+<div class="gzh-toolbar">
+  <span class="gzh-hint">👇 下方是排版效果 · 点右侧 <b>复制</b> 直接粘到公众号</span>
+  <button class="gzh-copy" id="gzhCopyBtn" onclick="gzhCopy()">📋 复制到公众号</button>
+</div>
+<div class="gzh-toast" id="gzhToast"></div>
+<div class="gzh-stage">
+  <div id="gzh-content">
+<section style="max-width:677px;margin:0 auto;background:#FFFFFF;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:#1F2937;line-height:1.75;letter-spacing:0.3px;">
+
+  <!-- ===== 封面头图卡 ===== -->
+  <section style="background:#FFFFFF;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(37,99,235,0.08);">
+    <section style="background:linear-gradient(135deg,#2563EB,#7C3AED);padding:26px 28px 22px;">
+      <section style="display:flex;align-items:center;gap:8px;margin-bottom:18px;">
+        <span style="width:6px;height:6px;background:#93C5FD;border-radius:50%;display:inline-block;"><span leaf="">&nbsp;</span></span>
+        <span style="font-size:11px;font-weight:700;letter-spacing:3px;color:rgba(255,255,255,0.85);"><span leaf="">CodeBuddy 自造系列 · 第 44 期</span></span>
+        <section style="flex:1;height:1px;background:rgba(255,255,255,0.25);"><span leaf="">&nbsp;</span></section>
+        <span style="font-size:10px;color:rgba(255,255,255,0.7);font-weight:500;"><span leaf="">2026.09.17</span></span>
+      </section>
+      <p style="font-size:23px;font-weight:800;color:#FFFFFF;margin:0 0 10px;line-height:1.25;letter-spacing:-0.75px;"><span leaf="">让 CodeBuddy 帮我下一本书：594 页 PDF、三次翻车、一条“验收公式”</span></p>
+      <p style="font-size:14px;color:rgba(255,255,255,0.75);margin:0;line-height:1.7;letter-spacing:0.3px;"><span leaf="">一句话需求、三段脚本、一个特别“中国特色”的坑——方法不止能下书</span></p>
+    </section>
+    <section style="padding:18px 28px;display:flex;align-items:center;justify-content:space-between;">
+      <p style="font-size:12px;color:#6B7280;margin:0;font-weight:500;"><span leaf="">自造系列第 4 弹</span></p>
+      <section style="display:flex;gap:6px;">
+        <span style="background:#EEF2FF;color:#2563EB;padding:2px 10px;border-radius:20px;font-size:10px;font-weight:600;"><span leaf="">工具实战</span></span>
+        <span style="background:#EEF2FF;color:#2563EB;padding:2px 10px;border-radius:20px;font-size:10px;font-weight:600;"><span leaf="">PowerShell</span></span>
+      </section>
+    </section>
+  </section>
+
+  <section style="padding:0 20px;">
+
+    <!-- ===== 导语段 ===== -->
+    <section style="background:#F8FAFF;border-left:3px solid #2563EB;padding:16px 18px;margin-top:24px;border-radius:0 12px 12px 0;">
+      <p style="font-size:15px;font-weight:600;color:#1E3A8A;line-height:1.8;margin:0;letter-spacing:0.3px;"><span leaf="">大家好，我是小智。前几期一直在聊 AI 的大话题，今天插播一篇短小但很实在的实战：我在备一门游戏设计的课，要把核心参考书《游戏设计艺术》（Jesse Schell 著，第 2 版）的电子版归档到课程目录里。这事说起来就一句话——“帮我把这本书下下来”。我把它丢给了 CodeBuddy。它确实下下来了：14.8 MB、594 页。但中间踩了三个坑，其中一个特别“中国特色”：书是好的，目录名却变成了乱码，我自己都找不到它。这篇文章把全过程、三段脚本、报错原文全摊开。你会发现，这套方法不止能下书——下数据集、下模型权重、下素材包、定时任务拉远程文件，全都通用。</span></p>
+    </section>
+
+    <!-- ===== 本文看点 ===== -->
+    <p style="font-size:14px;font-weight:700;color:#111827;margin:20px 0 10px;"><span leaf="">📌 本文看点</span></p>
+    <section style="display:flex;gap:8px;margin-bottom:8px;">
+      <span style="flex-shrink:0;width:6px;height:6px;background:#2563EB;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+      <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">一句话需求，CodeBuddy 自动拆成“探路 → 下载 → 校验”三步</span></p>
+    </section>
+    <section style="display:flex;gap:8px;margin-bottom:8px;">
+      <span style="flex-shrink:0;width:6px;height:6px;background:#06B6D4;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+      <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">三个翻车现场：链接可能是假的、文件可能是假的、路径可能是乱码</span></p>
+    </section>
+    <section style="display:flex;gap:8px;margin-bottom:8px;">
+      <span style="flex-shrink:0;width:6px;height:6px;background:#7C3AED;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+      <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">三段可直接复用的 PowerShell 脚本（附真实运行输出）</span></p>
+    </section>
+    <section style="display:flex;gap:8px;margin-bottom:8px;">
+      <span style="flex-shrink:0;width:6px;height:6px;background:#2563EB;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+      <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">收敛出来的五条“人机干活”法则，通用于所有交给 AI 执行的活</span></p>
+    </section>
+
+    <!-- ===== 指标卡 ===== -->
+    <section style="display:flex;gap:12px;margin-top:24px;">
+      <section style="flex:1;background:linear-gradient(180deg,#EEF2FF,#F8FAFF);border:1px solid #E5E7EB;border-radius:12px;padding:16px 12px;text-align:center;">
+        <p style="font-size:9px;color:#6B7280;margin:0 0 6px;letter-spacing:1px;"><span leaf="">PAGES</span></p>
+        <p style="font-size:22px;font-weight:800;color:#2563EB;margin:0 0 4px;line-height:1;"><span leaf="">594</span></p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf="">页 · 第 2 版</span></p>
+      </section>
+      <section style="flex:1;background:linear-gradient(180deg,#EEF2FF,#F8FAFF);border:1px solid #E5E7EB;border-radius:12px;padding:16px 12px;text-align:center;">
+        <p style="font-size:9px;color:#6B7280;margin:0 0 6px;letter-spacing:1px;"><span leaf="">SIZE</span></p>
+        <p style="font-size:22px;font-weight:800;color:#2563EB;margin:0 0 4px;line-height:1;"><span leaf="">14.8</span></p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf="">MB · 完整未截断</span></p>
+      </section>
+      <section style="flex:1;background:linear-gradient(180deg,#EEF2FF,#F8FAFF);border:1px solid #E5E7EB;border-radius:12px;padding:16px 12px;text-align:center;">
+        <p style="font-size:9px;color:#6B7280;margin:0 0 6px;letter-spacing:1px;"><span leaf="">SCRIPTS</span></p>
+        <p style="font-size:22px;font-weight:800;color:#2563EB;margin:0 0 4px;line-height:1;"><span leaf="">3</span></p>
+        <p style="font-size:10px;color:#9CA3AF;margin:0;"><span leaf="">段 · 共不到 40 行</span></p>
+      </section>
+    </section>
+
+    <!-- ===== 01 起因 ===== -->
+    <section style="display:flex;align-items:baseline;gap:14px;margin-top:28px;">
+      <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">01</span></span>
+      <section style="flex:1;">
+        <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">起因：一句“帮我把书下下来”</span></p>
+        <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">背景与需求</span></p>
+      </section>
+    </section>
+
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:16px 0 12px;letter-spacing:0.3px;text-align:left;">
+      <span leaf="">先交代背景。我在带一门《平面游戏设计》，32 节课，核心参考书是 </span>
+      <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">The Art of Game Design: A Book of Lenses, Second Edition</span></span>
+      <span leaf="">——游戏设计圈公认的“透镜”方法论，原文 594 页。</span>
+    </p>
+
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">课件里我给学生写了两句：</span></p>
+
+    <section style="border-left:3px solid #2563EB;padding-left:16px;margin-top:16px;">
+      <p style="font-size:15px;color:#111827;line-height:1.8;margin:0 0 6px;font-weight:600;"><span leaf="">作业 1（必做）：阅读《游戏设计艺术》第 1 章。京东／当当约 60 元，不强制。</span></p>
+      <p style="font-size:11px;color:#9CA3AF;margin:0;"><span leaf="">—— 我的课件原文</span></p>
+    </section>
+
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:16px 0 12px;letter-spacing:0.3px;text-align:left;">
+      <span leaf="">书不强制学生买，但我自己备课总得有一份电子版随时翻检。这种</span>
+      <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">“一次性、可复现、最好别手抄路径”</span></span>
+      <span leaf="">的活，正是 AI 最擅长的。</span>
+    </p>
+
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">于是我在 CodeBuddy 里敲了一句：</span></p>
+
+    <section style="border-left:3px solid #2563EB;padding-left:16px;margin-top:16px;">
+      <p style="font-size:15px;color:#111827;line-height:1.8;margin:0 0 6px;font-weight:600;">
+        <span leaf="">帮我把这本书下载下来，放到 </span>
+        <span style="background:#F1F5F9;color:#2563EB;padding:1px 6px;border-radius:4px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:13px;"><span leaf="">参考书</span></span>
+        <span leaf=""> 目录下，保存成 </span>
+        <span style="background:#F1F5F9;color:#2563EB;padding:1px 6px;border-radius:4px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:13px;"><span leaf="">The_Art_of_Game_Design_2nd_Jesse_Schell.pdf</span></span>
+        <span leaf="">。</span>
+      </p>
+      <p style="font-size:11px;color:#9CA3AF;margin:0;"><span leaf="">—— 我给 CodeBuddy 的唯一一句需求</span></p>
+    </section>
+
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:16px 0 0;letter-spacing:0.3px;text-align:left;"><span leaf="">就这一句。没说用什么工具，没说失败怎么办，更没提醒它 Windows 上有什么坑。</span></p>
+
+    <!-- ===== 02 探路 ===== -->
+    <section style="display:flex;align-items:baseline;gap:14px;margin-top:28px;">
+      <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">02</span></span>
+      <section style="flex:1;">
+        <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">它的第一步很聪明：先“探路”，再动手</span></p>
+        <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">起飞前检查</span></p>
+      </section>
+    </section>
+
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:16px 0 12px;letter-spacing:0.3px;text-align:left;">
+      <span leaf="">这是我觉得它做得最专业的一步——</span>
+      <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">它没有直接开始下载。</span></span>
+    </p>
+
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">面对几十兆的大文件，盲下有三大风险：链接已经失效、服务器返回的其实是一个 HTML 错误页、文件大到中途断流。所以它先写了一段“探路脚本”，只发 HEAD 请求（只拿响应头，不搬数据），把三个关键信息问出来：</span></p>
+
+    <section style="background:#0F172A;border-radius:12px;overflow:hidden;margin-top:24px;">
+      <section style="display:flex;align-items:center;gap:6px;padding:10px 14px;background:#1E293B;">
+        <span style="width:8px;height:8px;background:#F87171;border-radius:50%;display:inline-block;"><span leaf="">&nbsp;</span></span>
+        <span style="width:8px;height:8px;background:#FBBF24;border-radius:50%;display:inline-block;"><span leaf="">&nbsp;</span></span>
+        <span style="width:8px;height:8px;background:#34D399;border-radius:50%;display:inline-block;"><span leaf="">&nbsp;</span></span>
+        <span style="font-size:10px;color:#64748B;margin-left:8px;font-family:ui-monospace,'SF Mono',Consolas,monospace;"><span leaf="">PowerShell · 探路</span></span>
+      </section>
+      <section style="padding:16px 18px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:12px;line-height:1.8;color:#E2E8F0;">
+        <p style="margin:0;color:#38BDF8;"><span leaf="">$ProgressPreference = 'SilentlyContinue'</span></p>
+        <p style="margin:0;color:#E2E8F0;"><span leaf="">$urls = @(</span></p>
+        <p style="margin:0;color:#E2E8F0;"><span leaf="">　　@{ Name = 'ArtOfGameDesign_2nd'; Url = 'https://archive.org/download/game-design-pack/The%20Art%20of%20Game%20Design%20-%20Jesse%20Schell%20%282014%29%20%282nd%20from%202008%29.pdf' },</span></p>
+        <p style="margin:0;color:#E2E8F0;"><span leaf="">　　@{ Name = 'ArtOfGameDesign_archive_detail'; Url = 'https://archive.org/details/artofgamedesignsecondedition' }</span></p>
+        <p style="margin:0;color:#E2E8F0;"><span leaf="">)</span></p>
+        <p style="margin:0;color:#E2E8F0;"><span leaf="">foreach ($u in $urls) {</span></p>
+        <p style="margin:0;color:#E2E8F0;"><span leaf="">　　try {</span></p>
+        <p style="margin:0;color:#38BDF8;"><span leaf="">　　　　$r = Invoke-WebRequest -Uri $u.Url -Method Head -UseBasicParsing -TimeoutSec 30</span></p>
+        <p style="margin:0;color:#E2E8F0;"><span leaf="">　　　　Write-Output ("[{0}] Status: {1}" -f $u.Name, $r.StatusCode)</span></p>
+        <p style="margin:0;color:#E2E8F0;"><span leaf="">　　　　Write-Output ("[{0}] Type:   {1}" -f $u.Name, $r.Headers['Content-Type'])</span></p>
+        <p style="margin:0;color:#E2E8F0;"><span leaf="">　　　　Write-Output ("[{0}] Length: {1:N1} MB" -f $u.Name, ([double]$r.Headers['Content-Length'] / 1MB))</span></p>
+        <p style="margin:0;color:#E2E8F0;"><span leaf="">　　} catch {</span></p>
+        <p style="margin:0;color:#E2E8F0;"><span leaf="">　　　　Write-Output ("[{0}] ERROR: {1}" -f $u.Name, $_.Exception.Message)</span></p>
+        <p style="margin:0;color:#E2E8F0;"><span leaf="">　　}</span></p>
+        <p style="margin:0;color:#E2E8F0;"><span leaf="">}</span></p>
+      </section>
+    </section>
+
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:16px 0 12px;letter-spacing:0.3px;text-align:left;">
+      <span leaf="">注意它同时验证了两条候选地址——一条</span>
+      <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">直链</span></span>
+      <span leaf="">，一条</span>
+      <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">详情页</span></span>
+      <span leaf="">。这就是备胎思维。</span>
+    </p>
+
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">这段脚本要盯三个字段：</span></p>
+
+    <section style="display:flex;gap:8px;margin-bottom:8px;">
+      <span style="flex-shrink:0;width:6px;height:6px;background:#2563EB;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+      <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;">
+        <span leaf=""><strong><span leaf="">Status：</span></strong>200 才好，301／302 说明要跳转，403／404 直接换源；</span></p>
+    </section>
+    <section style="display:flex;gap:8px;margin-bottom:8px;">
+      <span style="flex-shrink:0;width:6px;height:6px;background:#06B6D4;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+      <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;">
+        <span leaf=""><strong><span leaf="">Type：</span></strong>必须是 </span>
+        <span style="background:#F1F5F9;color:#2563EB;padding:1px 6px;border-radius:4px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:13px;"><span leaf="">application/pdf</span></span>
+        <span leaf="">。这条最关键——很多“PDF 下载站”吐出来的是 </span>
+        <span style="background:#F1F5F9;color:#2563EB;padding:1px 6px;border-radius:4px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:13px;"><span leaf="">text/html</span></span>
+        <span leaf="">，你下半天拿到一张写着“正在跳转到真正下载地址”的网页；</span></p>
+    </section>
+    <section style="display:flex;gap:8px;margin-bottom:8px;">
+      <span style="flex-shrink:0;width:6px;height:6px;background:#7C3AED;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+      <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;">
+        <span leaf=""><strong><span leaf="">Length：</span></strong>十几 MB 合理，如果只有几十 KB，多半是个占位页。</span></p>
+    </section>
+
+    <section style="background:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:16px 18px;margin-top:24px;display:flex;gap:12px;">
+      <section style="flex-shrink:0;width:24px;height:24px;background:linear-gradient(135deg,#2563EB,#06B6D4);border-radius:6px;color:#FFFFFF;text-align:center;line-height:24px;font-size:13px;font-weight:800;"><span leaf="">i</span></section>
+      <section>
+        <p style="font-size:14px;font-weight:700;color:#111827;margin:0 0 4px;"><span leaf="">写稿时我重跑了一遍</span></p>
+        <p style="font-size:13px;color:#6B7280;line-height:1.7;margin:0;"><span leaf="">两个地址都返回「ERROR: 操作超时。」这类海外站点本来就时通时不通。这恰恰证明了“先探路”是对的：通就是通，不通立刻换源，别傻等一个十几兆的文件超时半天。</span></p>
+      </section>
+    </section>
+
+    <!-- ===== 03 下载 ===== -->
+    <section style="display:flex;align-items:baseline;gap:14px;margin-top:28px;">
+      <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">03</span></span>
+      <section style="flex:1;">
+        <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">真正下载：一个“提速一个数量级”的开关</span></p>
+        <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">三个保命开关</span></p>
+      </section>
+    </section>
+
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:16px 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">探明真身之后，才是正式下载。第二段脚本是这样的：</span></p>
+
+    <section style="background:#0F172A;border-radius:12px;overflow:hidden;margin-top:24px;">
+      <section style="display:flex;align-items:center;gap:6px;padding:10px 14px;background:#1E293B;">
+        <span style="width:8px;height:8px;background:#F87171;border-radius:50%;display:inline-block;"><span leaf="">&nbsp;</span></span>
+        <span style="width:8px;height:8px;background:#FBBF24;border-radius:50%;display:inline-block;"><span leaf="">&nbsp;</span></span>
+        <span style="width:8px;height:8px;background:#34D399;border-radius:50%;display:inline-block;"><span leaf="">&nbsp;</span></span>
+        <span style="font-size:10px;color:#64748B;margin-left:8px;font-family:ui-monospace,'SF Mono',Consolas,monospace;"><span leaf="">PowerShell · 下载</span></span>
+      </section>
+      <section style="padding:16px 18px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:12px;line-height:1.8;color:#E2E8F0;">
+        <p style="margin:0;color:#38BDF8;"><span leaf="">$ProgressPreference = 'SilentlyContinue'</span></p>
+        <p style="margin:0;color:#E2E8F0;"><span leaf="">$url = 'https://archive.org/download/game-design-pack/The%20Art%20of%20Game%20Design%20-%20Jesse%20Schell%20%282014%29%20%282nd%20from%202008%29.pdf'</span></p>
+        <p style="margin:0;color:#38BDF8;"><span leaf="">$out = 'd:\Users\Work\Trae\2DGameDesign\参考书\The_Art_of_Game_Design_2nd_Jesse_Schell.pdf'</span></p>
+        <p style="margin:0;color:#E2E8F0;"><span leaf="">$dir = Split-Path $out -Parent</span></p>
+        <p style="margin:0;color:#E2E8F0;"><span leaf="">if (-not (Test-Path $dir)) { New-Item -ItemType Directory -Force -Path $dir | Out-Null }</span></p>
+        <p style="margin:0;color:#E2E8F0;"><span leaf="">Write-Output ('Start downloading...')</span></p>
+        <p style="margin:0;color:#38BDF8;"><span leaf="">Invoke-WebRequest -Uri $url -OutFile $out -UseBasicParsing -TimeoutSec 300</span></p>
+        <p style="margin:0;color:#E2E8F0;"><span leaf="">if (Test-Path $out) {</span></p>
+        <p style="margin:0;color:#E2E8F0;"><span leaf="">　　$len = (Get-Item $out).Length</span></p>
+        <p style="margin:0;color:#E2E8F0;"><span leaf="">　　Write-Output ('Done. Size: {0:N1} MB' -f ($len / 1MB))</span></p>
+        <p style="margin:0;color:#E2E8F0;"><span leaf="">} else {</span></p>
+        <p style="margin:0;color:#E2E8F0;"><span leaf="">　　Write-Output 'FAILED: file not created'</span></p>
+        <p style="margin:0;color:#E2E8F0;"><span leaf="">}</span></p>
+      </section>
+    </section>
+
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:16px 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">看着平平无奇，里面藏着三个 Windows 上的“保命开关”：</span></p>
+
+    <section style="display:flex;gap:10px;margin-bottom:10px;">
+      <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">1</span></section>
+      <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;">
+        <span leaf=""><strong><span leaf="">关掉进度条渲染。</span></strong></span>
+        <span style="background:#F1F5F9;color:#2563EB;padding:1px 6px;border-radius:4px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:13px;"><span leaf="">$ProgressPreference = 'SilentlyContinue'</span></span>
+        <span leaf=""> 是 PowerShell 5.1 的经典暗坑：默认实时渲染进度条，下载十几兆文件时，画进度条的开销远远超过下载本身，速度能慢一个数量级。加上这一行，肉眼可见地飞起来。</span></p>
+    </section>
+    <section style="display:flex;gap:10px;margin-bottom:10px;">
+      <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">2</span></section>
+      <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;">
+        <span leaf=""><strong><span leaf="">跳过 IE 引擎。</span></strong></span>
+        <span style="background:#F1F5F9;color:#2563EB;padding:1px 6px;border-radius:4px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:13px;"><span leaf="">-UseBasicParsing</span></span>
+        <span leaf="">，否则在没初始化 IE 的机器上会直接报错。</span></p>
+    </section>
+    <section style="display:flex;gap:10px;margin-bottom:10px;">
+      <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">3</span></section>
+      <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;">
+        <span leaf=""><strong><span leaf="">给足耐心 + 自动建目录。</span></strong></span>
+        <span style="background:#F1F5F9;color:#2563EB;padding:1px 6px;border-radius:4px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:13px;"><span leaf="">-TimeoutSec 300</span></span>
+        <span leaf="">，目标目录不存在就自己造，绝不干等人工创建。</span></p>
+    </section>
+
+    <!-- ===== 04 验真 ===== -->
+    <section style="display:flex;align-items:baseline;gap:14px;margin-top:28px;">
+      <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">04</span></span>
+      <section style="flex:1;">
+        <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">下完别急着庆祝：先问“它对不对”</span></p>
+        <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">看文件头，性价比最高的一招</span></p>
+      </section>
+    </section>
+
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:16px 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">文件落地之后，第一件事应该是：它到底是不是 PDF？</span></p>
+
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+      <span leaf="">原因前面提过——服务器完全可能返回一张 HTML 错误页，而因为你指定了 </span>
+      <span style="background:#F1F5F9;color:#2563EB;padding:1px 6px;border-radius:4px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:13px;"><span leaf="">-OutFile xxx.pdf</span></span>
+      <span leaf="">，它照样安安静静躺在你硬盘上，扩展名清清楚楚写着 </span>
+      <span style="background:#F1F5F9;color:#2563EB;padding:1px 6px;border-radius:4px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:13px;"><span leaf="">.pdf</span></span>
+      <span leaf="">。等你双击打开，阅读器弹一句“文件已损坏”，白忙一场。</span>
+    </p>
+
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">CodeBuddy 顺手给的第三段脚本，思路是看文件的二进制指纹（魔数）：</span></p>
+
+    <section style="background:#0F172A;border-radius:12px;overflow:hidden;margin-top:24px;">
+      <section style="display:flex;align-items:center;gap:6px;padding:10px 14px;background:#1E293B;">
+        <span style="width:8px;height:8px;background:#F87171;border-radius:50%;display:inline-block;"><span leaf="">&nbsp;</span></span>
+        <span style="width:8px;height:8px;background:#FBBF24;border-radius:50%;display:inline-block;"><span leaf="">&nbsp;</span></span>
+        <span style="width:8px;height:8px;background:#34D399;border-radius:50%;display:inline-block;"><span leaf="">&nbsp;</span></span>
+        <span style="font-size:10px;color:#64748B;margin-left:8px;font-family:ui-monospace,'SF Mono',Consolas,monospace;"><span leaf="">PowerShell · 校验</span></span>
+      </section>
+      <section style="padding:16px 18px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:12px;line-height:1.8;color:#E2E8F0;">
+        <p style="margin:0;color:#E2E8F0;"><span leaf="">$f = 'd:\Users\Work\Trae\2DGameDesign\参考书\The_Art_of_Game_Design_2nd_Jesse_Schell.pdf'</span></p>
+        <p style="margin:0;color:#E2E8F0;"><span leaf="">$bytes = [System.IO.File]::ReadAllBytes($f)</span></p>
+        <p style="margin:0;color:#E2E8F0;"><span leaf="">$head = [System.Text.Encoding]::ASCII.GetString($bytes[0..3])</span></p>
+        <p style="margin:0;color:#E2E8F0;"><span leaf="">$len = $bytes.Length</span></p>
+        <p style="margin:0;color:#E2E8F0;"><span leaf="">$tail = [System.Text.Encoding]::ASCII.GetString($bytes[($len - 10)..($len - 1)])</span></p>
+        <p style="margin:0;color:#E2E8F0;"><span leaf="">Write-Output ('Header: ' + $head)</span></p>
+        <p style="margin:0;color:#E2E8F0;"><span leaf="">Write-Output ('Size: {0:N1} MB' -f ($len / 1MB))</span></p>
+        <p style="margin:0;color:#E2E8F0;"><span leaf="">Write-Output ('Tail: ' + $tail)</span></p>
+        <p style="margin:0;color:#38BDF8;"><span leaf="">Write-Output ('ValidPDF: ' + ($head -eq '%PDF' -and $tail -match '%%EOF'))</span></p>
+      </section>
+    </section>
+
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:16px 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">逻辑极简，却是我今天最想推荐的一条常识：</span></p>
+
+    <section style="border-left:3px solid #2563EB;padding-left:16px;margin-top:16px;">
+      <p style="font-size:15px;color:#111827;line-height:1.8;margin:0 0 6px;font-weight:600;"><span leaf="">所有 PDF 文件开头四个字节一定是 %PDF，结尾一定有 %%EOF。头对、尾对——文件基本完整；头不对——它压根不是 PDF；尾不对——下载被截断了。</span></p>
+      <p style="font-size:11px;color:#9CA3AF;margin:0;"><span leaf="">—— 今天最想让你记住的一条</span></p>
+    </section>
+
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:16px 0 12px;letter-spacing:0.3px;text-align:left;">
+      <span leaf="">这套思路可以平移：</span>
+      <span style="background:#F1F5F9;color:#2563EB;padding:1px 6px;border-radius:4px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:13px;"><span leaf="">.zip</span></span>
+      <span leaf=""> 开头是 </span>
+      <span style="background:#F1F5F9;color:#2563EB;padding:1px 6px;border-radius:4px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:13px;"><span leaf="">PK</span></span>
+      <span leaf="">，PNG 开头是 </span>
+      <span style="background:#F1F5F9;color:#2563EB;padding:1px 6px;border-radius:4px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:13px;"><span leaf="">‰PNG</span></span>
+      <span leaf="">，MP4 里头必有 </span>
+      <span style="background:#F1F5F9;color:#2563EB;padding:1px 6px;border-radius:4px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:13px;"><span leaf="">ftyp</span></span>
+      <span leaf="">。</span>
+      <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">“看文件头”，是整个数字化工作里性价比最高的一招。</span></span>
+    </p>
+
+    <!-- ===== 05 翻车 ===== -->
+    <section style="display:flex;align-items:baseline;gap:14px;margin-top:28px;">
+      <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">05</span></span>
+      <section style="flex:1;">
+        <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">翻车现场：书是好的，我却找不到它</span></p>
+        <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">一个特别“中国特色”的坑</span></p>
+      </section>
+    </section>
+
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:16px 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">重点来了，也是这篇文章最值得记的一段。</span></p>
+
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">我把上面的校验脚本原样跑了一遍，PowerShell 甩给我这么一坨：</span></p>
+
+    <section style="background:#0F172A;border-radius:12px;overflow:hidden;margin-top:24px;">
+      <section style="display:flex;align-items:center;gap:6px;padding:10px 14px;background:#1E293B;">
+        <span style="width:8px;height:8px;background:#F87171;border-radius:50%;display:inline-block;"><span leaf="">&nbsp;</span></span>
+        <span style="width:8px;height:8px;background:#FBBF24;border-radius:50%;display:inline-block;"><span leaf="">&nbsp;</span></span>
+        <span style="width:8px;height:8px;background:#34D399;border-radius:50%;display:inline-block;"><span leaf="">&nbsp;</span></span>
+        <span style="font-size:10px;color:#64748B;margin-left:8px;font-family:ui-monospace,'SF Mono',Consolas,monospace;"><span leaf="">PowerShell · 报错原文</span></span>
+      </section>
+      <section style="padding:16px 18px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:12px;line-height:1.8;color:#E2E8F0;">
+        <p style="margin:0;color:#F87171;"><span leaf="">使用“1”个参数调用“ReadAllBytes”时发生异常:“未能找到路径</span></p>
+        <p style="margin:0;color:#F87171;"><span leaf="">"d:\Users\Work\Trae\2DGameDesign\参考书\The_Art_of_Game_Design_2nd_Jesse_Schell.pdf"的一部分。”</span></p>
+        <p style="margin:0;color:#64748B;"><span leaf="">所在位置 行:2 字符: 1</span></p>
+        <p style="margin:0;color:#E2E8F0;"><span leaf="">+ $bytes = [System.IO.File]::ReadAllBytes($f)</span></p>
+        <p style="margin:0;color:#E2E8F0;"><span leaf="">+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></p>
+        <p style="margin:0;color:#64748B;"><span leaf="">　　+ CategoryInfo          : NotSpecified: (:) [], MethodInvocationException</span></p>
+        <p style="margin:0;color:#64748B;"><span leaf="">　　+ FullyQualifiedErrorId : DirectoryNotFoundException</span></p>
+      </section>
+    </section>
+
+    <p style="font-size:15px;font-weight:700;color:#111827;line-height:1.9;margin:16px 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">上一秒刚下载成功，下一秒就“找不到路径”？</span></p>
+
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">我去资源管理器里看了一眼，当场笑出声——目录确实建了，书也确实在里面，但目录名长这样：</span></p>
+
+    <section style="background:#F8FAFC;border:1px solid #E5E7EB;border-left:3px solid #2563EB;border-radius:12px;padding:16px 18px;margin-top:16px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:15px;line-height:1.8;color:#334155;">
+      <p style="margin:0;color:#7C3AED;"><span leaf="">鍙傝€冧功</span></p>
+    </section>
+
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:16px 0 12px;letter-spacing:0.3px;text-align:left;">
+      <span leaf="">这坨不知所云的字，本来应该是</span>
+      <strong style="color:#2563EB;"><span leaf="">“参考书”</span></strong>
+      <span leaf="">三个字。</span>
+    </p>
+
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+      <span leaf="">原因一句话：</span>
+      <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">编码打架。</span></span>
+    </p>
+
+    <section style="display:flex;gap:8px;margin-bottom:8px;">
+      <span style="flex-shrink:0;width:6px;height:6px;background:#2563EB;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+      <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">脚本文件是 UTF-8 保存的，“参考书”三个字在 UTF-8 里是 9 个字节；</span></p>
+    </section>
+    <section style="display:flex;gap:8px;margin-bottom:8px;">
+      <span style="flex-shrink:0;width:6px;height:6px;background:#06B6D4;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+      <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">但 Windows 的 PowerShell 5.1 默认按系统 ANSI（中文环境就是 GBK）去读这段脚本；</span></p>
+    </section>
+    <section style="display:flex;gap:8px;margin-bottom:8px;">
+      <span style="flex-shrink:0;width:6px;height:6px;background:#7C3AED;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+      <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">GBK 每 2 个字节认一个汉字，于是这 9 个字节被拆成了“鍙傝€冧功”。</span></p>
+    </section>
+
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:16px 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">于是发生了一件荒唐事：下载脚本按乱码创建了目录名并成功写入文件；校验脚本拿着同一个“参考书”字符串去读，两边对不上。同一个脚本里前后字符串一模一样，却被不同环节解释成了两个不同的路径。</span></p>
+
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">我用 Python 把这个目录名打印出来的时候，终端又给了我一记：</span></p>
+
+    <section style="background:#0F172A;border-radius:12px;overflow:hidden;margin-top:16px;">
+      <section style="display:flex;align-items:center;gap:6px;padding:10px 14px;background:#1E293B;">
+        <span style="width:8px;height:8px;background:#F87171;border-radius:50%;display:inline-block;"><span leaf="">&nbsp;</span></span>
+        <span style="width:8px;height:8px;background:#FBBF24;border-radius:50%;display:inline-block;"><span leaf="">&nbsp;</span></span>
+        <span style="width:8px;height:8px;background:#34D399;border-radius:50%;display:inline-block;"><span leaf="">&nbsp;</span></span>
+        <span style="font-size:10px;color:#64748B;margin-left:8px;font-family:ui-monospace,'SF Mono',Consolas,monospace;"><span leaf="">Python · 报错原文</span></span>
+      </section>
+      <section style="padding:16px 18px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:12px;line-height:1.8;color:#E2E8F0;">
+        <p style="margin:0;color:#F87171;"><span leaf="">UnicodeEncodeError: 'gbk' codec can't encode character '\u20ac' in position 2: illegal multibyte sequence</span></p>
+      </section>
+    </section>
+
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:16px 0 12px;letter-spacing:0.3px;text-align:left;">
+      <span leaf="">把 Unicode 码点打出来才看清真身：</span>
+      <span style="background:#F1F5F9;color:#2563EB;padding:1px 6px;border-radius:4px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:13px;"><span leaf="">\u9359\u509d\u20ac\u51a7\u529f</span></span>
+      <span leaf="">。</span>
+    </p>
+
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">最后确认，书本身完好无损：</span></p>
+
+    <section style="background:#0F172A;border-radius:12px;overflow:hidden;margin-top:16px;">
+      <section style="display:flex;align-items:center;gap:6px;padding:10px 14px;background:#1E293B;">
+        <span style="width:8px;height:8px;background:#F87171;border-radius:50%;display:inline-block;"><span leaf="">&nbsp;</span></span>
+        <span style="width:8px;height:8px;background:#FBBF24;border-radius:50%;display:inline-block;"><span leaf="">&nbsp;</span></span>
+        <span style="width:8px;height:8px;background:#34D399;border-radius:50%;display:inline-block;"><span leaf="">&nbsp;</span></span>
+        <span style="font-size:10px;color:#64748B;margin-left:8px;font-family:ui-monospace,'SF Mono',Consolas,monospace;"><span leaf="">Python · 验真输出</span></span>
+      </section>
+      <section style="padding:16px 18px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:12px;line-height:1.8;color:#E2E8F0;">
+        <p style="margin:0;color:#64748B;"><span leaf="">HEAD   </span><span style="color:#34D399;"><span leaf="">b'%PDF-1.7'</span></span></p>
+        <p style="margin:0;color:#64748B;"><span leaf="">TAIL   </span><span style="color:#34D399;"><span leaf="">b'6\r\n%%EOF\r\n'</span></span></p>
+        <p style="margin:0;color:#64748B;"><span leaf="">SIZE   </span><span style="color:#E2E8F0;"><span leaf="">14.81 MB</span></span></p>
+        <p style="margin:0;color:#64748B;"><span leaf="">PAGES  </span><span style="color:#E2E8F0;"><span leaf="">594</span></span></p>
+        <p style="margin:0;color:#64748B;"><span leaf="">TITLE  </span><span style="color:#38BDF8;"><span leaf="">The Art of Game Design: A Book of Lenses, Second Edition</span></span></p>
+      </section>
+    </section>
+
+    <section style="background:#F0FDF4;border-left:3px solid #10B981;border-radius:0 12px 12px 0;padding:14px 18px;margin-top:24px;display:flex;gap:12px;">
+      <section style="flex-shrink:0;width:22px;height:22px;background:#10B981;border-radius:50%;color:#FFFFFF;text-align:center;line-height:22px;font-size:12px;font-weight:800;"><span leaf="">✓</span></section>
+      <section>
+        <p style="font-size:14px;font-weight:700;color:#065F46;margin:0 0 4px;"><span leaf="">验真通过</span></p>
+        <p style="font-size:13px;color:#047857;line-height:1.7;margin:0;"><span leaf="">594 页、第 2 版、标题完全正确。书是好的，只是一个目录名变成了乱码。</span></p>
+      </section>
+    </section>
+
+    <p style="font-size:15px;font-weight:700;color:#1F2937;margin:24px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">怎么根治？四条路，任挑一条</span></p>
+
+    <section style="display:flex;gap:10px;margin-bottom:10px;">
+      <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">1</span></section>
+      <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;">
+        <span leaf=""><strong><span leaf="">最省事：路径一律用英文。</span></strong>文件名本来就是英文的，中招的只有目录名。改成 </span>
+        <span style="background:#F1F5F9;color:#2563EB;padding:1px 6px;border-radius:4px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:13px;"><span leaf="">refs/</span></span>
+        <span leaf=""> 或 </span>
+        <span style="background:#F1F5F9;color:#2563EB;padding:1px 6px;border-radius:4px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:13px;"><span leaf="">books/</span></span>
+        <span leaf="">，一次到位。</span></p>
+    </section>
+    <section style="display:flex;gap:10px;margin-bottom:10px;">
+      <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">2</span></section>
+      <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;">
+        <span leaf=""><strong><span leaf="">要用中文就加 BOM。</span></strong>把 </span>
+        <span style="background:#F1F5F9;color:#2563EB;padding:1px 6px;border-radius:4px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:13px;"><span leaf="">.ps1</span></span>
+        <span leaf=""> 另存为“UTF-8 with BOM”，PowerShell 才会按 UTF-8 读。</span></p>
+    </section>
+    <section style="display:flex;gap:10px;margin-bottom:10px;">
+      <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">3</span></section>
+      <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;">
+        <span leaf=""><strong><span leaf="">运行时切代码页。</span></strong>脚本开头加 </span>
+        <span style="background:#F1F5F9;color:#2563EB;padding:1px 6px;border-radius:4px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:13px;"><span leaf="">chcp 65001 | Out-Null</span></span>
+        <span leaf="">，并显式设置输出编码。</span></p>
+    </section>
+    <section style="display:flex;gap:10px;margin-bottom:10px;">
+      <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">4</span></section>
+      <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;">
+        <span leaf=""><strong><span leaf="">换 PowerShell 7。</span></strong>新版 </span>
+        <span style="background:#F1F5F9;color:#2563EB;padding:1px 6px;border-radius:4px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:13px;"><span leaf="">pwsh</span></span>
+        <span leaf=""> 默认 UTF-8，这个问题从根上消失。</span></p>
+    </section>
+
+    <section style="background:#FFF7ED;border-left:3px solid #F97316;border-radius:0 12px 12px 0;padding:14px 18px;margin-top:24px;display:flex;gap:12px;">
+      <section style="flex-shrink:0;width:22px;height:22px;background:#F97316;border-radius:50%;color:#FFFFFF;text-align:center;line-height:22px;font-size:13px;font-weight:800;"><span leaf="">!</span></section>
+      <section>
+        <p style="font-size:14px;font-weight:700;color:#7C2D12;margin:0 0 4px;"><span leaf="">📌 一句话记住</span></p>
+        <p style="font-size:13px;color:#9A3412;line-height:1.7;margin:0;"><span leaf="">让 AI 写 Windows 脚本时，先把“路径不许有中文”这条写进要求里，能省掉你半小时的排查。</span></p>
+      </section>
+    </section>
+
+    <!-- ===== 06 五条法则 ===== -->
+    <section style="display:flex;align-items:baseline;gap:14px;margin-top:28px;">
+      <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">06</span></span>
+      <section style="flex:1;">
+        <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">把这次经验收敛成五条法则</span></p>
+        <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">通用于所有交给 AI 执行的活</span></p>
+      </section>
+    </section>
+
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:16px 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">前面的第 36 期（编辑器扩展）、第 37 期（表情包）、第 42 期（收藏夹插件），加上这次第 4 弹，我的心得越来越收敛，就五条：</span></p>
+
+    <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">1. 给目标、给约束、给验收标准，但别替它定实现</span></p>
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">这次我只说了“下载到这个目录、叫这个名字”。至于用 HEAD 探路、看 Content-Type、校验魔数，全是它自己规划的。AI 不缺执行力，缺的是“什么叫完成”。</span></p>
+
+    <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">2. 凡是“拿数据”的动作，都要“先探测、后执行”</span></p>
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">先发一个便宜的请求问清楚状态码、类型、大小，再决定要不要付真金白银的流量。这条“起飞前检查”的思路，API 调用、爬虫、定时任务里统统适用。</span></p>
+
+    <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">3. 成功的标准是“结果正确”，不是“命令没报错”</span></p>
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+      <span leaf="">命令返回 0 不代表你拿到了 PDF，“文件存在”也不代表它没被截断。看文件头、看页数、看校验和——</span>
+      <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">把“验收”变成一个自动执行的检查动作，而不是靠眼睛扫一眼。</span></span>
+    </p>
+
+    <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">4. 中文路径、带空格的路径，是 Windows 脚本的头号杀手</span></p>
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+      <span leaf="">写在源码里的中文路径，在很多环境下岁月静好，到了 Windows PowerShell 5.1 上就变成一串乱码。</span>
+      <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">跨平台的脚本，路径用 ASCII，中文留给注释。</span></span>
+    </p>
+
+    <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">5. 报错原文，一个字都别删地贴给它</span></p>
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0;letter-spacing:0.3px;text-align:left;">
+      <span style="background:#F1F5F9;color:#2563EB;padding:1px 6px;border-radius:4px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:13px;"><span leaf="">DirectoryNotFoundException</span></span>
+      <span leaf="">、</span>
+      <span style="background:#F1F5F9;color:#2563EB;padding:1px 6px;border-radius:4px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:13px;"><span leaf="">UnicodeEncodeError</span></span>
+      <span leaf=""> 这些，我没有转述成“报错说找不到文件”，而是整段丢回去。</span>
+      <strong style="color:#2563EB;"><span leaf="">只有原始信息里才有真正的线索。</span></strong>
+    </p>
+
+    <!-- ===== ∞ 小智说两句 ===== -->
+    <section style="display:flex;align-items:baseline;gap:14px;margin-top:28px;">
+      <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">∞</span></span>
+      <section style="flex:1;">
+        <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">小智说两句</span></p>
+        <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">什么叫做好了，永远得你来定义</span></p>
+      </section>
+    </section>
+
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:16px 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">这次总共就三段脚本，加起来不到 40 行，但它解决的是一个我每周都会碰到的真实麻烦。</span></p>
+
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+      <span leaf="">回头看，整件事里我自己真正做的判断只有两个：</span>
+      <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">定目录和文件名</span></span>
+      <span leaf="">，以及</span>
+      <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">“下完了要验一下”</span></span>
+      <span leaf="">。中间所有的坑——大文件下载慢、假链接、假 PDF、中文乱码——都是 AI 一边试一边填过去的。</span>
+    </p>
+
+    <section style="border-left:3px solid #2563EB;padding-left:16px;margin-top:24px;">
+      <p style="font-size:15px;color:#111827;line-height:1.8;margin:0 0 6px;font-weight:600;"><span leaf="">AI 写代码的上限很高，但“什么叫做好了”这件事，永远得你来定义。给它画的验收红线越清楚，你的返工越少。</span></p>
+      <p style="font-size:11px;color:#9CA3AF;margin:0;"><span leaf="">—— 小智 · 本期总结</span></p>
+    </section>
+
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:16px 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">顺带提醒一句：这套方法适用于你有权获取的资源（自己买的书、开放数据集、开源素材）。这次是备课用的教学参考资源，请大家合理合规使用。</span></p>
+
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+      <span leaf="">还有个意外的收获——为了减少这类重复劳动，我把“下载 + 校验 + 归档”固化成了三个可复用脚本，以后任何远程文件归档，改两行 URL 就能跑。</span>
+      <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">把一次性的解决，变成可复用的资产，这才是人机协作最大的复利。</span></span>
+    </p>
+
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+      <span leaf="">下期兑现欠大家的：</span>
+      <strong style="color:#2563EB;"><span leaf="">AI 画图大乱斗——同一句提示词，我把主流文生图工具挨个测了一遍</span></strong>
+      <span leaf="">，看看谁真能打。</span>
+    </p>
+
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0;letter-spacing:0.3px;text-align:left;"><span leaf="">你最近有没有哪个“说起来一句话、做起来一小时”的重复活儿？评论区说说，说不定下期我就拿它当例子。</span></p>
+
+    <!-- ===== 今日互动 ===== -->
+    <section style="background:#EEF2FF;border:1px solid #C7D2FE;border-radius:12px;padding:16px 18px;margin-top:28px;">
+      <p style="font-size:15px;font-weight:800;color:#1E3A8A;margin:0 0 8px;"><span leaf="">💬 今日互动</span></p>
+      <p style="font-size:14px;color:#1F2937;margin:0;line-height:1.8;text-align:left;"><span leaf="">你在 Windows 上被中文路径坑过吗？或者有什么“说起来一句话、做起来一小时”的重复活儿？评论区聊聊，说不定下期我就拿它当例子。</span></p>
+    </section>
+
+    <!-- ===== 尾部签名 ===== -->
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:24px 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">我是小智，每天一分钟，把 AI 讲成妈妈都能听懂的话。</span></p>
+    <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+      <span leaf="">如果你觉得今天这篇有收获，欢迎</span>
+      <strong style="color:#2563EB;"><span leaf="">点赞、在看、转发</span></strong>
+      <span leaf="">三连，我们下篇见。</span>
+    </p>
+
+    <!-- ===== 关注引导卡 ===== -->
+    <section style="background:#FFFFFF;border:1.5px solid #2563EB;border-radius:12px;padding:18px 20px;margin-top:24px;display:flex;align-items:center;gap:14px;">
+      <span leaf=""><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/zeT1IrhsLLib9UkBbgKv2A7jfpyv4T5O3uAscIOuib1wHH4NibKALu7iaeSER3aC9jgFPZPgvHib0LWgYd5hhs5KjEvIcRia2aua48aUibYFNvibf2g/0?wx_fmt=jpeg&amp;from=appmsg" alt="公众号二维码" style="width:84px;height:84px;display:block;flex-shrink:0;border-radius:10px;"></span>
+      <section style="flex:1;min-width:0;">
+        <p style="font-size:15px;font-weight:800;color:#111827;margin:0 0 4px;"><span leaf="">智趣AI资讯小站</span></p>
+        <p style="font-size:12px;color:#6B7280;line-height:1.6;margin:0 0 6px;"><span leaf="">每天一分钟，AI 变轻松</span></p>
+        <p style="font-size:11px;font-weight:600;color:#2563EB;margin:0;"><span leaf="">长按识别二维码 · 关注不迷路</span></p>
+      </section>
+      <span style="flex-shrink:0;background:#2563EB;color:#FFFFFF;font-size:12px;font-weight:700;padding:6px 14px;border-radius:20px;"><span leaf="">关注</span></span>
+    </section>
+
+    <!-- ===== 页脚签名条 ===== -->
+    <section style="padding:20px 8px 8px;margin-top:24px;text-align:center;">
+      <p style="font-size:11px;color:#9CA3AF;letter-spacing:2px;margin:0 0 8px;"><span leaf="">每天一分钟 · AI 变轻松</span></p>
+      <section style="display:flex;align-items:center;gap:8px;justify-content:center;">
+        <section style="flex:0 0 60px;height:1px;background:linear-gradient(to right,transparent,#2563EB);"><span leaf="">&nbsp;</span></section>
+        <span style="font-size:10px;color:#2563EB;font-weight:700;"><span leaf="">▲</span></span>
+        <section style="flex:0 0 60px;height:1px;background:linear-gradient(to left,transparent,#2563EB);"><span leaf="">&nbsp;</span></section>
+      </section>
+    </section>
+
+  </section>
+
+</section>
+  </div>
+</div>
+<script>
+  function gzhShowToast(msg){
+    var t=document.getElementById('gzhToast');
+    t.textContent=msg;t.classList.add('show');
+    clearTimeout(t._timer);
+    t._timer=setTimeout(function(){t.classList.remove('show');},2800);
+  }
+  function gzhCopy(){
+    var el=document.getElementById('gzh-content');
+    // 选中渲染后的富文本节点并复制（等价于手动 Ctrl+A / Ctrl+C，保留全部样式）
+    var range=document.createRange();
+    range.selectNodeContents(el);
+    var sel=window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    var ok=false;
+    try{ok=document.execCommand('copy');}catch(e){ok=false;}
+    sel.removeAllRanges();
+    var btn=document.getElementById('gzhCopyBtn');
+    if(ok){
+      gzhShowToast('✅ 已复制！去公众号编辑器按 Ctrl/⌘+V 粘贴即可');
+      var old=btn.textContent;btn.textContent='✅ 已复制';
+      setTimeout(function(){btn.textContent=old;},2200);
+    }else{
+      gzhShowToast('⚠ 自动复制失败，请手动全选(Ctrl/⌘+A)再复制(Ctrl/⌘+C)');
+    }
+  }
+</script>
+</body>
+</html>

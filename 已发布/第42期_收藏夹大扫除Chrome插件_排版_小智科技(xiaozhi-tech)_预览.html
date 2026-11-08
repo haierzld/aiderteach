@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第42期_收藏夹大扫除Chrome插件_排版_小智科技(xiaozhi-tech) · 公众号排版预览</title>
+<style>
+  body{margin:0;background:#eef0f2;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;-webkit-text-size-adjust:100%;}
+  .gzh-toolbar{position:fixed;top:0;left:0;right:0;height:54px;background:#ffffff;box-shadow:0 1px 10px rgba(0,0,0,.08);display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:99;}
+  .gzh-hint{font-size:13px;color:#6b7280;line-height:1.4;}
+  .gzh-hint b{color:#111827;}
+  .gzh-copy{background:#059669;color:#fff;border:0;border-radius:9px;padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 3px 10px rgba(5,150,105,.28);white-space:nowrap;transition:transform .08s,background .15s;}
+  .gzh-copy:hover{background:#047857;}
+  .gzh-copy:active{transform:translateY(1px);}
+  .gzh-toast{position:fixed;top:66px;left:50%;transform:translateX(-50%);background:#111827;color:#fff;padding:11px 20px;border-radius:10px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .25s;z-index:100;box-shadow:0 6px 20px rgba(0,0,0,.25);max-width:88vw;text-align:center;}
+  .gzh-toast.show{opacity:1;}
+  .gzh-stage{max-width:700px;margin:78px auto 64px;padding:0 8px;}
+  @media(max-width:520px){.gzh-hint{max-width:150px;}}
+</style>
+</head>
+<body>
+<div class="gzh-toolbar">
+  <span class="gzh-hint">👇 下方是排版效果 · 点右侧 <b>复制</b> 直接粘到公众号</span>
+  <button class="gzh-copy" id="gzhCopyBtn" onclick="gzhCopy()">📋 复制到公众号</button>
+</div>
+<div class="gzh-toast" id="gzhToast"></div>
+<div class="gzh-stage">
+  <div id="gzh-content">
+<section style="max-width:677px;margin:0 auto;background:#FFFFFF;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:#1F2937;line-height:1.75;letter-spacing:0.3px;">
+
+<!-- ===== 封面头图卡 ===== -->
+<section style="background:#FFFFFF;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(37,99,235,0.08);">
+  <section style="background:linear-gradient(135deg,#2563EB,#7C3AED);padding:26px 28px 22px;">
+    <section style="display:flex;align-items:center;gap:8px;margin-bottom:18px;">
+      <span style="width:6px;height:6px;background:#93C5FD;border-radius:50%;display:inline-block;"><span leaf="">&nbsp;</span></span>
+      <span style="font-size:11px;font-weight:700;letter-spacing:3px;color:rgba(255,255,255,0.85);"><span leaf="">CodeBuddy 自造系列 · 第 42 期</span></span>
+      <section style="flex:1;height:1px;background:rgba(255,255,255,0.25);"><span leaf="">&nbsp;</span></section>
+      <span style="font-size:10px;color:rgba(255,255,255,0.7);font-weight:500;"><span leaf="">2026.09.15</span></span>
+    </section>
+    <p style="font-size:23px;font-weight:800;color:#FFFFFF;margin:0 0 10px;line-height:1.25;letter-spacing:-0.75px;"><span leaf="">收藏夹乱成“杂物间”？我用 CodeBuddy 写了个 Chrome 插件</span></p>
+    <p style="font-size:14px;color:rgba(255,255,255,0.75);margin:0;line-height:1.7;letter-spacing:0.3px;"><span leaf="">不藏私全程：四句话需求、两个翻车现场、从本地加载到开源上架</span></p>
+  </section>
+  <section style="padding:18px 28px;display:flex;align-items:center;justify-content:space-between;">
+    <p style="font-size:12px;color:#6B7280;margin:0;font-weight:500;"><span leaf="">自造系列第 3 弹</span></p>
+    <section style="display:flex;gap:6px;">
+      <span style="background:#EEF2FF;color:#2563EB;padding:2px 10px;border-radius:20px;font-size:10px;font-weight:600;"><span leaf="">工具实战</span></span>
+      <span style="background:#EEF2FF;color:#2563EB;padding:2px 10px;border-radius:20px;font-size:10px;font-weight:600;"><span leaf="">CodeBuddy</span></span>
+    </section>
+  </section>
+</section>
+
+<section style="padding:0 20px;">
+
+  <!-- ===== 导语段 ===== -->
+  <section style="background:#F8FAFF;border-left:3px solid #2563EB;padding:16px 18px;margin-top:24px;border-radius:0 12px 12px 0;">
+    <p style="font-size:15px;font-weight:600;color:#1E3A8A;line-height:1.8;margin:0;letter-spacing:0.3px;"><span leaf="">大家好，我是小智。这是“用 CodeBuddy 自造产品”系列的第 3 弹——第 36 期做了编辑器扩展，第 37 期做了微信表情包，这一期，我把手伸向了自己浏览器里那个“万年不整理”的收藏夹。点开一看：600 多条，一半是重复的，一堆早就打不开了，还有一大批是当年觉得“以后一定看”、结果三年没点开过的。于是我又干了同一件事：把需求丢给 CodeBuddy，让它给我写一个 Chrome 插件。</span></p>
+  </section>
+
+  <!-- ===== 本文看点 ===== -->
+  <p style="font-size:14px;font-weight:700;color:#111827;margin:20px 0 10px;"><span leaf="">📌 本文看点</span></p>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#2563EB;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">一个真痛点：收藏夹是怎么从“资料库”变成“杂物间”的</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#06B6D4;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">四句话需求，CodeBuddy 半天交付第一版</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#7C3AED;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">两个翻车现场：一个关于“权限”，一个关于“删太多”</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#2563EB;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">从本地加载到开源上架：让插件“能装能用”的完整路径</span></p>
+  </section>
+
+  <!-- ===== 01 起因 ===== -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:28px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">01</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">起因：收藏夹，怎么就成了“数字杂物间”</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">从“资料库”到“杂物间”</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:16px 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">写公众号这几年，我最常用的“资料库”就是浏览器收藏夹。看到好文章、好工具，第一反应就是“先收藏，回头细看”。</span></p>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">结果呢？</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">“回头”永远没来，“收藏”倒是越来越多。</span></span>
+  </p>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">那天我随手点开收藏夹管理页，吓了一跳：600 多条。里面大致是三堆东西——</span></p>
+
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#2563EB;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">同一个链接存了三四遍，标题还各不相同（每次看到又顺手收藏一次）；</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#06B6D4;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">一堆显示“无法访问”的失效链接，多半是文章被删、站点关闭；</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#7C3AED;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">还有一批“以后一定看”的，最后一次点开时间是三年前。</span></p>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:16px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">收藏夹本来的意义，是“帮我把好东西存住”；结果它自己变成了一个“清理成本比收益还高”的杂物间。</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">想删，舍不得；想留，又用不上。</span></span>
+  </p>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0;letter-spacing:0.3px;text-align:left;"><span leaf="">这种感觉，估计你也有。</span></p>
+
+  <!-- ===== 02 开工 ===== -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:28px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">02</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">开工：把“我想要”翻译成四条硬需求</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">先钉死“边界”，再让 AI 动手</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:16px 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">这次我没有跟 CodeBuddy 说“给我写个插件”，而是照旧先把“边界”钉死，一共四句话：</span></p>
+
+  <section style="display:flex;gap:10px;margin-bottom:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">1</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><strong><span leaf="">它是什么。</span></strong>一个 Chrome 浏览器扩展，用 Manifest V3 新标准，零第三方依赖，所有数据只在本地处理、绝不上传。</span></p>
+  </section>
+  <section style="display:flex;gap:10px;margin-bottom:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">2</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><strong><span leaf="">它能干什么。</span></strong>读取我的收藏夹，自动找出两类“垃圾”：重复的（同一个网址存了多次）和失效的（点了打不开的）；支持勾选后批量清理。</span></p>
+  </section>
+  <section style="display:flex;gap:10px;margin-bottom:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">3</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><strong><span leaf="">它怎么跟我交互。</span></strong>点一下浏览器右上角的插件图标，弹出一个小面板，上面三个标签页——重复项、失效链接、全部收藏；每条前面一个勾选框，底部一个“导出备份”、一个“清理选中”。</span></p>
+  </section>
+  <section style="display:flex;gap:10px;margin-bottom:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">4</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><strong><span leaf="">怎么算做完。</span></strong>能通过“加载已解压的扩展程序”在我自己的浏览器里跑起来；代码整理干净，配一份 README，开源到 GitHub。</span></p>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:16px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">把</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">“是什么、干什么、怎么用、怎么算完”</span></span>
+    <span leaf="">讲清楚之后，剩下的我基本没操心。</span>
+  </p>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0;letter-spacing:0.3px;text-align:left;"><span leaf="">半天不到，第一个能跑的版本就出来了：图标、弹窗、扫描逻辑、清理按钮，一应俱全。</span></p>
+
+  <section style="border-left:3px solid #2563EB;padding-left:16px;margin-top:24px;">
+    <p style="font-size:15px;color:#111827;line-height:1.8;margin:0 0 6px;font-weight:600;"><span leaf="">“AI 不缺写代码的能力，缺的是”你想要的到底是什么“。”</span></p>
+    <p style="font-size:11px;color:#9CA3AF;margin:0;"><span leaf="">—— 小智 · 自造系列第 3 弹心得</span></p>
+  </section>
+
+  <!-- ===== 03 踩坑现场 ===== -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:28px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">03</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">踩坑现场：AI 也会“想当然”</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">权限太贪心、删除太勇猛</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:16px 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">AI 写代码很快，但也特别容易“想当然”。这个项目里它翻了两次车，而且都挺有代表性。</span></p>
+
+  <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">翻车一：为了省事，申请了“通天的权限”</span></p>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">第一个版本能跑通，但我打开扩展详情页一看，眉头就皱了——它申请了</span>
+    <span style="background:#F1F5F9;color:#2563EB;padding:1px 6px;border-radius:4px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:13px;"><span leaf="">&lt;all_urls&gt;</span></span>
+    <span leaf="">（读取所有网站数据）的权限。</span>
+  </p>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">我明明只是要整理收藏夹、偶尔点一下链接看看活没活着，凭什么要看我所有网页？</span></p>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">CodeBuddy 的初衷是“省事”：要检测失效链接，就得能访问这些网址，那干脆一步到位申请全站权限。但站在用户立场，这就是典型的</span>
+    <strong style="color:#2563EB;"><span leaf="">“能力越大、越像流氓软件”</span></strong>
+    <span leaf="">——一个整理收藏夹的小工具张口就要“看所有网站”，谁敢装？</span>
+  </p>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">后来我让它按“最小必要”原则改：只申请</span>
+    <span style="background:#F1F5F9;color:#2563EB;padding:1px 6px;border-radius:4px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:13px;"><span leaf="">bookmarks</span></span>
+    <span leaf="">（收藏夹）权限；检测链接时，才在用户主动点击的那一刻发起请求，并在界面上写明白“只用于检查链接是否可访问，不会上传任何数据”。</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">权限这东西，能少要一分，就多一分信任。</span></span>
+  </p>
+
+  <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">翻车二：删得太“勇猛”，一按就没了</span></p>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">清理功能的第一版是这么写的：勾选 → 点“清理” → 直接删。干脆利落。</span></p>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">我拿测试账号试了一下，一键清掉一百多条，屏幕上干干净净——然后我愣住了：</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">万一删错了呢？能撤回吗？</span></span>
+  </p>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">答案是不能。</span>
+    <span style="background:#F1F5F9;color:#2563EB;padding:1px 6px;border-radius:4px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:13px;"><span leaf="">chrome.bookmarks.remove</span></span>
+    <span leaf="">执行完就是执行完，没有回收站。</span>
+  </p>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">我赶紧让它加了三道保险：第一，点清理前，自动把当前收藏夹导出成一份备份文件下载下来；第二，弹一个确认框，默认按钮从“确定”改成“取消”；第三，清理只删勾选的那几条，绝不“顺手”多删。</span></p>
+
+  <section style="background:#FFF7ED;border-left:3px solid #F97316;border-radius:0 12px 12px 0;padding:14px 18px;margin-top:24px;display:flex;gap:12px;">
+    <section style="flex-shrink:0;width:22px;height:22px;background:#F97316;border-radius:50%;color:#FFFFFF;text-align:center;line-height:22px;font-size:13px;font-weight:800;"><span leaf="">!</span></section>
+    <section>
+      <p style="font-size:14px;font-weight:700;color:#7C2D12;margin:0 0 4px;"><span leaf="">不可逆的动作，先停一步</span></p>
+      <p style="font-size:13px;color:#9A3412;line-height:1.7;margin:0;"><span leaf="">凡是“删、改、覆盖”，宁可多停一步让用户确认，也绝不自作主张——这一条，正好接上第 36 期那个“打错文件”的教训。</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:15px;font-weight:700;color:#1F2937;margin:20px 0 8px;padding-left:12px;border-left:3px solid #93C5FD;line-height:1.5;"><span leaf="">顺带一个惊喜：AI 主动提醒了我一件事</span></p>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">我原本的想法很简单：只要能打开，就不算失效。CodeBuddy 实现时加了一句提示——很多网站有“防盗链”、需要登录才能访问，机器去请求会被拒，但人点开其实是好的。</span></p>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">所以它没有一刀切，而是把结果分成了两档：</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">明确连不上的标成“失效”，拿不准的标成“存疑”</span></span>
+    <span leaf="">，让我自己点开看看。</span>
+  </p>
+
+  <section style="background:#F0FDF4;border-left:3px solid #10B981;border-radius:0 12px 12px 0;padding:14px 18px;margin-top:24px;display:flex;gap:12px;">
+    <section style="flex-shrink:0;width:22px;height:22px;background:#10B981;border-radius:50%;color:#FFFFFF;text-align:center;line-height:22px;font-size:12px;font-weight:800;"><span leaf="">✓</span></section>
+    <section>
+      <p style="font-size:14px;font-weight:700;color:#065F46;margin:0 0 4px;"><span leaf="">拿不准就问，别硬猜</span></p>
+      <p style="font-size:13px;color:#047857;line-height:1.7;margin:0;"><span leaf="">它没有假装自己什么都懂，而是把判断权交还给了人——这也是我用 CodeBuddy 最看重的一点。</span></p>
+    </section>
+  </section>
+
+  <!-- ===== 04 成品 ===== -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:28px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">04</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">成品长什么样：三个按钮，治好收藏夹</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">功能不花哨，每一下都打在痛点上</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:16px 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">跑了几轮之后，这个插件稳定成了我想要的样子。功能不花哨，但每一下都打在痛点上：</span></p>
+
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#2563EB;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><strong><span leaf="">扫重复：</span></strong>按网址去重，同一个链接存了几遍一目了然，留一条、删其余；</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#06B6D4;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><strong><span leaf="">扫失效：</span></strong>一键并发检测，死链、打不开的单独列一列；</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#7C3AED;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><strong><span leaf="">一键备份：</span></strong>动手之前先把收藏夹导出成文件，删错了也能找回来；</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#2563EB;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><strong><span leaf="">批量清理：</span></strong>勾选、确认、删除，一条龙。</span></p>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:16px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">它的“骨架”其实很简单，一个</span>
+    <span style="background:#F1F5F9;color:#2563EB;padding:1px 6px;border-radius:4px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:13px;"><span leaf="">manifest.json</span></span>
+    <span leaf="">就说明了全部诉求：</span>
+  </p>
+
+  <section style="background:#0F172A;border-radius:12px;overflow:hidden;margin-top:24px;">
+    <section style="display:flex;align-items:center;gap:6px;padding:10px 14px;background:#1E293B;">
+      <span style="width:8px;height:8px;background:#F87171;border-radius:50%;display:inline-block;"><span leaf="">&nbsp;</span></span>
+      <span style="width:8px;height:8px;background:#FBBF24;border-radius:50%;display:inline-block;"><span leaf="">&nbsp;</span></span>
+      <span style="width:8px;height:8px;background:#34D399;border-radius:50%;display:inline-block;"><span leaf="">&nbsp;</span></span>
+      <span style="font-size:10px;color:#64748B;margin-left:8px;font-family:ui-monospace,'SF Mono',Consolas,monospace;"><span leaf="">manifest.json</span></span>
+    </section>
+    <section style="padding:16px 18px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:12px;line-height:1.8;color:#E2E8F0;">
+      <p style="margin:0;color:#E2E8F0;"><span leaf="">{</span></p>
+      <p style="margin:0;color:#E2E8F0;"><span leaf="">　　"manifest_version": 3,</span></p>
+      <p style="margin:0;color:#38BDF8;"><span leaf="">　　"name": "收藏夹大扫除",</span></p>
+      <p style="margin:0;color:#E2E8F0;"><span leaf="">　　"version": "1.0.0",</span></p>
+      <p style="margin:0;color:#38BDF8;"><span leaf="">　　"permissions": ["bookmarks"],</span></p>
+      <p style="margin:0;color:#E2E8F0;"><span leaf="">　　"action": { "default_popup": "popup.html" }</span></p>
+      <p style="margin:0;color:#E2E8F0;"><span leaf="">}</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:16px 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">注意那份 permissions 清单——只有一个</span>
+    <span style="background:#F1F5F9;color:#2563EB;padding:1px 6px;border-radius:4px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:13px;"><span leaf="">bookmarks</span></span>
+    <span leaf="">。这就是上面那场“权限翻车”之后，最终收敛下来的结果。</span>
+  </p>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0;letter-spacing:0.3px;text-align:left;"><span leaf="">名字我起得很直白，就叫“收藏夹大扫除”。看着简单，但它解决的是我拖了好几年的一个具体麻烦。</span></p>
+
+  <!-- ===== 05 交付路径 ===== -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:28px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">05</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">让别人也能用上：从本地加载到开源上架</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">跑通只是第一步</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:16px 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">插件在自己电脑上跑通，只是第一步。想分享给别人，还有一条“交付路径”要走。整个过程，我照样交给 CodeBuddy 一条龙：</span></p>
+
+  <section style="display:flex;gap:10px;margin-bottom:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">1</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;">
+      <span leaf=""><strong><span leaf="">本地装起来。</span></strong>打开浏览器的扩展管理页（</span>
+      <span style="background:#F1F5F9;color:#2563EB;padding:1px 6px;border-radius:4px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:13px;"><span leaf="">chrome://extensions</span></span>
+      <span leaf="">），打开右上角的“开发者模式”，点“加载已解压的扩展程序”，选中项目文件夹——插件立刻出现在工具栏上。</span>
+    </p>
+  </section>
+  <section style="display:flex;gap:10px;margin-bottom:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">2</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><strong><span leaf="">打包。</span></strong>用同样的入口把文件夹打成 .zip 安装包，方便发给朋友，也方便作为上架的提交物。</span></p>
+  </section>
+  <section style="display:flex;gap:10px;margin-bottom:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">3</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><strong><span leaf="">开源。</span></strong>把代码托管到 GitHub，配一份说人话的 README：这插件解决什么问题、怎么安装、怎么用、需要哪些权限、为什么需要（这一条尤其重要，用户最怕黑箱）。</span></p>
+  </section>
+  <section style="display:flex;gap:10px;margin-bottom:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">4</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf=""><strong><span leaf="">上架商店（可选）。</span></strong>如果想进 Chrome 应用商店，需要注册开发者账号（一次性 5 美元）、填写隐私说明（讲清楚数据怎么用、绝不上传）、提交审核，一般几天出结果。</span></p>
+  </section>
+
+  <section style="background:#F0FDF4;border-left:3px solid #10B981;border-radius:0 12px 12px 0;padding:14px 18px;margin-top:24px;display:flex;gap:12px;">
+    <section style="flex-shrink:0;width:22px;height:22px;background:#10B981;border-radius:50%;color:#FFFFFF;text-align:center;line-height:22px;font-size:12px;font-weight:800;"><span leaf="">✓</span></section>
+    <section>
+      <p style="font-size:14px;font-weight:700;color:#065F46;margin:0 0 4px;"><span leaf="">已开源 · MIT 协议</span></p>
+      <p style="font-size:13px;color:#047857;line-height:1.7;margin:0;"><span leaf="">📦 仓库地址：https://github.com/haierzld/bookmark-cleaner —— 顺着第 36 期的老规矩开源，免费。有需要的朋友可以直接下载试用，觉得好用来个 Star，遇到问题在仓库提 Issue。</span></p>
+    </section>
+  </section>
+
+  <!-- ===== 06 结尾总结 ===== -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:28px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">∞</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">小智说两句</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">真正难的，从来不是写代码</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:16px 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">这是我用 CodeBuddy 做完的第三个“真产品”。三次下来，我的感受越来越一致：</span></p>
+
+  <p style="font-size:15px;font-weight:700;color:#111827;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">真正难的，从来不是写代码，而是想清楚“要什么”和“不要什么”。</span></p>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">这次的“不要什么”，就是那两个翻车点——不要贪心的权限，不要无法挽回的删除。把这两条想清楚，剩下的代码，AI 几乎没让我操心。</span></p>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">如果你也想让 CodeBuddy 帮你做个插件，别一上来就挑大工程。就从你每天在用、又总觉得“差点意思”的小地方下手：一个总也理不清的收藏夹、一步重复劳动、一句心里的“要是有个工具就好了”。</span></p>
+
+  <section style="border-left:3px solid #2563EB;padding-left:16px;margin-top:24px;">
+    <p style="font-size:15px;color:#111827;line-height:1.8;margin:0 0 6px;font-weight:600;"><span leaf="">“AI 能把你从”敲代码“里解放出来，但”这个工具该怎么长、边界在哪、底线是什么“，永远得由你这个”产品经理“说了算。”</span></p>
+    <p style="font-size:11px;color:#9CA3AF;margin:0;"><span leaf="">—— 小智 · 本期总结</span></p>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:16px 0 0;letter-spacing:0.3px;text-align:left;"><span leaf="">下期周三见，我们聊个技术词：<span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">RAG——为什么 AI 能“读着你的文档”回答问题，还不瞎编。</span></span></span></p>
+
+  <!-- ===== 今日互动 ===== -->
+  <section style="background:#EEF2FF;border:1px solid #C7D2FE;border-radius:12px;padding:16px 18px;margin-top:28px;">
+    <p style="font-size:15px;font-weight:800;color:#1E3A8A;margin:0 0 8px;"><span leaf="">💬 今日互动</span></p>
+    <p style="font-size:14px;color:#1F2937;margin:0;line-height:1.8;text-align:left;"><span leaf="">你的浏览器收藏夹里，存了多少条？有没有那种“存了三年没点开过”的？评论区聊聊，顺便说说——如果让你给自己造一个小工具，你最想解决哪个麻烦？</span></p>
+  </section>
+
+  <!-- ===== 尾部签名 ===== -->
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:24px 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">我是小智，每天一分钟，把 AI 讲成妈妈都能听懂的话。</span></p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">如果你觉得今天这篇有收获，欢迎</span>
+    <strong style="color:#2563EB;"><span leaf="">点赞、在看、转发</span></strong>
+    <span leaf="">三连，我们下篇见。</span>
+  </p>
+
+  <!-- ===== 关注引导卡 ===== -->
+  <section style="background:#FFFFFF;border:1.5px solid #2563EB;border-radius:12px;padding:18px 20px;margin-top:24px;display:flex;align-items:center;gap:14px;">
+    <span leaf=""><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/zeT1IrhsLLib9UkBbgKv2A7jfpyv4T5O3uAscIOuib1wHH4NibKALu7iaeSER3aC9jgFPZPgvHib0LWgYd5hhs5KjEvIcRia2aua48aUibYFNvibf2g/0?wx_fmt=jpeg&amp;from=appmsg" alt="公众号二维码" style="width:84px;height:84px;display:block;flex-shrink:0;border-radius:10px;"></span>
+    <section style="flex:1;min-width:0;">
+      <p style="font-size:15px;font-weight:800;color:#111827;margin:0 0 4px;"><span leaf="">智趣AI资讯小站</span></p>
+      <p style="font-size:12px;color:#6B7280;line-height:1.6;margin:0 0 6px;"><span leaf="">每天一分钟，AI 变轻松</span></p>
+      <p style="font-size:11px;font-weight:600;color:#2563EB;margin:0;"><span leaf="">长按识别二维码 · 关注不迷路</span></p>
+    </section>
+    <span style="flex-shrink:0;background:#2563EB;color:#FFFFFF;font-size:12px;font-weight:700;padding:6px 14px;border-radius:20px;"><span leaf="">关注</span></span>
+  </section>
+
+  <!-- ===== 页脚签名条 ===== -->
+  <section style="padding:20px 8px 8px;margin-top:24px;text-align:center;">
+    <p style="font-size:11px;color:#9CA3AF;letter-spacing:2px;margin:0 0 8px;"><span leaf="">每天一分钟 · AI 变轻松</span></p>
+    <section style="display:flex;align-items:center;gap:8px;justify-content:center;">
+      <section style="flex:0 0 60px;height:1px;background:linear-gradient(to right,transparent,#2563EB);"><span leaf="">&nbsp;</span></section>
+      <span style="font-size:10px;color:#2563EB;font-weight:700;"><span leaf="">▲</span></span>
+      <section style="flex:0 0 60px;height:1px;background:linear-gradient(to left,transparent,#2563EB);"><span leaf="">&nbsp;</span></section>
+    </section>
+  </section>
+
+</section>
+
+</section>
+  </div>
+</div>
+<script>
+  function gzhShowToast(msg){
+    var t=document.getElementById('gzhToast');
+    t.textContent=msg;t.classList.add('show');
+    clearTimeout(t._timer);
+    t._timer=setTimeout(function(){t.classList.remove('show');},2800);
+  }
+  function gzhCopy(){
+    var el=document.getElementById('gzh-content');
+    // 选中渲染后的富文本节点并复制（等价于手动 Ctrl+A / Ctrl+C，保留全部样式）
+    var range=document.createRange();
+    range.selectNodeContents(el);
+    var sel=window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    var ok=false;
+    try{ok=document.execCommand('copy');}catch(e){ok=false;}
+    sel.removeAllRanges();
+    var btn=document.getElementById('gzhCopyBtn');
+    if(ok){
+      gzhShowToast('✅ 已复制！去公众号编辑器按 Ctrl/⌘+V 粘贴即可');
+      var old=btn.textContent;btn.textContent='✅ 已复制';
+      setTimeout(function(){btn.textContent=old;},2200);
+    }else{
+      gzhShowToast('⚠ 自动复制失败，请手动全选(Ctrl/⌘+A)再复制(Ctrl/⌘+C)');
+    }
+  }
+</script>
+</body>
+</html>

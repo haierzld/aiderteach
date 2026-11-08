@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第37期_CodeBuddy做表情最佳实践_排版_小智科技(xiaozhi-tech) · 公众号排版预览</title>
+<style>
+  body{margin:0;background:#eef0f2;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;-webkit-text-size-adjust:100%;}
+  .gzh-toolbar{position:fixed;top:0;left:0;right:0;height:54px;background:#ffffff;box-shadow:0 1px 10px rgba(0,0,0,.08);display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:99;}
+  .gzh-hint{font-size:13px;color:#6b7280;line-height:1.4;}
+  .gzh-hint b{color:#111827;}
+  .gzh-copy{background:#059669;color:#fff;border:0;border-radius:9px;padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 3px 10px rgba(5,150,105,.28);white-space:nowrap;transition:transform .08s,background .15s;}
+  .gzh-copy:hover{background:#047857;}
+  .gzh-copy:active{transform:translateY(1px);}
+  .gzh-toast{position:fixed;top:66px;left:50%;transform:translateX(-50%);background:#111827;color:#fff;padding:11px 20px;border-radius:10px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .25s;z-index:100;box-shadow:0 6px 20px rgba(0,0,0,.25);max-width:88vw;text-align:center;}
+  .gzh-toast.show{opacity:1;}
+  .gzh-stage{max-width:700px;margin:78px auto 64px;padding:0 8px;}
+  @media(max-width:520px){.gzh-hint{max-width:150px;}}
+</style>
+</head>
+<body>
+<div class="gzh-toolbar">
+  <span class="gzh-hint">👇 下方是排版效果 · 点右侧 <b>复制</b> 直接粘到公众号</span>
+  <button class="gzh-copy" id="gzhCopyBtn" onclick="gzhCopy()">📋 复制到公众号</button>
+</div>
+<div class="gzh-toast" id="gzhToast"></div>
+<div class="gzh-stage">
+  <div id="gzh-content">
+<section style="max-width:677px;margin:0 auto;background:#FFFFFF;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:#1F2937;line-height:1.75;letter-spacing:0.3px;">
+
+<!-- ===== 封面头图卡 ===== -->
+<section style="background:#FFFFFF;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(37,99,235,0.08);">
+  <section style="background:linear-gradient(135deg,#2563EB,#7C3AED);padding:26px 28px 22px;">
+    <section style="display:flex;align-items:center;gap:8px;margin-bottom:18px;">
+      <span style="width:6px;height:6px;background:#93C5FD;border-radius:50%;display:inline-block;"><span leaf="">&nbsp;</span></span>
+      <span style="font-size:11px;font-weight:700;letter-spacing:3px;color:rgba(255,255,255,0.85);"><span leaf="">第 37 期</span></span>
+      <section style="flex:1;height:1px;background:rgba(255,255,255,0.25);"><span leaf="">&nbsp;</span></section>
+      <span style="font-size:10px;color:rgba(255,255,255,0.7);font-weight:500;"><span leaf="">2026.09.06</span></span>
+    </section>
+    <p style="font-size:23px;font-weight:800;color:#FFFFFF;margin:0 0 10px;line-height:1.2;letter-spacing:-0.75px;"><span leaf="">用 CodeBuddy 做一套能上架的微信表情包</span></p>
+    <p style="font-size:14px;color:rgba(255,255,255,0.75);margin:0;line-height:1.7;letter-spacing:0.3px;"><span leaf="">从角色人设、动效视频到上架材料——一条完整的“表情包生产线”实录</span></p>
+  </section>
+  <section style="padding:18px 28px;display:flex;align-items:center;justify-content:space-between;">
+    <p style="font-size:12px;color:#6B7280;margin:0;font-weight:500;"><span leaf="">平台注册 · 8 张动图 · 全套素材 · 一次过审</span></p>
+    <section style="display:flex;gap:6px;">
+      <span style="background:#EEF2FF;color:#2563EB;padding:2px 10px;border-radius:20px;font-size:10px;font-weight:600;"><span leaf="">CodeBuddy 实战</span></span>
+      <span style="background:#EEF2FF;color:#2563EB;padding:2px 10px;border-radius:20px;font-size:10px;font-weight:600;"><span leaf="">表情上架</span></span>
+    </section>
+  </section>
+</section>
+
+<section style="padding:0 20px;">
+
+  <!-- ===== 导语段 ===== -->
+  <section style="background:#F8FAFF;border-left:3px solid #2563EB;padding:16px 18px;margin-top:24px;border-radius:0 12px 12px 0;">
+    <p style="font-size:15px;font-weight:600;color:#1E3A8A;line-height:1.8;margin:0;letter-spacing:0.3px;"><span leaf="">大家好，我是小智。前几期讲了 AI 写代码、做插件，今天来点可爱的——我用 CodeBuddy 完整做了一整套微信表情包，而且不止一套：角色设定、批量出图、让表情动起来、把视频压成合规 GIF，再到横幅封面、赞赏图、审核材料，全程 AI 协作，最后真的提交到了微信表情开放平台。</span></p>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">今天这篇把这套</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">“表情包生产线”</span></span>
+    <span leaf="">从头拆到尾：从哪里注册、每步要什么、上架要交哪些文件，一步不落全罗列。</span>
+  </p>
+
+  <!-- ===== 本文看点 ===== -->
+  <p style="font-size:14px;font-weight:700;color:#111827;margin:20px 0 10px;"><span leaf="">📌 本文看点</span></p>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#2563EB;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">一条完整生产线：一个人设如何变成 8 张会动的表情</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#06B6D4;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">最容易被卡住的 500KB：GIF 怎么压才又小又清晰</span></p>
+  </section>
+  <section style="display:flex;gap:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#7C3AED;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">从注册到提交：上架要交的“材料全家桶”逐项核对</span></p>
+  </section>
+
+  <!-- ===== 渐变分隔线 ===== -->
+  <section style="height:1px;background:linear-gradient(to right,transparent,#2563EB,#06B6D4,transparent);margin-top:24px;"><span leaf="">&nbsp;</span></section>
+
+  <!-- ===== 01 起因 ===== -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:24px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">01</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">起因：为什么突然想用 AI 做表情包</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">一个“专属表情包”的小念头</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:20px 0 0;letter-spacing:0.3px;text-align:left;"><span leaf="">家里有个爱用表情包的长辈，翻来覆去就是那几套通用的，总觉得差点意思。我想给她做一套“专属款”——最好还能带点家乡味道。这个念头放以前想都不敢想：画一套统一风格的 Q 版人物得找画师一张张磨，动图还得专门做动画，成本不敢算。</span></p>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:12px 0 0;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">但今年不一样了，</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">文生图、图生视频这些能力在 CodeBuddy 里就能直接调用</span></span>
+    <span leaf="">。我给自己定了个小目标：从零到上架材料，全流程让 CodeBuddy 陪我做，顺便跑通一条可复制的“表情包生产线”。先剧透结果：我做了三套主题表情，其中一套七夕主题还配了动效视频版本。整条流水线跑顺之后，</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">一晚上的功夫就能再产出一套</span></span>
+    <span leaf="">。</span>
+  </p>
+
+  <!-- ===== 02 注册 ===== -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:24px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">02</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">第一步：先去微信表情开放平台“占个坑”</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">注册与入驻，其实就三样东西</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:20px 0 0;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">做表情包绕不开平台，国内上架基本都是走</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">微信表情开放平台</span></span>
+    <span leaf="">。上架是免费的，个人也能入驻，不需要企业资质。</span>
+  </p>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:12px 0 0;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">注册地址：</span>
+    <span style="background:#F3F4F6;border:1px solid #E5E7EB;border-radius:4px;padding:1px 6px;font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:13px;color:#2563EB;"><span leaf="">sticker.weixin.qq.com</span></span>
+  </p>
+
+  <p style="font-size:14px;font-weight:700;color:#111827;margin:20px 0 10px;"><span leaf="">注册和入驻要准备的三样东西</span></p>
+  <section style="display:flex;gap:10px;margin-bottom:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">1</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">一个能收验证码的手机号（或直接微信扫码登录）；</span></p>
+  </section>
+  <section style="display:flex;gap:10px;margin-bottom:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">2</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">实名认证：平台会对个人艺术家做实名核验，这一步不能省；</span></p>
+  </section>
+  <section style="display:flex;gap:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">3</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">主页资料：登录后完善个人主页，头像和主页横幅必传——头像要 640×640 方形图，横幅要 750×400，这两张我在做表情之前就先备好了。</span></p>
+  </section>
+
+  <section style="background:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:16px 18px;margin-top:24px;display:flex;gap:12px;">
+    <section style="flex-shrink:0;width:24px;height:24px;background:linear-gradient(135deg,#2563EB,#06B6D4);border-radius:6px;color:#FFFFFF;text-align:center;line-height:24px;font-size:13px;font-weight:800;"><span leaf="">i</span></section>
+    <section>
+      <p style="font-size:14px;font-weight:700;color:#111827;margin:0 0 4px;"><span leaf="">主页横幅是新手重灾区</span></p>
+      <p style="font-size:13px;color:#6B7280;line-height:1.7;margin:0;"><span leaf="">很多新手等提交专辑时才想起主页横幅没传，回头还得补。建议注册当天就把头像和横幅传好，后面专心做表情。</span></p>
+    </section>
+  </section>
+
+  <!-- ===== 03 人设 ===== -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:24px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">03</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">第二步：先给表情包定“人设”，再谈画图</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">十分钟写一张“角色卡”，守住统一风格</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:20px 0 0;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">很多人上来就喊“帮我画 8 张表情”，这是最容易翻车的开始。没有统一人设，8 张图画出来各长各的，根本凑不成一套。我的做法是先花十分钟把“角色卡”写好，它决定了整套表情的灵魂：</span>
+  </p>
+
+  <section style="display:flex;gap:8px;margin-top:14px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#2563EB;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">形象：8~10 岁圆脸小女孩，大眼、红润脸颊；</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#06B6D4;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">标志元素：头顶白色茉莉花环（福州市花），辨识度直接拉满；</span></p>
+  </section>
+  <section style="display:flex;gap:8px;margin-bottom:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#7C3AED;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">服装：粉色中式汉服小褂，双丸髻系粉色丝带；</span></p>
+  </section>
+  <section style="display:flex;gap:8px;">
+    <span style="flex-shrink:0;width:6px;height:6px;background:#2563EB;border-radius:2px;margin-top:9px;display:inline-block;"><span leaf="">&nbsp;</span></span>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">性格：温柔、可爱、治愈，口头禅“妈妈的专属小可爱”。</span></p>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:12px 0 0;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">给 CodeBuddy 的每一句绘图指令，我都把这段角色卡原样带上，再加场景动作描述。</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">角色一致性就靠“每次都说清主角是谁”这个笨办法守住</span></span>
+    <span leaf="">。</span>
+  </p>
+
+  <section style="background:#FFF7ED;border-left:3px solid #F97316;border-radius:0 12px 12px 0;padding:14px 18px;margin-top:24px;display:flex;gap:12px;">
+    <section style="flex-shrink:0;width:22px;height:22px;background:#F97316;border-radius:50%;color:#FFFFFF;text-align:center;line-height:22px;font-size:13px;font-weight:800;"><span leaf="">!</span></section>
+    <section>
+      <p style="font-size:14px;font-weight:700;color:#7C2D12;margin:0 0 4px;"><span leaf="">版权意识这步就要立起来</span></p>
+      <p style="font-size:13px;color:#9A3412;line-height:1.7;margin:0;"><span leaf="">用自己定义的形象就写原创；用了真实花朵、地名元素，最好在说明里写清创作依据。别拿别人的图或现成 IP 直接改，审核过不去是小，侵权风险是大。</span></p>
+    </section>
+  </section>
+
+  <!-- ===== 04 出图 ===== -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:24px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">04</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">第三步：批量“画”出表情原图</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">概念图定调 → 逐张出图 → 统一裁切</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:20px 0 0;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">人设定好，画图就快了。我用 CodeBuddy 的 AI 绘图能力批量生成单张表情，一套 8 张，通常分三到四轮搞定：</span>
+  </p>
+
+  <section style="display:flex;gap:10px;margin-bottom:10px;margin-top:14px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">1</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">先出概念图：把角色卡丢进去生成几张“定妆照”，选一张最满意的当全系列参照；</span></p>
+  </section>
+  <section style="display:flex;gap:10px;margin-bottom:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">2</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">再逐张出表情：早上好、晚安、爱你哟、谢谢、加油……每个动作配一句“角色卡 + 动作 + 构图”提示词，一次出 1~2 张；</span></p>
+  </section>
+  <section style="display:flex;gap:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">3</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">统一裁切：平台主图要正方形，我让 CodeBuddy 把所有图统一处理成 512×512 的方形 PNG，省得后面参差不齐。</span></p>
+  </section>
+
+  <section style="background:#FFF7ED;border-left:3px solid #F97316;border-radius:0 12px 12px 0;padding:14px 18px;margin-top:24px;display:flex;gap:12px;">
+    <section style="flex-shrink:0;width:22px;height:22px;background:#F97316;border-radius:50%;color:#FFFFFF;text-align:center;line-height:22px;font-size:13px;font-weight:800;"><span leaf="">!</span></section>
+    <section>
+      <p style="font-size:14px;font-weight:700;color:#7C2D12;margin:0 0 4px;"><span leaf="">AI 出图不是点一下就完事</span></p>
+      <p style="font-size:13px;color:#9A3412;line-height:1.7;margin:0;"><span leaf="">手指、文字、比例出错是家常便饭。每一张都要人工过一眼，不满意的直接重新生成，别将就——表情是贴在聊天框里的，细节崩了会非常扎眼。</span></p>
+    </section>
+  </section>
+
+  <!-- ===== 05 动起来 ===== -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:24px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">05</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">第四步：让表情“动”起来</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">静态图 → 图生视频 → 3 秒小动效</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:20px 0 0;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">静态图做出来只是第一步，现在的表情包不带点动态都拿不出手。微信表情支持 GIF 动图，但 GIF 得一张张做帧，手工根本做不来。我的路线是“曲线救国”：</span>
+  </p>
+
+  <section style="display:flex;gap:10px;margin-bottom:10px;margin-top:14px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">1</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">把满意的静态图交给 CodeBuddy 的图生视频能力，生成一段 3 秒左右的动效小视频；</span></p>
+  </section>
+  <section style="display:flex;gap:10px;margin-bottom:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">2</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">动作设计要简单夸张：花开、比心变大、抱月打哈欠……一个动作只表达一件事；</span></p>
+  </section>
+  <section style="display:flex;gap:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">3</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">检查动效是否自然，不合意就让 AI 换个动作重新生成。</span></p>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:12px 0 0;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">出来的视频源文件分辨率很高（接近 1000×1000），清晰度管够。真正烧脑的是下一步——</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">把它变成平台收的 GIF</span></span>
+    <span leaf="">。</span>
+  </p>
+
+  <!-- ===== 06 GIF ===== -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:24px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">06</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">第五步：视频转 GIF，卡好 500KB“生死线”</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">动图清晰与否，取决于压缩顺序</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:20px 0 0;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">动态表情上传微信，最硬的一条规矩是</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">主图 240×240、体积不能超过 500KB</span></span>
+    <span leaf="">，缩略图更是只有 120×120、50KB 的额度。视频直接转 GIF 几乎必然超重——动辄几 MB。我第一版就是直接硬转，出来 3MB 多，直接被平台拒了。后来把思路理清楚，转出来的 GIF 既清晰又不超重，实测全部达标：</span>
+  </p>
+
+  <table style="width:100%;border-collapse:collapse;font-size:12px;line-height:1.7;margin-top:24px;">
+    <tr>
+      <th style="background:#F8FAFC;color:#2563EB;font-weight:700;padding:8px 10px;border:1px solid #E5E7EB;text-align:left;"><span leaf="">阶段</span></th>
+      <th style="background:#F8FAFC;color:#2563EB;font-weight:700;padding:8px 10px;border:1px solid #E5E7EB;text-align:left;"><span leaf="">做法</span></th>
+      <th style="background:#F8FAFC;color:#2563EB;font-weight:700;padding:8px 10px;border:1px solid #E5E7EB;text-align:left;"><span leaf="">效果</span></th>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">抽帧</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">从 3 秒视频里按需抽帧，压住总帧数</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">帧数少了，体积直线下降</span></td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">降分辨率</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">裁成正方形，缩到 240×240</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">主图标准尺寸</span></td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">调色板</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">调色板方案二段式压缩，先建色板再套用</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">颜色保留最好，不糊不脏</span></td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">质量兜底</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">阈值内先保质量，逼近上限再逐步降帧</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">尽量清晰、绝不超限</span></td>
+    </tr>
+  </table>
+
+  <section style="background:#F0FDF4;border-left:3px solid #10B981;border-radius:0 12px 12px 0;padding:14px 18px;margin-top:24px;display:flex;gap:12px;">
+    <section style="flex-shrink:0;width:22px;height:22px;background:#10B981;border-radius:50%;color:#FFFFFF;text-align:center;line-height:22px;font-size:12px;font-weight:800;"><span leaf="">✓</span></section>
+    <section>
+      <p style="font-size:14px;font-weight:700;color:#065F46;margin:0 0 4px;"><span leaf="">一次批量转 9 个，全部达标</span></p>
+      <p style="font-size:13px;color:#047857;line-height:1.7;margin:0;"><span leaf="">我把这套逻辑写成了小脚本批量跑：主图最小 418KB、最大 496KB，全部压在 500KB 红线内；缩略图也都低于 50KB。</span></p>
+    </section>
+  </section>
+
+  <section style="border-left:3px solid #2563EB;padding-left:16px;margin-top:24px;">
+    <p style="font-size:15px;color:#111827;line-height:1.8;margin:0 0 6px;font-weight:600;"><span leaf="">动图要清晰，别只靠调“质量参数”硬压：先砍帧数、再上色板、最后才动质量——顺序对了，肉眼几乎看不出损失。</span></p>
+    <p style="font-size:11px;color:#9CA3AF;margin:0;"><span leaf="">—— 小智压图笔记</span></p>
+  </section>
+
+  <!-- ===== 07 配套材料 ===== -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:24px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">07</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">第六步：上架配套材料，一张都不能少</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">全套清单，照着备就不会漏</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:20px 0 0;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">很多人以为表情画完、转完 GIF 就大功告成，结果卡在提交页：平台要的远不止表情本身，还有一大堆配套材料。我把全套清单整理成一张表，照着备就不会漏：</span>
+  </p>
+
+  <table style="width:100%;border-collapse:collapse;font-size:12px;line-height:1.7;margin-top:24px;">
+    <tr>
+      <th style="background:#F8FAFC;color:#2563EB;font-weight:700;padding:8px 10px;border:1px solid #E5E7EB;text-align:left;"><span leaf="">材料</span></th>
+      <th style="background:#F8FAFC;color:#2563EB;font-weight:700;padding:8px 10px;border:1px solid #E5E7EB;text-align:left;"><span leaf="">规格</span></th>
+      <th style="background:#F8FAFC;color:#2563EB;font-weight:700;padding:8px 10px;border:1px solid #E5E7EB;text-align:left;"><span leaf="">用途</span></th>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">表情主图</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">240×240 GIF ≤500KB</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">聊天里看到的表情本体</span></td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">表情缩略图</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">120×120 GIF ≤50KB</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">表情面板小图</span></td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">专辑图标</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">200×200 PNG ≤100KB</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">专辑封面小圆标</span></td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">横幅</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">750×210 ≤1MB</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">专辑详情页横条</span></td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">封面</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">750×400 ≤1MB</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">专辑主视觉</span></td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">聊天面板图标</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">50×50</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">聊天界面的图标</span></td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">形象头像</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">240×240</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">艺术家形象展示</span></td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">赞赏引导图</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">750×400 ≤1MB</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">用户点“赞赏”时的引导</span></td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">赞赏致谢图</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">750×400 ≤1MB</span></td>
+      <td style="padding:8px 10px;border:1px solid #E5E7EB;color:#374151;"><span leaf="">赞赏成功后看到的致谢</span></td>
+    </tr>
+  </table>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:16px 0 0;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">这些配套图如果从 240×240 的 GIF 里截图，放大就糊了。我的解法是</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">直接从高清视频里抽帧</span></span>
+    <span leaf="">：裁方、调色、排版，横幅封面图标一套脚本全出——文字是中文标题排版，背景色自动从画面采样，整套视觉统一。图永远高清，还和表情本体长得一模一样。</span>
+  </p>
+
+  <!-- ===== 08 打包提交 ===== -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:24px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">08</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">第七步：打包提交，一次过审的材料清单</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">提交前用清单自查，比祈祷有用</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:20px 0 0;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">素材全齐之后，提交这一步把“要交什么”归拢好，一次就能过：</span>
+  </p>
+
+  <section style="display:flex;gap:10px;margin-bottom:10px;margin-top:14px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">1</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">专辑基本信息：名称、一句话介绍、版权信息，三样填清楚；</span></p>
+  </section>
+  <section style="display:flex;gap:10px;margin-bottom:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">2</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">表情文件包：主图 8~24 张（平台要求 8 张起），配齐对应缩略图；</span></p>
+  </section>
+  <section style="display:flex;gap:10px;margin-bottom:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">3</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">推广素材：图标、横幅、封面一张不少；</span></p>
+  </section>
+  <section style="display:flex;gap:10px;margin-bottom:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">4</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">版权与证明材料：原创性声明 + 创作过程截图。AI 辅助创作现在平台查得细，过程截图一定要留：生成画面、修改记录、脚本运行日志都算数；</span></p>
+  </section>
+  <section style="display:flex;gap:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">5</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">信息核对：名称、分类、简介逐项过一遍，别出现错别字或不实描述。</span></p>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:12px 0 0;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">我这边还顺手把“每三周攒够三套就打包一次”写进了自动化脚本，目录、文案、校验一条龙，连提交信息都自动生成。</span>
+  </p>
+
+  <section style="background:#FFFFFF;border:1px solid #E5E7EB;border-radius:12px;padding:16px 18px;margin-top:24px;display:flex;gap:12px;">
+    <section style="flex-shrink:0;width:24px;height:24px;background:linear-gradient(135deg,#2563EB,#06B6D4);border-radius:6px;color:#FFFFFF;text-align:center;line-height:24px;font-size:13px;font-weight:800;"><span leaf="">i</span></section>
+    <section>
+      <p style="font-size:14px;font-weight:700;color:#111827;margin:0 0 4px;"><span leaf="">审核被驳回，大多是“粗心错”</span></p>
+      <p style="font-size:13px;color:#6B7280;line-height:1.7;margin:0;"><span leaf="">审核一般需要几天，急不来。与其祈祷一次过，不如提交前用清单自查三遍——被驳回大多不是创意问题，而是尺寸、大小、缺材料这些粗心错。</span></p>
+    </section>
+  </section>
+
+  <!-- ===== 09 复盘 ===== -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:24px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">09</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">复盘：CodeBuddy 做表情，五条真经验</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">这条生产线完整跑下来，收敛成五条</span></p>
+    </section>
+  </section>
+
+  <section style="display:flex;gap:10px;margin-bottom:10px;margin-top:20px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">1</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">先给它“规范表”，别只说“做个表情”。把平台尺寸、大小上限喂给 AI，它才知道往哪个方向优化，否则很容易做出根本传不上去的东西。</span></p>
+  </section>
+  <section style="display:flex;gap:10px;margin-bottom:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">2</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">人设文案反复用，角色一致性靠描述守。每次出图都带同一段角色卡，比后期补救高效得多。</span></p>
+  </section>
+  <section style="display:flex;gap:10px;margin-bottom:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">3</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">能上脚本的都上脚本。转 GIF、抽帧、排版配套图，凡是重复劳动，让 CodeBuddy 写成脚本一次跑完，还能反复复用。</span></p>
+  </section>
+  <section style="display:flex;gap:10px;margin-bottom:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">4</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">“能过审”比“更炫”优先。动态表情先把 500KB 红线卡死，再谈清晰度；配套图从高清视频源取，别拿低清放大。</span></p>
+  </section>
+  <section style="display:flex;gap:10px;">
+    <section style="flex-shrink:0;width:20px;height:20px;background:#EEF2FF;color:#2563EB;border-radius:6px;text-align:center;line-height:20px;font-size:11px;font-weight:800;margin-top:3px;"><span leaf="">5</span></section>
+    <p style="font-size:14px;color:#1F2937;line-height:1.8;margin:0;"><span leaf="">截图留痕要养成习惯。AI 创作的版权证明，过程截图是最有力的材料，做完一套随手归档。</span></p>
+  </section>
+
+  <!-- ===== 10 小智说两句 ===== -->
+  <section style="display:flex;align-items:baseline;gap:14px;margin-top:24px;">
+    <span style="font-size:13px;font-weight:800;color:#2563EB;font-variant-numeric:tabular-nums;"><span leaf="">10</span></span>
+    <section style="flex:1;">
+      <p style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px;letter-spacing:-0.3px;"><span leaf="">小智说两句</span></p>
+      <p style="font-size:12px;color:#9CA3AF;margin:0;"><span leaf="">表情包背后的套路，和写代码一模一样</span></p>
+    </section>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:20px 0 0;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">表情包看着可爱，背后的套路其实和写代码一模一样：</span>
+    <span style="border-bottom:2px solid #BFDBFE;font-weight:600;color:#111827;"><span leaf="">先定规范和边界，再把重复劳动交给 AI，人只做判断和把关</span></span>
+    <span leaf="">。如果你也想做一套自己的表情包，别从“注册平台”开始焦虑——先从十秒钟写一张“角色卡”开始，画出一个你喜欢的形象，剩下的事，CodeBuddy 都能陪你一步步走完。</span>
+  </p>
+
+  <section style="border-left:3px solid #2563EB;padding-left:16px;margin-top:24px;">
+    <p style="font-size:15px;color:#111827;line-height:1.8;margin:0 0 6px;font-weight:600;"><span leaf="">一套能上架的表情包 = 统一人设 + 合规尺寸 + 高清动效 + 齐全材料。这四样，AI 都能搭把手，但把关的始终是你。</span></p>
+    <p style="font-size:11px;color:#9CA3AF;margin:0;"><span leaf="">—— 小智</span></p>
+  </section>
+
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:12px 0 0;letter-spacing:0.3px;text-align:left;"><span leaf="">下期见。</span></p>
+
+  <!-- ===== 今日互动 ===== -->
+  <section style="background:#EEF2FF;border:1px solid #C7D2FE;border-radius:12px;padding:16px 18px;margin-top:24px;">
+    <p style="font-size:15px;font-weight:800;color:#1E3A8A;margin:0 0 8px;"><span leaf="">💬 今日互动</span></p>
+    <p style="font-size:14px;color:#1F2937;margin:0;line-height:1.8;text-align:left;"><span leaf="">如果给你做一套专属表情，你想要什么主题、什么角色？留言说说，说不定下期小智就用 CodeBuddy 先帮你把角色画出来。</span></p>
+  </section>
+
+  <!-- ===== 尾部签名 ===== -->
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:24px 0 12px;letter-spacing:0.3px;text-align:left;"><span leaf="">我是小智，每天一分钟，把 AI 讲成妈妈都能听懂的话。</span></p>
+  <p style="font-size:14px;color:#1F2937;line-height:1.9;margin:0 0 12px;letter-spacing:0.3px;text-align:left;">
+    <span leaf="">如果你觉得今天这篇有收获，欢迎</span>
+    <strong style="color:#2563EB;"><span leaf="">点赞、在看、转发</span></strong>
+    <span leaf="">三连，我们下篇见。</span>
+  </p>
+
+  <!-- ===== 关注引导卡（二维码版） ===== -->
+  <section style="background:#FFFFFF;border:1.5px solid #2563EB;border-radius:12px;padding:18px 20px;margin-top:24px;display:flex;align-items:center;gap:14px;">
+    <span leaf=""><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/zeT1IrhsLLib9UkBbgKv2A7jfpyv4T5O3uAscIOuib1wHH4NibKALu7iaeSER3aC9jgFPZPgvHib0LWgYd5hhs5KjEvIcRia2aua48aUibYFNvibf2g/0?wx_fmt=jpeg&amp;from=appmsg" alt="公众号二维码" style="width:84px;height:84px;display:block;flex-shrink:0;border-radius:10px;"></span>
+    <section style="flex:1;min-width:0;">
+      <p style="font-size:15px;font-weight:800;color:#111827;margin:0 0 4px;"><span leaf="">智趣AI资讯小站</span></p>
+      <p style="font-size:12px;color:#6B7280;line-height:1.6;margin:0 0 6px;"><span leaf="">每天一分钟，AI 变轻松</span></p>
+      <p style="font-size:11px;font-weight:600;color:#2563EB;margin:0;"><span leaf="">长按识别二维码 · 关注不迷路</span></p>
+    </section>
+    <span style="flex-shrink:0;background:#2563EB;color:#FFFFFF;font-size:12px;font-weight:700;padding:6px 14px;border-radius:20px;"><span leaf="">关注</span></span>
+  </section>
+
+  <!-- ===== 页脚签名条 ===== -->
+  <section style="padding:20px 8px 8px;margin-top:24px;text-align:center;">
+    <p style="font-size:11px;color:#9CA3AF;letter-spacing:2px;margin:0 0 8px;"><span leaf="">每天一分钟 · AI 变轻松</span></p>
+    <section style="display:flex;align-items:center;gap:8px;justify-content:center;">
+      <section style="flex:0 0 60px;height:1px;background:linear-gradient(to right,transparent,#2563EB);"><span leaf="">&nbsp;</span></section>
+      <span style="font-size:10px;color:#2563EB;font-weight:700;"><span leaf="">▲</span></span>
+      <section style="flex:0 0 60px;height:1px;background:linear-gradient(to left,transparent,#2563EB);"><span leaf="">&nbsp;</span></section>
+    </section>
+  </section>
+
+</section>
+
+</section>
+  </div>
+</div>
+<script>
+  function gzhShowToast(msg){
+    var t=document.getElementById('gzhToast');
+    t.textContent=msg;t.classList.add('show');
+    clearTimeout(t._timer);
+    t._timer=setTimeout(function(){t.classList.remove('show');},2800);
+  }
+  function gzhCopy(){
+    var el=document.getElementById('gzh-content');
+    // 选中渲染后的富文本节点并复制（等价于手动 Ctrl+A / Ctrl+C，保留全部样式）
+    var range=document.createRange();
+    range.selectNodeContents(el);
+    var sel=window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    var ok=false;
+    try{ok=document.execCommand('copy');}catch(e){ok=false;}
+    sel.removeAllRanges();
+    var btn=document.getElementById('gzhCopyBtn');
+    if(ok){
+      gzhShowToast('✅ 已复制！去公众号编辑器按 Ctrl/⌘+V 粘贴即可');
+      var old=btn.textContent;btn.textContent='✅ 已复制';
+      setTimeout(function(){btn.textContent=old;},2200);
+    }else{
+      gzhShowToast('⚠ 自动复制失败，请手动全选(Ctrl/⌘+A)再复制(Ctrl/⌘+C)');
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+# 私密配置（公众号 AppID / AppSecret，绝不入库）
+config/config.ini
+config/*.local.*
+
+# 临时文件与缓存
+_tmp/
+_img_tmp/
+*.pyc
+__pycache__/
+*.log
+.DS_Store
+Thumbs.db
+
+# 本地 IDE / 工具数据
+.workbuddy/
+.playwright-cli/
+
+# 生成物与第三方资料（版权及体积考虑）
+generated-images/
+posters/
+docs/*.pdf
